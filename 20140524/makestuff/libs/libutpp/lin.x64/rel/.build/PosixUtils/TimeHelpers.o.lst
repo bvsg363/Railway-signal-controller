@@ -1,0 +1,112 @@
+   1              		.file	"TimeHelpers.cpp"
+   2              		.text
+   3              		.align 2
+   4              		.p2align 4,,15
+   5              		.globl	_ZN8UnitTest5TimerC2Ev
+   7              	_ZN8UnitTest5TimerC2Ev:
+   8              	.LFB14:
+   9              		.cfi_startproc
+  10 0000 48C70700 		movq	$0, (%rdi)
+  10      000000
+  11 0007 48C74708 		movq	$0, 8(%rdi)
+  11      00000000 
+  12 000f C3       		ret
+  13              		.cfi_endproc
+  14              	.LFE14:
+  16              		.globl	_ZN8UnitTest5TimerC1Ev
+  17              		.set	_ZN8UnitTest5TimerC1Ev,_ZN8UnitTest5TimerC2Ev
+  18              		.align 2
+  19              		.p2align 4,,15
+  20              		.globl	_ZN8UnitTest5Timer5StartEv
+  22              	_ZN8UnitTest5Timer5StartEv:
+  23              	.LFB16:
+  24              		.cfi_startproc
+  25 0010 31F6     		xorl	%esi, %esi
+  26 0012 E9000000 		jmp	gettimeofday@PLT
+  26      00
+  27              		.cfi_endproc
+  28              	.LFE16:
+  30 0017 90       		.align 2
+  31 0018 0F1F8400 		.p2align 4,,15
+  31      00000000 
+  32              		.globl	_ZNK8UnitTest5Timer11GetTimeInMsEv
+  34              	_ZNK8UnitTest5Timer11GetTimeInMsEv:
+  35              	.LFB17:
+  36              		.cfi_startproc
+  37 0020 53       		pushq	%rbx
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 3, -16
+  40 0021 31F6     		xorl	%esi, %esi
+  41 0023 4889FB   		movq	%rdi, %rbx
+  42 0026 4883EC20 		subq	$32, %rsp
+  43              		.cfi_def_cfa_offset 48
+  44 002a 4889E7   		movq	%rsp, %rdi
+  45 002d 64488B04 		movq	%fs:40, %rax
+  45      25280000 
+  45      00
+  46 0036 48894424 		movq	%rax, 24(%rsp)
+  46      18
+  47 003b 31C0     		xorl	%eax, %eax
+  48 003d E8000000 		call	gettimeofday@PLT
+  48      00
+  49 0042 488B7424 		movq	8(%rsp), %rsi
+  49      08
+  50 0047 2B7308   		subl	8(%rbx), %esi
+  51 004a BAD34D62 		movl	$274877907, %edx
+  51      10
+  52 004f 488B0C24 		movq	(%rsp), %rcx
+  53 0053 2B0B     		subl	(%rbx), %ecx
+  54 0055 89F0     		movl	%esi, %eax
+  55 0057 C1FE1F   		sarl	$31, %esi
+  56 005a F7EA     		imull	%edx
+  57 005c 69C9E803 		imull	$1000, %ecx, %ecx
+  57      0000
+  58 0062 C1FA06   		sarl	$6, %edx
+  59 0065 29F2     		subl	%esi, %edx
+  60 0067 488B5C24 		movq	24(%rsp), %rbx
+  60      18
+  61 006c 6448331C 		xorq	%fs:40, %rbx
+  61      25280000 
+  61      00
+  62 0075 8D0411   		leal	(%rcx,%rdx), %eax
+  63 0078 7506     		jne	.L7
+  64 007a 4883C420 		addq	$32, %rsp
+  65              		.cfi_remember_state
+  66              		.cfi_def_cfa_offset 16
+  67 007e 5B       		popq	%rbx
+  68              		.cfi_def_cfa_offset 8
+  69 007f C3       		ret
+  70              	.L7:
+  71              		.cfi_restore_state
+  72 0080 E8000000 		call	__stack_chk_fail@PLT
+  72      00
+  73              		.cfi_endproc
+  74              	.LFE17:
+  76 0085 90662E0F 		.p2align 4,,15
+  76      1F840000 
+  76      000000
+  77              		.globl	_ZN8UnitTest11TimeHelpers7SleepMsEi
+  79              	_ZN8UnitTest11TimeHelpers7SleepMsEi:
+  80              	.LFB18:
+  81              		.cfi_startproc
+  82 0090 69FFE803 		imull	$1000, %edi, %edi
+  82      0000
+  83 0096 E9000000 		jmp	usleep@PLT
+  83      00
+  84              		.cfi_endproc
+  85              	.LFE18:
+  87              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+  88              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 TimeHelpers.cpp
+     /tmp/ccXzK4gk.s:7      .text:0000000000000000 _ZN8UnitTest5TimerC2Ev
+     /tmp/ccXzK4gk.s:7      .text:0000000000000000 _ZN8UnitTest5TimerC1Ev
+     /tmp/ccXzK4gk.s:22     .text:0000000000000010 _ZN8UnitTest5Timer5StartEv
+     /tmp/ccXzK4gk.s:34     .text:0000000000000020 _ZNK8UnitTest5Timer11GetTimeInMsEv
+     /tmp/ccXzK4gk.s:79     .text:0000000000000090 _ZN8UnitTest11TimeHelpers7SleepMsEi
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+gettimeofday
+__stack_chk_fail
+usleep

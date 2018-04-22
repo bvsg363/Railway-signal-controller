@@ -1,0 +1,204 @@
+   1              		.file	"SignalTranslator.cpp"
+   2              		.text
+   3              		.p2align 4,,15
+   5              	_ZN8UnitTest12_GLOBAL__N_113SignalHandlerEi:
+   6              	.LFB0:
+   7              		.cfi_startproc
+   8 0000 4883EC08 		subq	$8, %rsp
+   9              		.cfi_def_cfa_offset 16
+  10 0004 488B0500 		movq	_ZN8UnitTest16SignalTranslator12s_jumpTargetE@GOTPCREL(%rip), %rax
+  10      000000
+  11 000b 89FE     		movl	%edi, %esi
+  12 000d 488B38   		movq	(%rax), %rdi
+  13 0010 E8000000 		call	__longjmp_chk@PLT
+  13      00
+  14              		.cfi_endproc
+  15              	.LFE0:
+  17 0015 90       		.align 2
+  18 0016 662E0F1F 		.p2align 4,,15
+  18      84000000 
+  18      0000
+  19              		.globl	_ZN8UnitTest16SignalTranslatorC2Ev
+  21              	_ZN8UnitTest16SignalTranslatorC2Ev:
+  22              	.LFB2:
+  23              		.cfi_startproc
+  24 0020 55       		pushq	%rbp
+  25              		.cfi_def_cfa_offset 16
+  26              		.cfi_offset 6, -16
+  27 0021 53       		pushq	%rbx
+  28              		.cfi_def_cfa_offset 24
+  29              		.cfi_offset 3, -24
+  30 0022 4889FB   		movq	%rdi, %rbx
+  31 0025 4881ECA8 		subq	$168, %rsp
+  31      000000
+  32              		.cfi_def_cfa_offset 192
+  33 002c 64488B04 		movq	%fs:40, %rax
+  33      25280000 
+  33      00
+  34 0035 48898424 		movq	%rax, 152(%rsp)
+  34      98000000 
+  35 003d 31C0     		xorl	%eax, %eax
+  36 003f 488B0500 		movq	_ZN8UnitTest16SignalTranslator12s_jumpTargetE@GOTPCREL(%rip), %rax
+  36      000000
+  37 0046 4889E5   		movq	%rsp, %rbp
+  38 0049 C7842488 		movl	$0, 136(%rsp)
+  38      00000000 
+  38      000000
+  39 0054 488B10   		movq	(%rax), %rdx
+  40 0057 488938   		movq	%rdi, (%rax)
+  41 005a 488D059F 		leaq	_ZN8UnitTest12_GLOBAL__N_113SignalHandlerEi(%rip), %rax
+  41      FFFFFF
+  42 0061 48890424 		movq	%rax, (%rsp)
+  43 0065 488997C8 		movq	%rdx, 200(%rdi)
+  43      000000
+  44 006c 488D7D08 		leaq	8(%rbp), %rdi
+  45 0070 E8000000 		call	sigemptyset@PLT
+  45      00
+  46 0075 488D9300 		leaq	512(%rbx), %rdx
+  46      020000
+  47 007c 4889EE   		movq	%rbp, %rsi
+  48 007f BF0B0000 		movl	$11, %edi
+  48      00
+  49 0084 E8000000 		call	sigaction@PLT
+  49      00
+  50 0089 488D93D0 		leaq	208(%rbx), %rdx
+  50      000000
+  51 0090 4889EE   		movq	%rbp, %rsi
+  52 0093 BF080000 		movl	$8, %edi
+  52      00
+  53 0098 E8000000 		call	sigaction@PLT
+  53      00
+  54 009d 488D9368 		leaq	360(%rbx), %rdx
+  54      010000
+  55 00a4 4889EE   		movq	%rbp, %rsi
+  56 00a7 4881C398 		addq	$664, %rbx
+  56      020000
+  57 00ae BF050000 		movl	$5, %edi
+  57      00
+  58 00b3 E8000000 		call	sigaction@PLT
+  58      00
+  59 00b8 4889DA   		movq	%rbx, %rdx
+  60 00bb 4889EE   		movq	%rbp, %rsi
+  61 00be BF070000 		movl	$7, %edi
+  61      00
+  62 00c3 E8000000 		call	sigaction@PLT
+  62      00
+  63 00c8 4889DA   		movq	%rbx, %rdx
+  64 00cb 4889EE   		movq	%rbp, %rsi
+  65 00ce BF040000 		movl	$4, %edi
+  65      00
+  66 00d3 E8000000 		call	sigaction@PLT
+  66      00
+  67 00d8 488B8424 		movq	152(%rsp), %rax
+  67      98000000 
+  68 00e0 64483304 		xorq	%fs:40, %rax
+  68      25280000 
+  68      00
+  69 00e9 750A     		jne	.L7
+  70 00eb 4881C4A8 		addq	$168, %rsp
+  70      000000
+  71              		.cfi_remember_state
+  72              		.cfi_def_cfa_offset 24
+  73 00f2 5B       		popq	%rbx
+  74              		.cfi_def_cfa_offset 16
+  75 00f3 5D       		popq	%rbp
+  76              		.cfi_def_cfa_offset 8
+  77 00f4 C3       		ret
+  78              	.L7:
+  79              		.cfi_restore_state
+  80 00f5 E8000000 		call	__stack_chk_fail@PLT
+  80      00
+  81              		.cfi_endproc
+  82              	.LFE2:
+  84              		.globl	_ZN8UnitTest16SignalTranslatorC1Ev
+  85              		.set	_ZN8UnitTest16SignalTranslatorC1Ev,_ZN8UnitTest16SignalTranslatorC2Ev
+  86              		.align 2
+  87 00fa 660F1F44 		.p2align 4,,15
+  87      0000
+  88              		.globl	_ZN8UnitTest16SignalTranslatorD2Ev
+  90              	_ZN8UnitTest16SignalTranslatorD2Ev:
+  91              	.LFB5:
+  92              		.cfi_startproc
+  93 0100 55       		pushq	%rbp
+  94              		.cfi_def_cfa_offset 16
+  95              		.cfi_offset 6, -16
+  96 0101 488DAF98 		leaq	664(%rdi), %rbp
+  96      020000
+  97 0108 53       		pushq	%rbx
+  98              		.cfi_def_cfa_offset 24
+  99              		.cfi_offset 3, -24
+ 100 0109 31D2     		xorl	%edx, %edx
+ 101 010b 4889FB   		movq	%rdi, %rbx
+ 102 010e BF040000 		movl	$4, %edi
+ 102      00
+ 103 0113 4883EC08 		subq	$8, %rsp
+ 104              		.cfi_def_cfa_offset 32
+ 105 0117 4889EE   		movq	%rbp, %rsi
+ 106 011a E8000000 		call	sigaction@PLT
+ 106      00
+ 107 011f 4889EE   		movq	%rbp, %rsi
+ 108 0122 31D2     		xorl	%edx, %edx
+ 109 0124 BF070000 		movl	$7, %edi
+ 109      00
+ 110 0129 E8000000 		call	sigaction@PLT
+ 110      00
+ 111 012e 488DB368 		leaq	360(%rbx), %rsi
+ 111      010000
+ 112 0135 31D2     		xorl	%edx, %edx
+ 113 0137 BF050000 		movl	$5, %edi
+ 113      00
+ 114 013c E8000000 		call	sigaction@PLT
+ 114      00
+ 115 0141 488DB3D0 		leaq	208(%rbx), %rsi
+ 115      000000
+ 116 0148 31D2     		xorl	%edx, %edx
+ 117 014a BF080000 		movl	$8, %edi
+ 117      00
+ 118 014f E8000000 		call	sigaction@PLT
+ 118      00
+ 119 0154 488DB300 		leaq	512(%rbx), %rsi
+ 119      020000
+ 120 015b 31D2     		xorl	%edx, %edx
+ 121 015d BF0B0000 		movl	$11, %edi
+ 121      00
+ 122 0162 E8000000 		call	sigaction@PLT
+ 122      00
+ 123 0167 488B93C8 		movq	200(%rbx), %rdx
+ 123      000000
+ 124 016e 488B0500 		movq	_ZN8UnitTest16SignalTranslator12s_jumpTargetE@GOTPCREL(%rip), %rax
+ 124      000000
+ 125 0175 488910   		movq	%rdx, (%rax)
+ 126 0178 4883C408 		addq	$8, %rsp
+ 127              		.cfi_def_cfa_offset 24
+ 128 017c 5B       		popq	%rbx
+ 129              		.cfi_def_cfa_offset 16
+ 130 017d 5D       		popq	%rbp
+ 131              		.cfi_def_cfa_offset 8
+ 132 017e C3       		ret
+ 133              		.cfi_endproc
+ 134              	.LFE5:
+ 136              		.globl	_ZN8UnitTest16SignalTranslatorD1Ev
+ 137              		.set	_ZN8UnitTest16SignalTranslatorD1Ev,_ZN8UnitTest16SignalTranslatorD2Ev
+ 138              		.globl	_ZN8UnitTest16SignalTranslator12s_jumpTargetE
+ 139              		.bss
+ 140              		.align 8
+ 143              	_ZN8UnitTest16SignalTranslator12s_jumpTargetE:
+ 144 0000 00000000 		.zero	8
+ 144      00000000 
+ 145              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+ 146              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 SignalTranslator.cpp
+     /tmp/ccCKZ2bb.s:5      .text:0000000000000000 _ZN8UnitTest12_GLOBAL__N_113SignalHandlerEi
+     /tmp/ccCKZ2bb.s:143    .bss:0000000000000000 _ZN8UnitTest16SignalTranslator12s_jumpTargetE
+     /tmp/ccCKZ2bb.s:21     .text:0000000000000020 _ZN8UnitTest16SignalTranslatorC2Ev
+     /tmp/ccCKZ2bb.s:21     .text:0000000000000020 _ZN8UnitTest16SignalTranslatorC1Ev
+     /tmp/ccCKZ2bb.s:90     .text:0000000000000100 _ZN8UnitTest16SignalTranslatorD2Ev
+     /tmp/ccCKZ2bb.s:90     .text:0000000000000100 _ZN8UnitTest16SignalTranslatorD1Ev
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+__longjmp_chk
+sigemptyset
+sigaction
+__stack_chk_fail

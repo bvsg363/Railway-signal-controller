@@ -1,0 +1,802 @@
+   1              		.file	"spi.c"
+   2              		.text
+   3              		.p2align 4,,15
+   4              		.globl	spiBitSwap
+   6              	spiBitSwap:
+   7              	.LFB27:
+   8              		.cfi_startproc
+   9 0000 85FF     		testl	%edi, %edi
+  10 0002 8D47FF   		leal	-1(%rdi), %eax
+  11 0005 7424     		je	.L1
+  12 0007 488D4C06 		leaq	1(%rsi,%rax), %rcx
+  12      01
+  13 000c 488D1500 		leaq	swapTable(%rip), %rdx
+  13      000000
+  14              		.p2align 4,,10
+  15 0013 0F1F4400 		.p2align 3
+  15      00
+  16              	.L3:
+  17 0018 0FB606   		movzbl	(%rsi), %eax
+  18 001b 4883C601 		addq	$1, %rsi
+  19 001f 0FB60402 		movzbl	(%rdx,%rax), %eax
+  20 0023 8846FF   		movb	%al, -1(%rsi)
+  21 0026 4839CE   		cmpq	%rcx, %rsi
+  22 0029 75ED     		jne	.L3
+  23              	.L1:
+  24 002b F3C3     		rep ret
+  25              		.cfi_endproc
+  26              	.LFE27:
+  28              		.section	.rodata.str1.1,"aMS",@progbits,1
+  29              	.LC0:
+  30 0000 73706953 		.string	"spiSend()"
+  30      656E6428 
+  30      2900
+  31              		.section	.rodata.str1.8,"aMS",@progbits,1
+  32              		.align 8
+  33              	.LC1:
+  34 0000 73706953 		.string	"spiSend(): device doesn't support SPI send"
+  34      656E6428 
+  34      293A2064 
+  34      65766963 
+  34      6520646F 
+  35              		.text
+  36 002d 0F1F00   		.p2align 4,,15
+  37              		.globl	spiSend
+  39              	spiSend:
+  40              	.LFB28:
+  41              		.cfi_startproc
+  42 0030 4157     		pushq	%r15
+  43              		.cfi_def_cfa_offset 16
+  44              		.cfi_offset 15, -16
+  45 0032 4156     		pushq	%r14
+  46              		.cfi_def_cfa_offset 24
+  47              		.cfi_offset 14, -24
+  48 0034 4155     		pushq	%r13
+  49              		.cfi_def_cfa_offset 32
+  50              		.cfi_offset 13, -32
+  51 0036 4154     		pushq	%r12
+  52              		.cfi_def_cfa_offset 40
+  53              		.cfi_offset 12, -40
+  54 0038 4D89C5   		movq	%r8, %r13
+  55 003b 55       		pushq	%rbp
+  56              		.cfi_def_cfa_offset 48
+  57              		.cfi_offset 6, -48
+  58 003c 53       		pushq	%rbx
+  59              		.cfi_def_cfa_offset 56
+  60              		.cfi_offset 3, -56
+  61 003d 4889FD   		movq	%rdi, %rbp
+  62 0040 4189F4   		movl	%esi, %r12d
+  63 0043 4889D3   		movq	%rdx, %rbx
+  64 0046 4883EC28 		subq	$40, %rsp
+  65              		.cfi_def_cfa_offset 96
+  66 004a 64488B04 		movq	%fs:40, %rax
+  66      25280000 
+  66      00
+  67 0053 48894424 		movq	%rax, 24(%rsp)
+  67      18
+  68 0058 31C0     		xorl	%eax, %eax
+  69 005a 84C9     		testb	%cl, %cl
+  70 005c 7552     		jne	.L10
+  71 005e 89F7     		movl	%esi, %edi
+  72 0060 E8000000 		call	malloc@PLT
+  72      00
+  73 0065 4885C0   		testq	%rax, %rax
+  74 0068 4989C7   		movq	%rax, %r15
+  75 006b 0F842F01 		je	.L11
+  75      0000
+  76 0071 418D7424 		leal	-1(%r12), %esi
+  76      FF
+  77 0076 31C0     		xorl	%eax, %eax
+  78 0078 488B7D00 		movq	0(%rbp), %rdi
+  79 007c 488D1500 		leaq	swapTable(%rip), %rdx
+  79      000000
+  80 0083 4883C601 		addq	$1, %rsi
+  81 0087 4585E4   		testl	%r12d, %r12d
+  82 008a 0F845001 		je	.L37
+  82      0000
+  83              		.p2align 4,,10
+  84              		.p2align 3
+  85              	.L15:
+  86 0090 0FB60C03 		movzbl	(%rbx,%rax), %ecx
+  87 0094 0FB60C0A 		movzbl	(%rdx,%rcx), %ecx
+  88 0098 41880C07 		movb	%cl, (%r15,%rax)
+  89 009c 4883C001 		addq	$1, %rax
+  90 00a0 4839F0   		cmpq	%rsi, %rax
+  91 00a3 75EB     		jne	.L15
+  92 00a5 4C897C24 		movq	%r15, 8(%rsp)
+  92      08
+  93 00aa EB13     		jmp	.L16
+  94 00ac 0F1F4000 		.p2align 4,,10
+  95              		.p2align 3
+  96              	.L10:
+  97 00b0 488B3F   		movq	(%rdi), %rdi
+  98 00b3 4989D7   		movq	%rdx, %r15
+  99 00b6 48C74424 		movq	$0, 8(%rsp)
+  99      08000000 
+  99      00
+ 100              	.L16:
+ 101 00bf 44896424 		movl	%r12d, 20(%rsp)
+ 101      14
+ 102 00c4 6A00     		pushq	$0
+ 103              		.cfi_def_cfa_offset 104
+ 104 00c6 31D2     		xorl	%edx, %edx
+ 105 00c8 68E80300 		pushq	$1000
+ 105      00
+ 106              		.cfi_def_cfa_offset 112
+ 107 00cd BE810000 		movl	$129, %esi
+ 107      00
+ 108 00d2 41B90400 		movl	$4, %r9d
+ 108      0000
+ 109 00d8 B9060000 		movl	$6, %ecx
+ 109      00
+ 110 00dd 4C8D4424 		leaq	36(%rsp), %r8
+ 110      24
+ 111 00e2 E8000000 		call	usbControlWrite@PLT
+ 111      00
+ 112 00e7 85C0     		testl	%eax, %eax
+ 113 00e9 5E       		popq	%rsi
+ 114              		.cfi_def_cfa_offset 104
+ 115 00ea 5F       		popq	%rdi
+ 116              		.cfi_def_cfa_offset 96
+ 117 00eb 0F852F01 		jne	.L17
+ 117      0000
+ 118 00f1 4183FC3F 		cmpl	$63, %r12d
+ 119 00f5 0F864501 		jbe	.L38
+ 119      0000
+ 120 00fb 418D5C24 		leal	-64(%r12), %ebx
+ 120      C0
+ 121 0100 41BEFFFF 		movl	$-1, %r14d
+ 121      FFFF
+ 122 0106 C1EB06   		shrl	$6, %ebx
+ 123 0109 4883C301 		addq	$1, %rbx
+ 124 010d 48C1E306 		salq	$6, %rbx
+ 125 0111 4C01FB   		addq	%r15, %rbx
+ 126              		.p2align 4,,10
+ 127 0114 0F1F4000 		.p2align 3
+ 128              	.L20:
+ 129 0118 0FB67515 		movzbl	21(%rbp), %esi
+ 130 011c 488B7D00 		movq	0(%rbp), %rdi
+ 131 0120 4C89FA   		movq	%r15, %rdx
+ 132 0123 4D89E9   		movq	%r13, %r9
+ 133 0126 4589F0   		movl	%r14d, %r8d
+ 134 0129 B9400000 		movl	$64, %ecx
+ 134      00
+ 135 012e 4983C740 		addq	$64, %r15
+ 136 0132 E8000000 		call	usbBulkWrite@PLT
+ 136      00
+ 137 0137 4939DF   		cmpq	%rbx, %r15
+ 138 013a 75DC     		jne	.L20
+ 139 013c 31DB     		xorl	%ebx, %ebx
+ 140 013e 4183E43F 		andl	$63, %r12d
+ 141 0142 7426     		je	.L14
+ 142 0144 85C0     		testl	%eax, %eax
+ 143 0146 7578     		jne	.L36
+ 144              	.L19:
+ 145 0148 0FB67515 		movzbl	21(%rbp), %esi
+ 146 014c 488B7D00 		movq	0(%rbp), %rdi
+ 147 0150 4D89E9   		movq	%r13, %r9
+ 148 0153 41B8FFFF 		movl	$-1, %r8d
+ 148      FFFF
+ 149 0159 4489E1   		movl	%r12d, %ecx
+ 150 015c 4C89FA   		movq	%r15, %rdx
+ 151 015f 31DB     		xorl	%ebx, %ebx
+ 152 0161 E8000000 		call	usbBulkWrite@PLT
+ 152      00
+ 153 0166 85C0     		testl	%eax, %eax
+ 154 0168 7556     		jne	.L36
+ 155              	.L14:
+ 156 016a 488B7C24 		movq	8(%rsp), %rdi
+ 156      08
+ 157 016f E8000000 		call	free@PLT
+ 157      00
+ 158 0174 488B5424 		movq	24(%rsp), %rdx
+ 158      18
+ 159 0179 64483314 		xorq	%fs:40, %rdx
+ 159      25280000 
+ 159      00
+ 160 0182 89D8     		movl	%ebx, %eax
+ 161 0184 0F85CD00 		jne	.L39
+ 161      0000
+ 162 018a 4883C428 		addq	$40, %rsp
+ 163              		.cfi_remember_state
+ 164              		.cfi_def_cfa_offset 56
+ 165 018e 5B       		popq	%rbx
+ 166              		.cfi_def_cfa_offset 48
+ 167 018f 5D       		popq	%rbp
+ 168              		.cfi_def_cfa_offset 40
+ 169 0190 415C     		popq	%r12
+ 170              		.cfi_def_cfa_offset 32
+ 171 0192 415D     		popq	%r13
+ 172              		.cfi_def_cfa_offset 24
+ 173 0194 415E     		popq	%r14
+ 174              		.cfi_def_cfa_offset 16
+ 175 0196 415F     		popq	%r15
+ 176              		.cfi_def_cfa_offset 8
+ 177 0198 C3       		ret
+ 178 0199 0F1F8000 		.p2align 4,,10
+ 178      000000
+ 179              		.p2align 3
+ 180              	.L11:
+ 181              		.cfi_restore_state
+ 182 01a0 488D3500 		leaq	.LC0(%rip), %rsi
+ 182      000000
+ 183 01a7 4C89EF   		movq	%r13, %rdi
+ 184 01aa BB010000 		movl	$1, %ebx
+ 184      00
+ 185 01af E8000000 		call	errPrefix@PLT
+ 185      00
+ 186 01b4 48C74424 		movq	$0, 8(%rsp)
+ 186      08000000 
+ 186      00
+ 187 01bd EBAB     		jmp	.L14
+ 188 01bf 90       		.p2align 4,,10
+ 189              		.p2align 3
+ 190              	.L36:
+ 191 01c0 488D3500 		leaq	.LC0(%rip), %rsi
+ 191      000000
+ 192 01c7 4C89EF   		movq	%r13, %rdi
+ 193 01ca BB020000 		movl	$2, %ebx
+ 193      00
+ 194 01cf E8000000 		call	errPrefix@PLT
+ 194      00
+ 195 01d4 EB94     		jmp	.L14
+ 196 01d6 662E0F1F 		.p2align 4,,10
+ 196      84000000 
+ 196      0000
+ 197              		.p2align 3
+ 198              	.L37:
+ 199 01e0 C7442414 		movl	$0, 20(%rsp)
+ 199      00000000 
+ 200 01e8 6A00     		pushq	$0
+ 201              		.cfi_def_cfa_offset 104
+ 202 01ea 31D2     		xorl	%edx, %edx
+ 203 01ec 68E80300 		pushq	$1000
+ 203      00
+ 204              		.cfi_def_cfa_offset 112
+ 205 01f1 B9060000 		movl	$6, %ecx
+ 205      00
+ 206 01f6 41B90400 		movl	$4, %r9d
+ 206      0000
+ 207 01fc BE810000 		movl	$129, %esi
+ 207      00
+ 208 0201 4C8D4424 		leaq	36(%rsp), %r8
+ 208      24
+ 209 0206 E8000000 		call	usbControlWrite@PLT
+ 209      00
+ 210 020b 5A       		popq	%rdx
+ 211              		.cfi_def_cfa_offset 104
+ 212 020c 59       		popq	%rcx
+ 213              		.cfi_def_cfa_offset 96
+ 214 020d 85C0     		testl	%eax, %eax
+ 215 020f 4C897C24 		movq	%r15, 8(%rsp)
+ 215      08
+ 216 0214 743A     		je	.L35
+ 217 0216 662E0F1F 		.p2align 4,,10
+ 217      84000000 
+ 217      0000
+ 218              		.p2align 3
+ 219              	.L17:
+ 220 0220 488D3500 		leaq	.LC1(%rip), %rsi
+ 220      000000
+ 221 0227 4C89EF   		movq	%r13, %rdi
+ 222 022a BB030000 		movl	$3, %ebx
+ 222      00
+ 223 022f E8000000 		call	errPrefix@PLT
+ 223      00
+ 224 0234 E931FFFF 		jmp	.L14
+ 224      FF
+ 225 0239 0F1F8000 		.p2align 4,,10
+ 225      000000
+ 226              		.p2align 3
+ 227              	.L38:
+ 228 0240 4585E4   		testl	%r12d, %r12d
+ 229 0243 0F85FFFE 		jne	.L19
+ 229      FFFF
+ 230 0249 0F1F8000 		.p2align 4,,10
+ 230      000000
+ 231              		.p2align 3
+ 232              	.L35:
+ 233 0250 31DB     		xorl	%ebx, %ebx
+ 234 0252 E913FFFF 		jmp	.L14
+ 234      FF
+ 235              	.L39:
+ 236 0257 E8000000 		call	__stack_chk_fail@PLT
+ 236      00
+ 237              		.cfi_endproc
+ 238              	.LFE28:
+ 240              		.section	.rodata.str1.8
+ 241 002b 00000000 		.align 8
+ 241      00
+ 242              	.LC2:
+ 243 0030 73706952 		.string	"spiRecv(): device doesn't support SPI receive"
+ 243      65637628 
+ 243      293A2064 
+ 243      65766963 
+ 243      6520646F 
+ 244              		.section	.rodata.str1.1
+ 245              	.LC3:
+ 246 000a 73706952 		.string	"spiRecv()"
+ 246      65637628 
+ 246      2900
+ 247              		.text
+ 248 025c 0F1F4000 		.p2align 4,,15
+ 249              		.globl	spiRecv
+ 251              	spiRecv:
+ 252              	.LFB29:
+ 253              		.cfi_startproc
+ 254 0260 4157     		pushq	%r15
+ 255              		.cfi_def_cfa_offset 16
+ 256              		.cfi_offset 15, -16
+ 257 0262 4156     		pushq	%r14
+ 258              		.cfi_def_cfa_offset 24
+ 259              		.cfi_offset 14, -24
+ 260 0264 4989FF   		movq	%rdi, %r15
+ 261 0267 4155     		pushq	%r13
+ 262              		.cfi_def_cfa_offset 32
+ 263              		.cfi_offset 13, -32
+ 264 0269 4154     		pushq	%r12
+ 265              		.cfi_def_cfa_offset 40
+ 266              		.cfi_offset 12, -40
+ 267 026b 4D89C4   		movq	%r8, %r12
+ 268 026e 55       		pushq	%rbp
+ 269              		.cfi_def_cfa_offset 48
+ 270              		.cfi_offset 6, -48
+ 271 026f 53       		pushq	%rbx
+ 272              		.cfi_def_cfa_offset 56
+ 273              		.cfi_offset 3, -56
+ 274 0270 4889D5   		movq	%rdx, %rbp
+ 275 0273 89F3     		movl	%esi, %ebx
+ 276 0275 31D2     		xorl	%edx, %edx
+ 277 0277 41B90400 		movl	$4, %r9d
+ 277      0000
+ 278 027d 4883EC28 		subq	$40, %rsp
+ 279              		.cfi_def_cfa_offset 96
+ 280 0281 488B3F   		movq	(%rdi), %rdi
+ 281 0284 89742408 		movl	%esi, 8(%rsp)
+ 282 0288 894C240C 		movl	%ecx, 12(%rsp)
+ 283 028c B9070000 		movl	$7, %ecx
+ 283      00
+ 284 0291 64488B04 		movq	%fs:40, %rax
+ 284      25280000 
+ 284      00
+ 285 029a 48894424 		movq	%rax, 24(%rsp)
+ 285      18
+ 286 029f 31C0     		xorl	%eax, %eax
+ 287 02a1 89742414 		movl	%esi, 20(%rsp)
+ 288 02a5 6A00     		pushq	$0
+ 289              		.cfi_def_cfa_offset 104
+ 290 02a7 BE810000 		movl	$129, %esi
+ 290      00
+ 291 02ac 68E80300 		pushq	$1000
+ 291      00
+ 292              		.cfi_def_cfa_offset 112
+ 293 02b1 4C8D4424 		leaq	36(%rsp), %r8
+ 293      24
+ 294 02b6 E8000000 		call	usbControlWrite@PLT
+ 294      00
+ 295 02bb 85C0     		testl	%eax, %eax
+ 296 02bd 5A       		popq	%rdx
+ 297              		.cfi_def_cfa_offset 104
+ 298 02be 59       		popq	%rcx
+ 299              		.cfi_def_cfa_offset 96
+ 300 02bf 0F85DB00 		jne	.L41
+ 300      0000
+ 301 02c5 83FB3F   		cmpl	$63, %ebx
+ 302 02c8 0F868200 		jbe	.L61
+ 302      0000
+ 303 02ce 448B7424 		movl	8(%rsp), %r14d
+ 303      08
+ 304 02d3 4889EB   		movq	%rbp, %rbx
+ 305 02d6 4589F5   		movl	%r14d, %r13d
+ 306 02d9 4183E53F 		andl	$63, %r13d
+ 307 02dd EB0E     		jmp	.L46
+ 308 02df 90       		.p2align 4,,10
+ 309              		.p2align 3
+ 310              	.L45:
+ 311 02e0 4183EE40 		subl	$64, %r14d
+ 312 02e4 4883C340 		addq	$64, %rbx
+ 313 02e8 4539EE   		cmpl	%r13d, %r14d
+ 314 02eb 7473     		je	.L43
+ 315              	.L46:
+ 316 02ed 410FB677 		movzbl	22(%r15), %esi
+ 316      16
+ 317 02f2 498B3F   		movq	(%r15), %rdi
+ 318 02f5 4D89E1   		movq	%r12, %r9
+ 319 02f8 41B8FFFF 		movl	$-1, %r8d
+ 319      FFFF
+ 320 02fe B9400000 		movl	$64, %ecx
+ 320      00
+ 321 0303 4889DA   		movq	%rbx, %rdx
+ 322 0306 E8000000 		call	usbBulkRead@PLT
+ 322      00
+ 323 030b 85C0     		testl	%eax, %eax
+ 324 030d 74D1     		je	.L45
+ 325              	.L48:
+ 326 030f 488D3500 		leaq	.LC3(%rip), %rsi
+ 326      000000
+ 327 0316 4C89E7   		movq	%r12, %rdi
+ 328 0319 E8000000 		call	errPrefix@PLT
+ 328      00
+ 329 031e B8020000 		movl	$2, %eax
+ 329      00
+ 330              	.L40:
+ 331 0323 488B7C24 		movq	24(%rsp), %rdi
+ 331      18
+ 332 0328 6448333C 		xorq	%fs:40, %rdi
+ 332      25280000 
+ 332      00
+ 333 0331 0F85AE00 		jne	.L62
+ 333      0000
+ 334 0337 4883C428 		addq	$40, %rsp
+ 335              		.cfi_remember_state
+ 336              		.cfi_def_cfa_offset 56
+ 337 033b 5B       		popq	%rbx
+ 338              		.cfi_def_cfa_offset 48
+ 339 033c 5D       		popq	%rbp
+ 340              		.cfi_def_cfa_offset 40
+ 341 033d 415C     		popq	%r12
+ 342              		.cfi_def_cfa_offset 32
+ 343 033f 415D     		popq	%r13
+ 344              		.cfi_def_cfa_offset 24
+ 345 0341 415E     		popq	%r14
+ 346              		.cfi_def_cfa_offset 16
+ 347 0343 415F     		popq	%r15
+ 348              		.cfi_def_cfa_offset 8
+ 349 0345 C3       		ret
+ 350 0346 662E0F1F 		.p2align 4,,10
+ 350      84000000 
+ 350      0000
+ 351              		.p2align 3
+ 352              	.L61:
+ 353              		.cfi_restore_state
+ 354 0350 448B6C24 		movl	8(%rsp), %r13d
+ 354      08
+ 355 0355 4889EB   		movq	%rbp, %rbx
+ 356 0358 0F1F8400 		.p2align 4,,10
+ 356      00000000 
+ 357              		.p2align 3
+ 358              	.L43:
+ 359 0360 4585ED   		testl	%r13d, %r13d
+ 360 0363 755B     		jne	.L63
+ 361              	.L47:
+ 362 0365 807C240C 		cmpb	$0, 12(%rsp)
+ 362      00
+ 363 036a 7530     		jne	.L49
+ 364 036c 8B542408 		movl	8(%rsp), %edx
+ 365 0370 85D2     		testl	%edx, %edx
+ 366 0372 8D42FF   		leal	-1(%rdx), %eax
+ 367 0375 7425     		je	.L49
+ 368 0377 488D4C05 		leaq	1(%rbp,%rax), %rcx
+ 368      01
+ 369 037c 488D1500 		leaq	swapTable(%rip), %rdx
+ 369      000000
+ 370              		.p2align 4,,10
+ 371 0383 0F1F4400 		.p2align 3
+ 371      00
+ 372              	.L50:
+ 373 0388 0FB64500 		movzbl	0(%rbp), %eax
+ 374 038c 4883C501 		addq	$1, %rbp
+ 375 0390 0FB60402 		movzbl	(%rdx,%rax), %eax
+ 376 0394 8845FF   		movb	%al, -1(%rbp)
+ 377 0397 4839CD   		cmpq	%rcx, %rbp
+ 378 039a 75EC     		jne	.L50
+ 379              	.L49:
+ 380              	.L44:
+ 381 039c 31C0     		xorl	%eax, %eax
+ 382 039e EB83     		jmp	.L40
+ 383              		.p2align 4,,10
+ 384              		.p2align 3
+ 385              	.L41:
+ 386 03a0 488D3500 		leaq	.LC2(%rip), %rsi
+ 386      000000
+ 387 03a7 4C89E7   		movq	%r12, %rdi
+ 388 03aa E8000000 		call	errPrefix@PLT
+ 388      00
+ 389 03af B8030000 		movl	$3, %eax
+ 389      00
+ 390 03b4 E96AFFFF 		jmp	.L40
+ 390      FF
+ 391 03b9 0F1F8000 		.p2align 4,,10
+ 391      000000
+ 392              		.p2align 3
+ 393              	.L63:
+ 394 03c0 410FB677 		movzbl	22(%r15), %esi
+ 394      16
+ 395 03c5 498B3F   		movq	(%r15), %rdi
+ 396 03c8 4D89E1   		movq	%r12, %r9
+ 397 03cb 41B8FFFF 		movl	$-1, %r8d
+ 397      FFFF
+ 398 03d1 4489E9   		movl	%r13d, %ecx
+ 399 03d4 4889DA   		movq	%rbx, %rdx
+ 400 03d7 E8000000 		call	usbBulkRead@PLT
+ 400      00
+ 401 03dc 85C0     		testl	%eax, %eax
+ 402 03de 7485     		je	.L47
+ 403 03e0 E92AFFFF 		jmp	.L48
+ 403      FF
+ 404              	.L62:
+ 405 03e5 E8000000 		call	__stack_chk_fail@PLT
+ 405      00
+ 406              		.cfi_endproc
+ 407              	.LFE29:
+ 409              		.section	.rodata
+ 410              		.align 32
+ 413              	swapTable:
+ 414 0000 00       		.byte	0
+ 415 0001 80       		.byte	-128
+ 416 0002 40       		.byte	64
+ 417 0003 C0       		.byte	-64
+ 418 0004 20       		.byte	32
+ 419 0005 A0       		.byte	-96
+ 420 0006 60       		.byte	96
+ 421 0007 E0       		.byte	-32
+ 422 0008 10       		.byte	16
+ 423 0009 90       		.byte	-112
+ 424 000a 50       		.byte	80
+ 425 000b D0       		.byte	-48
+ 426 000c 30       		.byte	48
+ 427 000d B0       		.byte	-80
+ 428 000e 70       		.byte	112
+ 429 000f F0       		.byte	-16
+ 430 0010 08       		.byte	8
+ 431 0011 88       		.byte	-120
+ 432 0012 48       		.byte	72
+ 433 0013 C8       		.byte	-56
+ 434 0014 28       		.byte	40
+ 435 0015 A8       		.byte	-88
+ 436 0016 68       		.byte	104
+ 437 0017 E8       		.byte	-24
+ 438 0018 18       		.byte	24
+ 439 0019 98       		.byte	-104
+ 440 001a 58       		.byte	88
+ 441 001b D8       		.byte	-40
+ 442 001c 38       		.byte	56
+ 443 001d B8       		.byte	-72
+ 444 001e 78       		.byte	120
+ 445 001f F8       		.byte	-8
+ 446 0020 04       		.byte	4
+ 447 0021 84       		.byte	-124
+ 448 0022 44       		.byte	68
+ 449 0023 C4       		.byte	-60
+ 450 0024 24       		.byte	36
+ 451 0025 A4       		.byte	-92
+ 452 0026 64       		.byte	100
+ 453 0027 E4       		.byte	-28
+ 454 0028 14       		.byte	20
+ 455 0029 94       		.byte	-108
+ 456 002a 54       		.byte	84
+ 457 002b D4       		.byte	-44
+ 458 002c 34       		.byte	52
+ 459 002d B4       		.byte	-76
+ 460 002e 74       		.byte	116
+ 461 002f F4       		.byte	-12
+ 462 0030 0C       		.byte	12
+ 463 0031 8C       		.byte	-116
+ 464 0032 4C       		.byte	76
+ 465 0033 CC       		.byte	-52
+ 466 0034 2C       		.byte	44
+ 467 0035 AC       		.byte	-84
+ 468 0036 6C       		.byte	108
+ 469 0037 EC       		.byte	-20
+ 470 0038 1C       		.byte	28
+ 471 0039 9C       		.byte	-100
+ 472 003a 5C       		.byte	92
+ 473 003b DC       		.byte	-36
+ 474 003c 3C       		.byte	60
+ 475 003d BC       		.byte	-68
+ 476 003e 7C       		.byte	124
+ 477 003f FC       		.byte	-4
+ 478 0040 02       		.byte	2
+ 479 0041 82       		.byte	-126
+ 480 0042 42       		.byte	66
+ 481 0043 C2       		.byte	-62
+ 482 0044 22       		.byte	34
+ 483 0045 A2       		.byte	-94
+ 484 0046 62       		.byte	98
+ 485 0047 E2       		.byte	-30
+ 486 0048 12       		.byte	18
+ 487 0049 92       		.byte	-110
+ 488 004a 52       		.byte	82
+ 489 004b D2       		.byte	-46
+ 490 004c 32       		.byte	50
+ 491 004d B2       		.byte	-78
+ 492 004e 72       		.byte	114
+ 493 004f F2       		.byte	-14
+ 494 0050 0A       		.byte	10
+ 495 0051 8A       		.byte	-118
+ 496 0052 4A       		.byte	74
+ 497 0053 CA       		.byte	-54
+ 498 0054 2A       		.byte	42
+ 499 0055 AA       		.byte	-86
+ 500 0056 6A       		.byte	106
+ 501 0057 EA       		.byte	-22
+ 502 0058 1A       		.byte	26
+ 503 0059 9A       		.byte	-102
+ 504 005a 5A       		.byte	90
+ 505 005b DA       		.byte	-38
+ 506 005c 3A       		.byte	58
+ 507 005d BA       		.byte	-70
+ 508 005e 7A       		.byte	122
+ 509 005f FA       		.byte	-6
+ 510 0060 06       		.byte	6
+ 511 0061 86       		.byte	-122
+ 512 0062 46       		.byte	70
+ 513 0063 C6       		.byte	-58
+ 514 0064 26       		.byte	38
+ 515 0065 A6       		.byte	-90
+ 516 0066 66       		.byte	102
+ 517 0067 E6       		.byte	-26
+ 518 0068 16       		.byte	22
+ 519 0069 96       		.byte	-106
+ 520 006a 56       		.byte	86
+ 521 006b D6       		.byte	-42
+ 522 006c 36       		.byte	54
+ 523 006d B6       		.byte	-74
+ 524 006e 76       		.byte	118
+ 525 006f F6       		.byte	-10
+ 526 0070 0E       		.byte	14
+ 527 0071 8E       		.byte	-114
+ 528 0072 4E       		.byte	78
+ 529 0073 CE       		.byte	-50
+ 530 0074 2E       		.byte	46
+ 531 0075 AE       		.byte	-82
+ 532 0076 6E       		.byte	110
+ 533 0077 EE       		.byte	-18
+ 534 0078 1E       		.byte	30
+ 535 0079 9E       		.byte	-98
+ 536 007a 5E       		.byte	94
+ 537 007b DE       		.byte	-34
+ 538 007c 3E       		.byte	62
+ 539 007d BE       		.byte	-66
+ 540 007e 7E       		.byte	126
+ 541 007f FE       		.byte	-2
+ 542 0080 01       		.byte	1
+ 543 0081 81       		.byte	-127
+ 544 0082 41       		.byte	65
+ 545 0083 C1       		.byte	-63
+ 546 0084 21       		.byte	33
+ 547 0085 A1       		.byte	-95
+ 548 0086 61       		.byte	97
+ 549 0087 E1       		.byte	-31
+ 550 0088 11       		.byte	17
+ 551 0089 91       		.byte	-111
+ 552 008a 51       		.byte	81
+ 553 008b D1       		.byte	-47
+ 554 008c 31       		.byte	49
+ 555 008d B1       		.byte	-79
+ 556 008e 71       		.byte	113
+ 557 008f F1       		.byte	-15
+ 558 0090 09       		.byte	9
+ 559 0091 89       		.byte	-119
+ 560 0092 49       		.byte	73
+ 561 0093 C9       		.byte	-55
+ 562 0094 29       		.byte	41
+ 563 0095 A9       		.byte	-87
+ 564 0096 69       		.byte	105
+ 565 0097 E9       		.byte	-23
+ 566 0098 19       		.byte	25
+ 567 0099 99       		.byte	-103
+ 568 009a 59       		.byte	89
+ 569 009b D9       		.byte	-39
+ 570 009c 39       		.byte	57
+ 571 009d B9       		.byte	-71
+ 572 009e 79       		.byte	121
+ 573 009f F9       		.byte	-7
+ 574 00a0 05       		.byte	5
+ 575 00a1 85       		.byte	-123
+ 576 00a2 45       		.byte	69
+ 577 00a3 C5       		.byte	-59
+ 578 00a4 25       		.byte	37
+ 579 00a5 A5       		.byte	-91
+ 580 00a6 65       		.byte	101
+ 581 00a7 E5       		.byte	-27
+ 582 00a8 15       		.byte	21
+ 583 00a9 95       		.byte	-107
+ 584 00aa 55       		.byte	85
+ 585 00ab D5       		.byte	-43
+ 586 00ac 35       		.byte	53
+ 587 00ad B5       		.byte	-75
+ 588 00ae 75       		.byte	117
+ 589 00af F5       		.byte	-11
+ 590 00b0 0D       		.byte	13
+ 591 00b1 8D       		.byte	-115
+ 592 00b2 4D       		.byte	77
+ 593 00b3 CD       		.byte	-51
+ 594 00b4 2D       		.byte	45
+ 595 00b5 AD       		.byte	-83
+ 596 00b6 6D       		.byte	109
+ 597 00b7 ED       		.byte	-19
+ 598 00b8 1D       		.byte	29
+ 599 00b9 9D       		.byte	-99
+ 600 00ba 5D       		.byte	93
+ 601 00bb DD       		.byte	-35
+ 602 00bc 3D       		.byte	61
+ 603 00bd BD       		.byte	-67
+ 604 00be 7D       		.byte	125
+ 605 00bf FD       		.byte	-3
+ 606 00c0 03       		.byte	3
+ 607 00c1 83       		.byte	-125
+ 608 00c2 43       		.byte	67
+ 609 00c3 C3       		.byte	-61
+ 610 00c4 23       		.byte	35
+ 611 00c5 A3       		.byte	-93
+ 612 00c6 63       		.byte	99
+ 613 00c7 E3       		.byte	-29
+ 614 00c8 13       		.byte	19
+ 615 00c9 93       		.byte	-109
+ 616 00ca 53       		.byte	83
+ 617 00cb D3       		.byte	-45
+ 618 00cc 33       		.byte	51
+ 619 00cd B3       		.byte	-77
+ 620 00ce 73       		.byte	115
+ 621 00cf F3       		.byte	-13
+ 622 00d0 0B       		.byte	11
+ 623 00d1 8B       		.byte	-117
+ 624 00d2 4B       		.byte	75
+ 625 00d3 CB       		.byte	-53
+ 626 00d4 2B       		.byte	43
+ 627 00d5 AB       		.byte	-85
+ 628 00d6 6B       		.byte	107
+ 629 00d7 EB       		.byte	-21
+ 630 00d8 1B       		.byte	27
+ 631 00d9 9B       		.byte	-101
+ 632 00da 5B       		.byte	91
+ 633 00db DB       		.byte	-37
+ 634 00dc 3B       		.byte	59
+ 635 00dd BB       		.byte	-69
+ 636 00de 7B       		.byte	123
+ 637 00df FB       		.byte	-5
+ 638 00e0 07       		.byte	7
+ 639 00e1 87       		.byte	-121
+ 640 00e2 47       		.byte	71
+ 641 00e3 C7       		.byte	-57
+ 642 00e4 27       		.byte	39
+ 643 00e5 A7       		.byte	-89
+ 644 00e6 67       		.byte	103
+ 645 00e7 E7       		.byte	-25
+ 646 00e8 17       		.byte	23
+ 647 00e9 97       		.byte	-105
+ 648 00ea 57       		.byte	87
+ 649 00eb D7       		.byte	-41
+ 650 00ec 37       		.byte	55
+ 651 00ed B7       		.byte	-73
+ 652 00ee 77       		.byte	119
+ 653 00ef F7       		.byte	-9
+ 654 00f0 0F       		.byte	15
+ 655 00f1 8F       		.byte	-113
+ 656 00f2 4F       		.byte	79
+ 657 00f3 CF       		.byte	-49
+ 658 00f4 2F       		.byte	47
+ 659 00f5 AF       		.byte	-81
+ 660 00f6 6F       		.byte	111
+ 661 00f7 EF       		.byte	-17
+ 662 00f8 1F       		.byte	31
+ 663 00f9 9F       		.byte	-97
+ 664 00fa 5F       		.byte	95
+ 665 00fb DF       		.byte	-33
+ 666 00fc 3F       		.byte	63
+ 667 00fd BF       		.byte	-65
+ 668 00fe 7F       		.byte	127
+ 669 00ff FF       		.byte	-1
+ 670              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+ 671              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 spi.c
+     /tmp/ccJ4iBgY.s:6      .text:0000000000000000 spiBitSwap
+     /tmp/ccJ4iBgY.s:413    .rodata:0000000000000000 swapTable
+     /tmp/ccJ4iBgY.s:39     .text:0000000000000030 spiSend
+     /tmp/ccJ4iBgY.s:251    .text:0000000000000260 spiRecv
+     /tmp/ccJ4iBgY.s:29     .rodata.str1.1:0000000000000000 .LC0
+     /tmp/ccJ4iBgY.s:33     .rodata.str1.8:0000000000000000 .LC1
+     /tmp/ccJ4iBgY.s:245    .rodata.str1.1:000000000000000a .LC3
+     /tmp/ccJ4iBgY.s:242    .rodata.str1.8:0000000000000030 .LC2
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+malloc
+usbControlWrite
+usbBulkWrite
+free
+errPrefix
+__stack_chk_fail
+usbBulkRead

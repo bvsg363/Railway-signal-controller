@@ -1,0 +1,7 @@
+   1              		.file	"getopt1.c"
+   2              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+   3              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 getopt1.c
+
+NO UNDEFINED SYMBOLS

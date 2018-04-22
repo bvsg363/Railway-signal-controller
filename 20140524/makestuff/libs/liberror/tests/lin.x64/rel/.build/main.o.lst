@@ -1,0 +1,20 @@
+   1              		.file	"main.cpp"
+   2              		.section	.text.startup,"ax",@progbits
+   3              		.p2align 4,,15
+   4              		.globl	main
+   6              	main:
+   7              	.LFB1115:
+   8              		.cfi_startproc
+   9 0000 E9000000 		jmp	_ZN8UnitTest11RunAllTestsEv@PLT
+   9      00
+  10              		.cfi_endproc
+  11              	.LFE1115:
+  13              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+  14              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+     /tmp/cco1DnJD.s:6      .text.startup:0000000000000000 main
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+_ZN8UnitTest11RunAllTestsEv

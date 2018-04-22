@@ -1,0 +1,3294 @@
+   1              		.file	"argtable2.c"
+   2              		.section	.rodata.str1.1,"aMS",@progbits,1
+   3              	.LC0:
+   4 0000 2D2D00   		.string	"--"
+   5              	.LC1:
+   6 0003 2C00     		.string	","
+   7              		.text
+   8              		.p2align 4,,15
+  10              	arg_cat_optionv.constprop.1:
+  11              	.LFB64:
+  12              		.cfi_startproc
+  13 0000 4157     		pushq	%r15
+  14              		.cfi_def_cfa_offset 16
+  15              		.cfi_offset 15, -16
+  16 0002 4156     		pushq	%r14
+  17              		.cfi_def_cfa_offset 24
+  18              		.cfi_offset 14, -24
+  19 0004 4989FF   		movq	%rdi, %r15
+  20 0007 4155     		pushq	%r13
+  21              		.cfi_def_cfa_offset 32
+  22              		.cfi_offset 13, -32
+  23 0009 4154     		pushq	%r12
+  24              		.cfi_def_cfa_offset 40
+  25              		.cfi_offset 12, -40
+  26 000b 55       		pushq	%rbp
+  27              		.cfi_def_cfa_offset 48
+  28              		.cfi_offset 6, -48
+  29 000c 53       		pushq	%rbx
+  30              		.cfi_def_cfa_offset 56
+  31              		.cfi_offset 3, -56
+  32 000d 4889CD   		movq	%rcx, %rbp
+  33 0010 4883EC38 		subq	$56, %rsp
+  34              		.cfi_def_cfa_offset 112
+  35 0014 64488B04 		movq	%fs:40, %rax
+  35      25280000 
+  35      00
+  36 001d 48894424 		movq	%rax, 40(%rsp)
+  36      28
+  37 0022 31C0     		xorl	%eax, %eax
+  38 0024 4885F6   		testq	%rsi, %rsi
+  39 0027 48897424 		movq	%rsi, 24(%rsp)
+  39      18
+  40 002c 48891424 		movq	%rdx, (%rsp)
+  41 0030 44894424 		movl	%r8d, 20(%rsp)
+  41      14
+  42 0035 4C894C24 		movq	%r9, 8(%rsp)
+  42      08
+  43 003a 0F84CF03 		je	.L2
+  43      0000
+  44 0040 0FB606   		movzbl	(%rsi), %eax
+  45 0043 84C0     		testb	%al, %al
+  46 0045 0F841504 		je	.L62
+  46      0000
+  47 004b 488D7601 		leaq	1(%rsi), %rsi
+  48 004f BBC80000 		movl	$200, %ebx
+  48      00
+  49              		.p2align 4,,10
+  50 0054 0F1F4000 		.p2align 3
+  51              	.L12:
+  52 0058 498D0C1F 		leaq	(%r15,%rbx), %rcx
+  53 005c C6442425 		movb	$45, 37(%rsp)
+  53      2D
+  54 0061 88442426 		movb	%al, 38(%rsp)
+  55 0065 C6442427 		movb	$0, 39(%rsp)
+  55      00
+  56 006a 4939CF   		cmpq	%rcx, %r15
+  57 006d 7216     		jb	.L113
+  58 006f E9FF0000 		jmp	.L4
+  58      00
+  59              		.p2align 4,,10
+  60 0074 0F1F4000 		.p2align 3
+  61              	.L127:
+  62 0078 4983C701 		addq	$1, %r15
+  63 007c 4C39F9   		cmpq	%r15, %rcx
+  64 007f 0F84EB00 		je	.L63
+  64      0000
+  65              	.L113:
+  66 0085 41803F00 		cmpb	$0, (%r15)
+  67 0089 75ED     		jne	.L127
+  68 008b 488D4424 		leaq	37(%rsp), %rax
+  68      25
+  69 0090 BA2D0000 		movl	$45, %edx
+  69      00
+  70              		.p2align 4,,10
+  71 0095 0F1F00   		.p2align 3
+  72              	.L7:
+  73 0098 4983C701 		addq	$1, %r15
+  74 009c 4883C001 		addq	$1, %rax
+  75 00a0 418857FF 		movb	%dl, -1(%r15)
+  76 00a4 4C39F9   		cmpq	%r15, %rcx
+  77 00a7 0F86C600 		jbe	.L4
+  77      0000
+  78 00ad 0FB610   		movzbl	(%rax), %edx
+  79 00b0 84D2     		testb	%dl, %dl
+  80 00b2 75E4     		jne	.L7
+  81 00b4 4889CB   		movq	%rcx, %rbx
+  82 00b7 41C60700 		movb	$0, (%r15)
+  83 00bb 4C29FB   		subq	%r15, %rbx
+  84 00be 803E00   		cmpb	$0, (%rsi)
+  85 00c1 0F85C900 		jne	.L128
+  85      0000
+  86              	.L54:
+  87 00c7 0FB606   		movzbl	(%rsi), %eax
+  88 00ca 4883C601 		addq	$1, %rsi
+  89 00ce 84C0     		testb	%al, %al
+  90 00d0 7586     		jne	.L12
+  91 00d2 48833C24 		cmpq	$0, (%rsp)
+  91      00
+  92 00d7 0F85EA00 		jne	.L129
+  92      0000
+  93              	.L13:
+  94 00dd 4885ED   		testq	%rbp, %rbp
+  95 00e0 0F844D02 		je	.L1
+  95      0000
+  96 00e6 4C01FB   		addq	%r15, %rbx
+  97 00e9 4C89F8   		movq	%r15, %rax
+  98              	.L34:
+  99 00ec 48837C24 		cmpq	$0, 24(%rsp)
+  99      1800
+ 100 00f2 743C     		je	.L38
+ 101 00f4 4939DF   		cmpq	%rbx, %r15
+ 102 00f7 0F830A03 		jnb	.L58
+ 102      0000
+ 103 00fd 41803F00 		cmpb	$0, (%r15)
+ 104 0101 0F847303 		je	.L71
+ 104      0000
+ 105 0107 660F1F84 		.p2align 4,,10
+ 105      00000000 
+ 105      00
+ 106              		.p2align 3
+ 107              	.L41:
+ 108 0110 4883C001 		addq	$1, %rax
+ 109 0114 4839D8   		cmpq	%rbx, %rax
+ 110 0117 0F84EA02 		je	.L58
+ 110      0000
+ 111 011d 803800   		cmpb	$0, (%rax)
+ 112 0120 75EE     		jne	.L41
+ 113 0122 4989C2   		movq	%rax, %r10
+ 114              	.L40:
+ 115 0125 4883C001 		addq	$1, %rax
+ 116 0129 41C60220 		movb	$32, (%r10)
+ 117 012d C60000   		movb	$0, (%rax)
+ 118              	.L38:
+ 119 0130 8B542414 		movl	20(%rsp), %edx
+ 120 0134 85D2     		testl	%edx, %edx
+ 121 0136 0F851A02 		jne	.L130
+ 121      0000
+ 122 013c 4839D8   		cmpq	%rbx, %rax
+ 123 013f 721C     		jb	.L122
+ 124 0141 E9EA0100 		jmp	.L50
+ 124      00
+ 125 0146 662E0F1F 		.p2align 4,,10
+ 125      84000000 
+ 125      0000
+ 126              		.p2align 3
+ 127              	.L131:
+ 128 0150 4883C001 		addq	$1, %rax
+ 129 0154 4839D8   		cmpq	%rbx, %rax
+ 130 0157 0F84D301 		je	.L50
+ 130      0000
+ 131              	.L122:
+ 132 015d 803800   		cmpb	$0, (%rax)
+ 133 0160 75EE     		jne	.L131
+ 134 0162 E9B90100 		jmp	.L51
+ 134      00
+ 135 0167 660F1F84 		.p2align 4,,10
+ 135      00000000 
+ 135      00
+ 136              		.p2align 3
+ 137              	.L63:
+ 138 0170 4989CF   		movq	%rcx, %r15
+ 139              	.L4:
+ 140 0173 4C29F9   		subq	%r15, %rcx
+ 141 0176 41C60700 		movb	$0, (%r15)
+ 142 017a 803E00   		cmpb	$0, (%rsi)
+ 143 017d 4889CB   		movq	%rcx, %rbx
+ 144 0180 0F8441FF 		je	.L54
+ 144      FFFF
+ 145              	.L11:
+ 146 0186 41C60700 		movb	$0, (%r15)
+ 147 018a E938FFFF 		jmp	.L54
+ 147      FF
+ 148 018f 90       		.p2align 4,,10
+ 149              		.p2align 3
+ 150              	.L128:
+ 151 0190 488B5424 		movq	8(%rsp), %rdx
+ 151      08
+ 152 0195 0FB602   		movzbl	(%rdx), %eax
+ 153 0198 84C0     		testb	%al, %al
+ 154 019a 74EA     		je	.L11
+ 155 019c 0F1F4000 		.p2align 4,,10
+ 156              		.p2align 3
+ 157              	.L10:
+ 158 01a0 4983C701 		addq	$1, %r15
+ 159 01a4 4883C201 		addq	$1, %rdx
+ 160 01a8 418847FF 		movb	%al, -1(%r15)
+ 161 01ac 4C39F9   		cmpq	%r15, %rcx
+ 162 01af 7607     		jbe	.L9
+ 163 01b1 0FB602   		movzbl	(%rdx), %eax
+ 164 01b4 84C0     		testb	%al, %al
+ 165 01b6 75E8     		jne	.L10
+ 166              	.L9:
+ 167 01b8 4C29F9   		subq	%r15, %rcx
+ 168 01bb 41C60700 		movb	$0, (%r15)
+ 169 01bf 4889CB   		movq	%rcx, %rbx
+ 170 01c2 E900FFFF 		jmp	.L54
+ 170      FF
+ 171              	.L129:
+ 172 01c7 4C01FB   		addq	%r15, %rbx
+ 173 01ca 4939DF   		cmpq	%rbx, %r15
+ 174 01cd 7216     		jb	.L114
+ 175 01cf EB3F     		jmp	.L14
+ 176              		.p2align 4,,10
+ 177 01d1 0F1F8000 		.p2align 3
+ 177      000000
+ 178              	.L132:
+ 179 01d8 4983C701 		addq	$1, %r15
+ 180 01dc 4C39FB   		cmpq	%r15, %rbx
+ 181 01df 0F846B02 		je	.L64
+ 181      0000
+ 182              	.L114:
+ 183 01e5 41803F00 		cmpb	$0, (%r15)
+ 184 01e9 75ED     		jne	.L132
+ 185 01eb 488B5424 		movq	8(%rsp), %rdx
+ 185      08
+ 186 01f0 EB17     		jmp	.L115
+ 187              		.p2align 4,,10
+ 188 01f2 660F1F44 		.p2align 3
+ 188      0000
+ 189              	.L17:
+ 190 01f8 4983C701 		addq	$1, %r15
+ 191 01fc 4883C201 		addq	$1, %rdx
+ 192 0200 418847FF 		movb	%al, -1(%r15)
+ 193 0204 4C39FB   		cmpq	%r15, %rbx
+ 194 0207 7607     		jbe	.L14
+ 195              	.L115:
+ 196 0209 0FB602   		movzbl	(%rdx), %eax
+ 197 020c 84C0     		testb	%al, %al
+ 198 020e 75E8     		jne	.L17
+ 199              	.L14:
+ 200 0210 4C8B3424 		movq	(%rsp), %r14
+ 201 0214 41C60700 		movb	$0, (%r15)
+ 202 0218 4C29FB   		subq	%r15, %rbx
+ 203              	.L18:
+ 204 021b 410FB606 		movzbl	(%r14), %eax
+ 205 021f 90       		.p2align 4,,10
+ 206              		.p2align 3
+ 207              	.L25:
+ 208 0220 84C0     		testb	%al, %al
+ 209 0222 0F84A801 		je	.L133
+ 209      0000
+ 210 0228 4D8D2C1F 		leaq	(%r15,%rbx), %r13
+ 211 022c 4D39FD   		cmpq	%r15, %r13
+ 212 022f 7714     		ja	.L116
+ 213 0231 EB45     		jmp	.L23
+ 214              		.p2align 4,,10
+ 215 0233 0F1F4400 		.p2align 3
+ 215      00
+ 216              	.L134:
+ 217 0238 4983C701 		addq	$1, %r15
+ 218 023c 4D39FD   		cmpq	%r15, %r13
+ 219 023f 0F848301 		je	.L66
+ 219      0000
+ 220              	.L116:
+ 221 0245 41803F00 		cmpb	$0, (%r15)
+ 222 0249 75ED     		jne	.L134
+ 223 024b BA2D0000 		movl	$45, %edx
+ 223      00
+ 224 0250 488D0500 		leaq	.LC0(%rip), %rax
+ 224      000000
+ 225 0257 EB0E     		jmp	.L24
+ 226 0259 0F1F8000 		.p2align 4,,10
+ 226      000000
+ 227              		.p2align 3
+ 228              	.L135:
+ 229 0260 0FB610   		movzbl	(%rax), %edx
+ 230 0263 84D2     		testb	%dl, %dl
+ 231 0265 7411     		je	.L23
+ 232              	.L24:
+ 233 0267 4983C701 		addq	$1, %r15
+ 234 026b 4883C001 		addq	$1, %rax
+ 235 026f 418857FF 		movb	%dl, -1(%r15)
+ 236 0273 4D39FD   		cmpq	%r15, %r13
+ 237 0276 77E8     		ja	.L135
+ 238              	.L23:
+ 239 0278 488D3500 		leaq	.LC1(%rip), %rsi
+ 239      000000
+ 240 027f 4C89EB   		movq	%r13, %rbx
+ 241 0282 4C89F7   		movq	%r14, %rdi
+ 242 0285 4C29FB   		subq	%r15, %rbx
+ 243 0288 41C60700 		movb	$0, (%r15)
+ 244 028c E8000000 		call	strcspn@PLT
+ 244      00
+ 245 0291 4889DA   		movq	%rbx, %rdx
+ 246 0294 4839D8   		cmpq	%rbx, %rax
+ 247 0297 4989C4   		movq	%rax, %r12
+ 248 029a 480F46D0 		cmovbe	%rax, %rdx
+ 249 029e 4C89F6   		movq	%r14, %rsi
+ 250 02a1 4C89FF   		movq	%r15, %rdi
+ 251 02a4 4D01E6   		addq	%r12, %r14
+ 252 02a7 E8000000 		call	strncat@PLT
+ 252      00
+ 253 02ac 410FB606 		movzbl	(%r14), %eax
+ 254 02b0 3C2C     		cmpb	$44, %al
+ 255 02b2 0F8568FF 		jne	.L25
+ 255      FFFF
+ 256 02b8 4D39FD   		cmpq	%r15, %r13
+ 257 02bb 7710     		ja	.L117
+ 258 02bd EB3F     		jmp	.L26
+ 259 02bf 90       		.p2align 4,,10
+ 260              		.p2align 3
+ 261              	.L136:
+ 262 02c0 4983C701 		addq	$1, %r15
+ 263 02c4 4D39FD   		cmpq	%r15, %r13
+ 264 02c7 0F845A01 		je	.L67
+ 264      0000
+ 265              	.L117:
+ 266 02cd 41803F00 		cmpb	$0, (%r15)
+ 267 02d1 75ED     		jne	.L136
+ 268 02d3 488B5424 		movq	8(%rsp), %rdx
+ 268      08
+ 269 02d8 EB17     		jmp	.L124
+ 270 02da 660F1F44 		.p2align 4,,10
+ 270      0000
+ 271              		.p2align 3
+ 272              	.L30:
+ 273 02e0 4983C701 		addq	$1, %r15
+ 274 02e4 4883C201 		addq	$1, %rdx
+ 275 02e8 418847FF 		movb	%al, -1(%r15)
+ 276 02ec 4D39FD   		cmpq	%r15, %r13
+ 277 02ef 7607     		jbe	.L118
+ 278              	.L124:
+ 279 02f1 0FB602   		movzbl	(%rdx), %eax
+ 280 02f4 84C0     		testb	%al, %al
+ 281 02f6 75E8     		jne	.L30
+ 282              	.L118:
+ 283 02f8 4C89EB   		movq	%r13, %rbx
+ 284 02fb 4C29FB   		subq	%r15, %rbx
+ 285              	.L26:
+ 286 02fe 41C60700 		movb	$0, (%r15)
+ 287 0302 4983C601 		addq	$1, %r14
+ 288 0306 E910FFFF 		jmp	.L18
+ 288      FF
+ 289 030b 0F1F4400 		.p2align 4,,10
+ 289      00
+ 290              		.p2align 3
+ 291              	.L53:
+ 292 0310 4883C001 		addq	$1, %rax
+ 293 0314 4883C501 		addq	$1, %rbp
+ 294 0318 8850FF   		movb	%dl, -1(%rax)
+ 295 031b 4839D8   		cmpq	%rbx, %rax
+ 296 031e 7310     		jnb	.L50
+ 297              	.L51:
+ 298 0320 0FB65500 		movzbl	0(%rbp), %edx
+ 299 0324 84D2     		testb	%dl, %dl
+ 300 0326 75E8     		jne	.L53
+ 301 0328 0F1F8400 		.p2align 4,,10
+ 301      00000000 
+ 302              		.p2align 3
+ 303              	.L50:
+ 304 0330 C60000   		movb	$0, (%rax)
+ 305              	.L1:
+ 306 0333 488B4424 		movq	40(%rsp), %rax
+ 306      28
+ 307 0338 64483304 		xorq	%fs:40, %rax
+ 307      25280000 
+ 307      00
+ 308 0341 0F854001 		jne	.L137
+ 308      0000
+ 309 0347 4883C438 		addq	$56, %rsp
+ 310              		.cfi_remember_state
+ 311              		.cfi_def_cfa_offset 56
+ 312 034b 5B       		popq	%rbx
+ 313              		.cfi_def_cfa_offset 48
+ 314 034c 5D       		popq	%rbp
+ 315              		.cfi_def_cfa_offset 40
+ 316 034d 415C     		popq	%r12
+ 317              		.cfi_def_cfa_offset 32
+ 318 034f 415D     		popq	%r13
+ 319              		.cfi_def_cfa_offset 24
+ 320 0351 415E     		popq	%r14
+ 321              		.cfi_def_cfa_offset 16
+ 322 0353 415F     		popq	%r15
+ 323              		.cfi_def_cfa_offset 8
+ 324 0355 C3       		ret
+ 325              	.L130:
+ 326              		.cfi_restore_state
+ 327 0356 4839D8   		cmpq	%rbx, %rax
+ 328 0359 7212     		jb	.L120
+ 329 035b E9D30000 		jmp	.L43
+ 329      00
+ 330              		.p2align 4,,10
+ 331              		.p2align 3
+ 332              	.L138:
+ 333 0360 4883C001 		addq	$1, %rax
+ 334 0364 4839D8   		cmpq	%rbx, %rax
+ 335 0367 0F84C600 		je	.L43
+ 335      0000
+ 336              	.L120:
+ 337 036d 803800   		cmpb	$0, (%rax)
+ 338 0370 75EE     		jne	.L138
+ 339 0372 488D5001 		leaq	1(%rax), %rdx
+ 340 0376 C6005B   		movb	$91, (%rax)
+ 341 0379 C6400100 		movb	$0, 1(%rax)
+ 342 037d 4839DA   		cmpq	%rbx, %rdx
+ 343 0380 7222     		jb	.L121
+ 344 0382 E9C10000 		jmp	.L125
+ 344      00
+ 345 0387 660F1F84 		.p2align 4,,10
+ 345      00000000 
+ 345      00
+ 346              		.p2align 3
+ 347              	.L47:
+ 348 0390 4883C201 		addq	$1, %rdx
+ 349 0394 4883C501 		addq	$1, %rbp
+ 350 0398 8842FF   		movb	%al, -1(%rdx)
+ 351 039b 4839DA   		cmpq	%rbx, %rdx
+ 352 039e 0F83DE00 		jnb	.L74
+ 352      0000
+ 353              	.L121:
+ 354 03a4 0FB64500 		movzbl	0(%rbp), %eax
+ 355 03a8 84C0     		testb	%al, %al
+ 356 03aa 75E4     		jne	.L47
+ 357 03ac C60200   		movb	$0, (%rdx)
+ 358              	.L60:
+ 359 03af 4839DA   		cmpq	%rbx, %rdx
+ 360 03b2 0F839000 		jnb	.L125
+ 360      0000
+ 361 03b8 488D4201 		leaq	1(%rdx), %rax
+ 362 03bc C6025D   		movb	$93, (%rdx)
+ 363 03bf E96CFFFF 		jmp	.L50
+ 363      FF
+ 364              		.p2align 4,,10
+ 365 03c4 0F1F4000 		.p2align 3
+ 366              	.L66:
+ 367 03c8 4D89EF   		movq	%r13, %r15
+ 368 03cb E9A8FEFF 		jmp	.L23
+ 368      FF
+ 369              		.p2align 4,,10
+ 370              		.p2align 3
+ 371              	.L133:
+ 372 03d0 4885ED   		testq	%rbp, %rbp
+ 373 03d3 0F845AFF 		je	.L1
+ 373      FFFF
+ 374 03d9 4C01FB   		addq	%r15, %rbx
+ 375 03dc 48833C24 		cmpq	$0, (%rsp)
+ 375      00
+ 376 03e1 7475     		je	.L68
+ 377 03e3 4C39FB   		cmpq	%r15, %rbx
+ 378 03e6 7711     		ja	.L119
+ 379 03e8 E9880000 		jmp	.L69
+ 379      00
+ 380 03ed 0F1F00   		.p2align 4,,10
+ 381              		.p2align 3
+ 382              	.L139:
+ 383 03f0 4983C701 		addq	$1, %r15
+ 384 03f4 4939DF   		cmpq	%rbx, %r15
+ 385 03f7 7435     		je	.L70
+ 386              	.L119:
+ 387 03f9 41803F00 		cmpb	$0, (%r15)
+ 388 03fd 75F1     		jne	.L139
+ 389 03ff 498D4701 		leaq	1(%r15), %rax
+ 390 0403 41C6073D 		movb	$61, (%r15)
+ 391              	.L58:
+ 392 0407 C60000   		movb	$0, (%rax)
+ 393 040a E921FDFF 		jmp	.L38
+ 393      FF
+ 394              	.L2:
+ 395 040f 48833C24 		cmpq	$0, (%rsp)
+ 395      00
+ 396 0414 BBC80000 		movl	$200, %ebx
+ 396      00
+ 397 0419 0F84BEFC 		je	.L13
+ 397      FFFF
+ 398 041f 4989D6   		movq	%rdx, %r14
+ 399 0422 E9F4FDFF 		jmp	.L18
+ 399      FF
+ 400              	.L67:
+ 401 0427 31DB     		xorl	%ebx, %ebx
+ 402 0429 E9D0FEFF 		jmp	.L26
+ 402      FF
+ 403              	.L70:
+ 404 042e 4889D8   		movq	%rbx, %rax
+ 405 0431 EBD4     		jmp	.L58
+ 406              	.L43:
+ 407 0433 C60000   		movb	$0, (%rax)
+ 408              	.L46:
+ 409 0436 C60000   		movb	$0, (%rax)
+ 410 0439 4889C2   		movq	%rax, %rdx
+ 411 043c E96EFFFF 		jmp	.L60
+ 411      FF
+ 412              		.p2align 4,,10
+ 413 0441 0F1F8000 		.p2align 3
+ 413      000000
+ 414              	.L125:
+ 415 0448 4889D0   		movq	%rdx, %rax
+ 416 044b E9E0FEFF 		jmp	.L50
+ 416      FF
+ 417              	.L64:
+ 418 0450 4989DF   		movq	%rbx, %r15
+ 419 0453 E9B8FDFF 		jmp	.L14
+ 419      FF
+ 420              	.L68:
+ 421 0458 4C89F8   		movq	%r15, %rax
+ 422 045b E98CFCFF 		jmp	.L34
+ 422      FF
+ 423              	.L62:
+ 424 0460 48833C24 		cmpq	$0, (%rsp)
+ 424      00
+ 425 0465 BBC80000 		movl	$200, %ebx
+ 425      00
+ 426 046a 0F846DFC 		je	.L13
+ 426      FFFF
+ 427 0470 E952FDFF 		jmp	.L129
+ 427      FF
+ 428              	.L69:
+ 429 0475 4C89F8   		movq	%r15, %rax
+ 430 0478 EB8D     		jmp	.L58
+ 431              	.L71:
+ 432 047a 4D89FA   		movq	%r15, %r10
+ 433 047d E9A3FCFF 		jmp	.L40
+ 433      FF
+ 434              	.L74:
+ 435 0482 4889D0   		movq	%rdx, %rax
+ 436 0485 EBAF     		jmp	.L46
+ 437              	.L137:
+ 438 0487 E8000000 		call	__stack_chk_fail@PLT
+ 438      00
+ 439              		.cfi_endproc
+ 440              	.LFE64:
+ 442 048c 0F1F4000 		.p2align 4,,15
+ 443              		.globl	arg_parse
+ 445              	arg_parse:
+ 446              	.LFB49:
+ 447              		.cfi_startproc
+ 448 0490 4157     		pushq	%r15
+ 449              		.cfi_def_cfa_offset 16
+ 450              		.cfi_offset 15, -16
+ 451 0492 4156     		pushq	%r14
+ 452              		.cfi_def_cfa_offset 24
+ 453              		.cfi_offset 14, -24
+ 454 0494 4155     		pushq	%r13
+ 455              		.cfi_def_cfa_offset 32
+ 456              		.cfi_offset 13, -32
+ 457 0496 4154     		pushq	%r12
+ 458              		.cfi_def_cfa_offset 40
+ 459              		.cfi_offset 12, -40
+ 460 0498 4989D5   		movq	%rdx, %r13
+ 461 049b 55       		pushq	%rbp
+ 462              		.cfi_def_cfa_offset 48
+ 463              		.cfi_offset 6, -48
+ 464 049c 53       		pushq	%rbx
+ 465              		.cfi_def_cfa_offset 56
+ 466              		.cfi_offset 3, -56
+ 467 049d 4889F5   		movq	%rsi, %rbp
+ 468 04a0 4889D3   		movq	%rdx, %rbx
+ 469 04a3 4883EC48 		subq	$72, %rsp
+ 470              		.cfi_def_cfa_offset 128
+ 471 04a7 897C240C 		movl	%edi, 12(%rsp)
+ 472 04ab 48895424 		movq	%rdx, 16(%rsp)
+ 472      10
+ 473              		.p2align 4,,10
+ 474              		.p2align 3
+ 475              	.L141:
+ 476 04b0 488B03   		movq	(%rbx), %rax
+ 477 04b3 4989DC   		movq	%rbx, %r12
+ 478 04b6 488B5038 		movq	56(%rax), %rdx
+ 479 04ba 4885D2   		testq	%rdx, %rdx
+ 480 04bd 0F84B705 		je	.L142
+ 480      0000
+ 481 04c3 488B7830 		movq	48(%rax), %rdi
+ 482 04c7 4883C308 		addq	$8, %rbx
+ 483 04cb FFD2     		call	*%rdx
+ 484 04cd 498B0424 		movq	(%r12), %rax
+ 485 04d1 F60001   		testb	$1, (%rax)
+ 486 04d4 74DA     		je	.L141
+ 487              	.L144:
+ 488 04d6 488B7424 		movq	16(%rsp), %rsi
+ 488      10
+ 489 04db 4C8B3E   		movq	(%rsi), %r15
+ 490 04de 410FB607 		movzbl	(%r15), %eax
+ 491 04e2 88442428 		movb	%al, 40(%rsp)
+ 492 04e6 83E001   		andl	$1, %eax
+ 493 04e9 88442420 		movb	%al, 32(%rsp)
+ 494 04ed 0F859809 		jne	.L238
+ 494      0000
+ 495 04f3 488D4608 		leaq	8(%rsi), %rax
+ 496 04f7 660F1F84 		.p2align 4,,10
+ 496      00000000 
+ 496      00
+ 497              		.p2align 3
+ 498              	.L146:
+ 499 0500 488B18   		movq	(%rax), %rbx
+ 500 0503 4883C008 		addq	$8, %rax
+ 501 0507 F60301   		testb	$1, (%rbx)
+ 502 050a 74F4     		je	.L146
+ 503              	.L145:
+ 504 050c 8B44240C 		movl	12(%rsp), %eax
+ 505 0510 85C0     		testl	%eax, %eax
+ 506 0512 0F840401 		je	.L152
+ 506      0000
+ 507 0518 48637C24 		movslq	12(%rsp), %rdi
+ 507      0C
+ 508 051d 4989FE   		movq	%rdi, %r14
+ 509 0520 48C1E703 		salq	$3, %rdi
+ 510 0524 E8000000 		call	malloc@PLT
+ 510      00
+ 511 0529 4885C0   		testq	%rax, %rax
+ 512 052c 4889C7   		movq	%rax, %rdi
+ 513 052f 48894424 		movq	%rax, 24(%rsp)
+ 513      18
+ 514 0534 0F84BF08 		je	.L154
+ 514      0000
+ 515 053a 4585F6   		testl	%r14d, %r14d
+ 516 053d 7E23     		jle	.L155
+ 517 053f 418D46FF 		leal	-1(%r14), %eax
+ 518 0543 4889EE   		movq	%rbp, %rsi
+ 519 0546 488D14C5 		leaq	8(,%rax,8), %rdx
+ 519      08000000 
+ 520 054e E8000000 		call	memcpy@PLT
+ 520      00
+ 521 0553 410FB607 		movzbl	(%r15), %eax
+ 522 0557 88442428 		movb	%al, 40(%rsp)
+ 523 055b 83E001   		andl	$1, %eax
+ 524 055e 88442420 		movb	%al, 32(%rsp)
+ 525              	.L155:
+ 526 0562 48895C24 		movq	%rbx, 48(%rsp)
+ 526      30
+ 527 0567 0FB65C24 		movzbl	40(%rsp), %ebx
+ 527      28
+ 528 056c 4531F6   		xorl	%r14d, %r14d
+ 529 056f 4C8B6424 		movq	16(%rsp), %r12
+ 529      10
+ 530 0574 BD010000 		movl	$1, %ebp
+ 530      00
+ 531 0579 4C896C24 		movq	%r13, 56(%rsp)
+ 531      38
+ 532 057e 6690     		.p2align 4,,10
+ 533              		.p2align 3
+ 534              	.L159:
+ 535 0580 498B0424 		movq	(%r12), %rax
+ 536 0584 4983C601 		addq	$1, %r14
+ 537 0588 4C8B6810 		movq	16(%rax), %r13
+ 538 058c 4D85ED   		testq	%r13, %r13
+ 539 058f 7428     		je	.L156
+ 540 0591 4C89EF   		movq	%r13, %rdi
+ 541 0594 E8000000 		call	strlen@PLT
+ 541      00
+ 542 0599 4901C6   		addq	%rax, %r14
+ 543 059c 0F1F4000 		.p2align 4,,10
+ 544              		.p2align 3
+ 545              	.L157:
+ 546 05a0 498D7D01 		leaq	1(%r13), %rdi
+ 547 05a4 BE2C0000 		movl	$44, %esi
+ 547      00
+ 548 05a9 83C501   		addl	$1, %ebp
+ 549 05ac E8000000 		call	strchr@PLT
+ 549      00
+ 550 05b1 4885C0   		testq	%rax, %rax
+ 551 05b4 4989C5   		movq	%rax, %r13
+ 552 05b7 75E7     		jne	.L157
+ 553              	.L156:
+ 554 05b9 4983C408 		addq	$8, %r12
+ 555 05bd 83E301   		andl	$1, %ebx
+ 556 05c0 0F859500 		jne	.L158
+ 556      0000
+ 557 05c6 498B0424 		movq	(%r12), %rax
+ 558 05ca 0FB618   		movzbl	(%rax), %ebx
+ 559 05cd EBB1     		jmp	.L159
+ 560 05cf 90       		.p2align 4,,10
+ 561              		.p2align 3
+ 562              	.L149:
+ 563 05d0 48634B60 		movslq	96(%rbx), %rcx
+ 564 05d4 4863532C 		movslq	44(%rbx), %rdx
+ 565 05d8 488B7B68 		movq	104(%rbx), %rdi
+ 566 05dc 488B7370 		movq	112(%rbx), %rsi
+ 567 05e0 39D1     		cmpl	%edx, %ecx
+ 568 05e2 0F8CA404 		jl	.L347
+ 568      0000
+ 569 05e8 C74497FC 		movl	$1, -4(%rdi,%rdx,4)
+ 569      01000000 
+ 570 05f0 4863432C 		movslq	44(%rbx), %rax
+ 571 05f4 48C1E003 		salq	$3, %rax
+ 572 05f8 48895C06 		movq	%rbx, -8(%rsi,%rax)
+ 572      F8
+ 573 05fd 488B5378 		movq	120(%rbx), %rdx
+ 574 0601 48C74402 		movq	$0, -8(%rdx,%rax)
+ 574      F8000000 
+ 574      00
+ 575              	.L334:
+ 576 060a 4D8B7D00 		movq	0(%r13), %r15
+ 577              	.L148:
+ 578 060e 4983C508 		addq	$8, %r13
+ 579 0612 41F60701 		testb	$1, (%r15)
+ 580 0616 7531     		jne	.L340
+ 581 0618 4D8B7D00 		movq	0(%r13), %r15
+ 582              	.L152:
+ 583 061c 498B4748 		movq	72(%r15), %rax
+ 584 0620 4885C0   		testq	%rax, %rax
+ 585 0623 74E9     		je	.L148
+ 586 0625 498B6F30 		movq	48(%r15), %rbp
+ 587 0629 4889EF   		movq	%rbp, %rdi
+ 588 062c FFD0     		call	*%rax
+ 589 062e 85C0     		testl	%eax, %eax
+ 590 0630 74D8     		je	.L334
+ 591 0632 EB9C     		jmp	.L149
+ 592              	.L358:
+ 593 0634 8B5360   		movl	96(%rbx), %edx
+ 594              	.L213:
+ 595 0637 85D2     		testl	%edx, %edx
+ 596 0639 0F847706 		je	.L232
+ 596      0000
+ 597              	.L228:
+ 598 063f 488B7C24 		movq	24(%rsp), %rdi
+ 598      18
+ 599 0644 E8000000 		call	free@PLT
+ 599      00
+ 600              	.L340:
+ 601 0649 8B4360   		movl	96(%rbx), %eax
+ 602              	.L140:
+ 603 064c 4883C448 		addq	$72, %rsp
+ 604              		.cfi_remember_state
+ 605              		.cfi_def_cfa_offset 56
+ 606 0650 5B       		popq	%rbx
+ 607              		.cfi_def_cfa_offset 48
+ 608 0651 5D       		popq	%rbp
+ 609              		.cfi_def_cfa_offset 40
+ 610 0652 415C     		popq	%r12
+ 611              		.cfi_def_cfa_offset 32
+ 612 0654 415D     		popq	%r13
+ 613              		.cfi_def_cfa_offset 24
+ 614 0656 415E     		popq	%r14
+ 615              		.cfi_def_cfa_offset 16
+ 616 0658 415F     		popq	%r15
+ 617              		.cfi_def_cfa_offset 8
+ 618 065a C3       		ret
+ 619              	.L158:
+ 620              		.cfi_restore_state
+ 621 065b 4863FD   		movslq	%ebp, %rdi
+ 622 065e 488B5C24 		movq	48(%rsp), %rbx
+ 622      30
+ 623 0663 4C8B6C24 		movq	56(%rsp), %r13
+ 623      38
+ 624 0668 48C1E705 		salq	$5, %rdi
+ 625 066c 4989FC   		movq	%rdi, %r12
+ 626 066f 498D7C3E 		leaq	16(%r14,%rdi), %rdi
+ 626      10
+ 627 0674 E8000000 		call	malloc@PLT
+ 627      00
+ 628 0679 4885C0   		testq	%rax, %rax
+ 629 067c 4989C6   		movq	%rax, %r14
+ 630 067f 0F842C01 		je	.L160
+ 630      0000
+ 631 0685 807C2420 		cmpb	$0, 32(%rsp)
+ 631      00
+ 632 068a C7000000 		movl	$0, (%rax)
+ 632      0000
+ 633 0690 488D4010 		leaq	16(%rax), %rax
+ 634 0694 8968F4   		movl	%ebp, -12(%rax)
+ 635 0697 49894608 		movq	%rax, 8(%r14)
+ 636 069b 4A8D3C20 		leaq	(%rax,%r12), %rdi
+ 637 069f 0F857208 		jne	.L239
+ 637      0000
+ 638 06a5 4C8B6424 		movq	16(%rsp), %r12
+ 638      10
+ 639 06aa 4D89FA   		movq	%r15, %r10
+ 640 06ad 31ED     		xorl	%ebp, %ebp
+ 641 06af 4531C0   		xorl	%r8d, %r8d
+ 642              		.p2align 4,,10
+ 643 06b2 660F1F44 		.p2align 3
+ 643      0000
+ 644              	.L171:
+ 645 06b8 498B5210 		movq	16(%r10), %rdx
+ 646 06bc 4189EB   		movl	%ebp, %r11d
+ 647 06bf 4885D2   		testq	%rdx, %rdx
+ 648 06c2 0F849D00 		je	.L162
+ 648      0000
+ 649 06c8 0FB602   		movzbl	(%rdx), %eax
+ 650 06cb 84C0     		testb	%al, %al
+ 651 06cd 0F849200 		je	.L162
+ 651      0000
+ 652 06d3 4963F0   		movslq	%r8d, %rsi
+ 653 06d6 4989F9   		movq	%rdi, %r9
+ 654 06d9 48C1E605 		salq	$5, %rsi
+ 655 06dd 0F1F00   		.p2align 4,,10
+ 656              		.p2align 3
+ 657              	.L163:
+ 658 06e0 4889F9   		movq	%rdi, %rcx
+ 659 06e3 EB15     		jmp	.L335
+ 660              		.p2align 4,,10
+ 661 06e5 0F1F00   		.p2align 3
+ 662              	.L164:
+ 663 06e8 4883C201 		addq	$1, %rdx
+ 664 06ec 4883C101 		addq	$1, %rcx
+ 665 06f0 8841FF   		movb	%al, -1(%rcx)
+ 666 06f3 0FB602   		movzbl	(%rdx), %eax
+ 667 06f6 84C0     		testb	%al, %al
+ 668 06f8 7404     		je	.L170
+ 669              	.L335:
+ 670 06fa 3C2C     		cmpb	$44, %al
+ 671 06fc 75EA     		jne	.L164
+ 672              	.L170:
+ 673 06fe C60100   		movb	$0, (%rcx)
+ 674 0701 31C0     		xorl	%eax, %eax
+ 675 0703 803A2C   		cmpb	$44, (%rdx)
+ 676 0706 488D7901 		leaq	1(%rcx), %rdi
+ 677 070a 0F94C0   		sete	%al
+ 678 070d 4801C2   		addq	%rax, %rdx
+ 679 0710 498B4608 		movq	8(%r14), %rax
+ 680 0714 4801F0   		addq	%rsi, %rax
+ 681 0717 4C8908   		movq	%r9, (%rax)
+ 682 071a 4C897010 		movq	%r14, 16(%rax)
+ 683 071e 44895818 		movl	%r11d, 24(%rax)
+ 684 0722 410FB60A 		movzbl	(%r10), %ecx
+ 685 0726 F6C104   		testb	$4, %cl
+ 686 0729 7425     		je	.L167
+ 687 072b 4183C001 		addl	$1, %r8d
+ 688 072f 4885D2   		testq	%rdx, %rdx
+ 689 0732 C7400802 		movl	$2, 8(%rax)
+ 689      000000
+ 690 0739 742A     		je	.L162
+ 691              	.L348:
+ 692 073b 0FB602   		movzbl	(%rdx), %eax
+ 693 073e 4883C620 		addq	$32, %rsi
+ 694 0742 84C0     		testb	%al, %al
+ 695 0744 741F     		je	.L162
+ 696 0746 4989F9   		movq	%rdi, %r9
+ 697 0749 EB95     		jmp	.L163
+ 698 074b 0F1F4400 		.p2align 4,,10
+ 698      00
+ 699              		.p2align 3
+ 700              	.L167:
+ 701 0750 83E102   		andl	$2, %ecx
+ 702 0753 0F95C1   		setne	%cl
+ 703 0756 4183C001 		addl	$1, %r8d
+ 704 075a 4885D2   		testq	%rdx, %rdx
+ 705 075d 0FB6C9   		movzbl	%cl, %ecx
+ 706 0760 894808   		movl	%ecx, 8(%rax)
+ 707 0763 75D6     		jne	.L348
+ 708              	.L162:
+ 709 0765 4D8B54EC 		movq	8(%r12,%rbp,8), %r10
+ 709      08
+ 710 076a 4883C501 		addq	$1, %rbp
+ 711 076e 41F60201 		testb	$1, (%r10)
+ 712 0772 0F8440FF 		je	.L171
+ 712      FFFF
+ 713 0778 410FB637 		movzbl	(%r15), %esi
+ 714 077c 498B4608 		movq	8(%r14), %rax
+ 715 0780 4D63C0   		movslq	%r8d, %r8
+ 716 0783 49C1E005 		salq	$5, %r8
+ 717 0787 83E601   		andl	$1, %esi
+ 718 078a 40887424 		movb	%sil, 32(%rsp)
+ 718      20
+ 719              	.L161:
+ 720 078f 4901C0   		addq	%rax, %r8
+ 721 0792 49C70000 		movq	$0, (%r8)
+ 721      000000
+ 722 0799 41C74008 		movl	$0, 8(%r8)
+ 722      00000000 
+ 723 07a1 49C74010 		movq	$0, 16(%r8)
+ 723      00000000 
+ 724 07a9 41C74018 		movl	$0, 24(%r8)
+ 724      00000000 
+ 725              	.L160:
+ 726 07b1 807C2420 		cmpb	$0, 32(%rsp)
+ 726      00
+ 727 07b6 0F852B07 		jne	.L241
+ 727      0000
+ 728 07bc 488B4424 		movq	16(%rsp), %rax
+ 728      10
+ 729 07c1 BD020000 		movl	$2, %ebp
+ 729      00
+ 730 07c6 4C8D6008 		leaq	8(%rax), %r12
+ 731 07ca 4C89F8   		movq	%r15, %rax
+ 732 07cd 0F1F00   		.p2align 4,,10
+ 733              		.p2align 3
+ 734              	.L174:
+ 735 07d0 488B7808 		movq	8(%rax), %rdi
+ 736 07d4 4885FF   		testq	%rdi, %rdi
+ 737 07d7 740C     		je	.L173
+ 738 07d9 E8000000 		call	strlen@PLT
+ 738      00
+ 739 07de 488D0440 		leaq	(%rax,%rax,2), %rax
+ 740 07e2 4801C5   		addq	%rax, %rbp
+ 741              	.L173:
+ 742 07e5 498B0424 		movq	(%r12), %rax
+ 743 07e9 4983C408 		addq	$8, %r12
+ 744 07ed F60001   		testb	$1, (%rax)
+ 745 07f0 74DE     		je	.L174
+ 746              	.L172:
+ 747 07f2 4889EF   		movq	%rbp, %rdi
+ 748 07f5 E8000000 		call	malloc@PLT
+ 748      00
+ 749 07fa 4885C0   		testq	%rax, %rax
+ 750 07fd 48894424 		movq	%rax, 32(%rsp)
+ 750      20
+ 751 0802 0F848B06 		je	.L185
+ 751      0000
+ 752 0808 4889C6   		movq	%rax, %rsi
+ 753 080b 488D4001 		leaq	1(%rax), %rax
+ 754 080f C6063A   		movb	$58, (%rsi)
+ 755 0812 41F60701 		testb	$1, (%r15)
+ 756 0816 7555     		jne	.L178
+ 757 0818 488B7424 		movq	16(%rsp), %rsi
+ 757      10
+ 758 081d 4883C608 		addq	$8, %rsi
+ 759              		.p2align 4,,10
+ 760 0821 0F1F8000 		.p2align 3
+ 760      000000
+ 761              	.L184:
+ 762 0828 498B5708 		movq	8(%r15), %rdx
+ 763              	.L342:
+ 764 082c 4885D2   		testq	%rdx, %rdx
+ 765 082f 742F     		je	.L179
+ 766              	.L349:
+ 767 0831 0FB60A   		movzbl	(%rdx), %ecx
+ 768 0834 84C9     		testb	%cl, %cl
+ 769 0836 7428     		je	.L179
+ 770 0838 8808     		movb	%cl, (%rax)
+ 771 083a 410FB60F 		movzbl	(%r15), %ecx
+ 772 083e 4883C201 		addq	$1, %rdx
+ 773 0842 F6C102   		testb	$2, %cl
+ 774 0845 0F852501 		jne	.L180
+ 774      0000
+ 775 084b 4883C001 		addq	$1, %rax
+ 776              	.L181:
+ 777 084f 83E104   		andl	$4, %ecx
+ 778 0852 74D8     		je	.L342
+ 779 0854 C6003A   		movb	$58, (%rax)
+ 780 0857 4883C001 		addq	$1, %rax
+ 781 085b 4885D2   		testq	%rdx, %rdx
+ 782 085e 75D1     		jne	.L349
+ 783              	.L179:
+ 784 0860 4C8B3E   		movq	(%rsi), %r15
+ 785 0863 4883C608 		addq	$8, %rsi
+ 786 0867 41F60701 		testb	$1, (%r15)
+ 787 086b 74BB     		je	.L184
+ 788              	.L178:
+ 789 086d 4D85F6   		testq	%r14, %r14
+ 790 0870 C60000   		movb	$0, (%rax)
+ 791 0873 0F841A06 		je	.L185
+ 791      0000
+ 792 0879 488B2D00 		movq	optind@GOTPCREL(%rip), %rbp
+ 792      000000
+ 793 0880 488B0500 		movq	opterr@GOTPCREL(%rip), %rax
+ 793      000000
+ 794 0887 4C896C24 		movq	%r13, 48(%rsp)
+ 794      30
+ 795 088c 4989DD   		movq	%rbx, %r13
+ 796 088f C7450000 		movl	$0, 0(%rbp)
+ 796      000000
+ 797 0896 C7000000 		movl	$0, (%rax)
+ 797      0000
+ 798 089c 0F1F4000 		.p2align 4,,10
+ 799              		.p2align 3
+ 800              	.L189:
+ 801 08a0 498B4E08 		movq	8(%r14), %rcx
+ 802 08a4 488B5424 		movq	32(%rsp), %rdx
+ 802      20
+ 803 08a9 4531C0   		xorl	%r8d, %r8d
+ 804 08ac 488B7424 		movq	24(%rsp), %rsi
+ 804      18
+ 805 08b1 8B7C240C 		movl	12(%rsp), %edi
+ 806 08b5 E8000000 		call	getopt_long@PLT
+ 806      00
+ 807 08ba 83F8FF   		cmpl	$-1, %eax
+ 808 08bd 89C3     		movl	%eax, %ebx
+ 809 08bf 0F840F02 		je	.L350
+ 809      0000
+ 810 08c5 83FB3A   		cmpl	$58, %ebx
+ 811 08c8 0F846D01 		je	.L191
+ 811      0000
+ 812 08ce 83FB3F   		cmpl	$63, %ebx
+ 813 08d1 0F841401 		je	.L192
+ 813      0000
+ 814 08d7 85DB     		testl	%ebx, %ebx
+ 815 08d9 0F84A200 		je	.L351
+ 815      0000
+ 816 08df 0FBEC3   		movsbl	%bl, %eax
+ 817 08e2 89442428 		movl	%eax, 40(%rsp)
+ 818 08e6 488B4424 		movq	16(%rsp), %rax
+ 818      10
+ 819 08eb 4C8B20   		movq	(%rax), %r12
+ 820 08ee 41F60424 		testb	$1, (%r12)
+ 820      01
+ 821 08f3 7535     		jne	.L205
+ 822 08f5 4C8D7808 		leaq	8(%rax), %r15
+ 823 08f9 0F1F8000 		.p2align 4,,10
+ 823      000000
+ 824              		.p2align 3
+ 825              	.L208:
+ 826 0900 498B7C24 		movq	8(%r12), %rdi
+ 826      08
+ 827 0905 4885FF   		testq	%rdi, %rdi
+ 828 0908 7412     		je	.L206
+ 829 090a 8B742428 		movl	40(%rsp), %esi
+ 830 090e E8000000 		call	strchr@PLT
+ 830      00
+ 831 0913 4885C0   		testq	%rax, %rax
+ 832 0916 0F859901 		jne	.L207
+ 832      0000
+ 833              	.L206:
+ 834 091c 4D8B27   		movq	(%r15), %r12
+ 835 091f 4983C708 		addq	$8, %r15
+ 836 0923 41F60424 		testb	$1, (%r12)
+ 836      01
+ 837 0928 74D6     		je	.L208
+ 838              	.L205:
+ 839 092a 49634560 		movslq	96(%r13), %rax
+ 840 092e 49634D2C 		movslq	44(%r13), %rcx
+ 841 0932 498B7568 		movq	104(%r13), %rsi
+ 842 0936 498B7D70 		movq	112(%r13), %rdi
+ 843 093a 39C8     		cmpl	%ecx, %eax
+ 844 093c 0F8C3804 		jl	.L352
+ 844      0000
+ 845 0942 C7448EFC 		movl	$1, -4(%rsi,%rcx,4)
+ 845      01000000 
+ 846 094a 4963452C 		movslq	44(%r13), %rax
+ 847 094e 48C1E003 		salq	$3, %rax
+ 848 0952 4C896C07 		movq	%r13, -8(%rdi,%rax)
+ 848      F8
+ 849 0957 498B5578 		movq	120(%r13), %rdx
+ 850 095b 48C74402 		movq	$0, -8(%rdx,%rax)
+ 850      F8000000 
+ 850      00
+ 851 0964 E937FFFF 		jmp	.L189
+ 851      FF
+ 852 0969 0F1F8000 		.p2align 4,,10
+ 852      000000
+ 853              		.p2align 3
+ 854              	.L180:
+ 855 0970 C640013A 		movb	$58, 1(%rax)
+ 856 0974 4883C002 		addq	$2, %rax
+ 857 0978 410FB60F 		movzbl	(%r15), %ecx
+ 858 097c E9CEFEFF 		jmp	.L181
+ 858      FF
+ 859              	.L351:
+ 860 0981 496306   		movslq	(%r14), %rax
+ 861 0984 488B7424 		movq	16(%rsp), %rsi
+ 861      10
+ 862 0989 488B1D00 		movq	optarg@GOTPCREL(%rip), %rbx
+ 862      000000
+ 863 0990 488D0CC6 		leaq	(%rsi,%rax,8), %rcx
+ 864 0994 488B13   		movq	(%rbx), %rdx
+ 865 0997 488B01   		movq	(%rcx), %rax
+ 866 099a 4885D2   		testq	%rdx, %rdx
+ 867 099d 4C8B6030 		movq	48(%rax), %r12
+ 868 09a1 7409     		je	.L194
+ 869 09a3 803A00   		cmpb	$0, (%rdx)
+ 870 09a6 0F845A03 		je	.L353
+ 870      0000
+ 871              	.L194:
+ 872 09ac 488B4040 		movq	64(%rax), %rax
+ 873 09b0 4885C0   		testq	%rax, %rax
+ 874 09b3 0F84E7FE 		je	.L189
+ 874      FFFF
+ 875              	.L346:
+ 876 09b9 488B33   		movq	(%rbx), %rsi
+ 877 09bc 4C89E7   		movq	%r12, %rdi
+ 878 09bf FFD0     		call	*%rax
+ 879 09c1 85C0     		testl	%eax, %eax
+ 880 09c3 0F84D7FE 		je	.L189
+ 880      FFFF
+ 881 09c9 49634D60 		movslq	96(%r13), %rcx
+ 882 09cd 4963552C 		movslq	44(%r13), %rdx
+ 883 09d1 498B7D68 		movq	104(%r13), %rdi
+ 884 09d5 498B7570 		movq	112(%r13), %rsi
+ 885 09d9 39D1     		cmpl	%edx, %ecx
+ 886 09db 0F8CBF03 		jl	.L354
+ 886      0000
+ 887 09e1 C74497FC 		movl	$1, -4(%rdi,%rdx,4)
+ 887      01000000 
+ 888 09e9 EB31     		jmp	.L338
+ 889              	.L192:
+ 890 09eb 488B0500 		movq	optopt@GOTPCREL(%rip), %rax
+ 890      000000
+ 891 09f2 49635560 		movslq	96(%r13), %rdx
+ 892 09f6 498B7D68 		movq	104(%r13), %rdi
+ 893 09fa 498B7570 		movq	112(%r13), %rsi
+ 894 09fe 8B08     		movl	(%rax), %ecx
+ 895 0a00 4963452C 		movslq	44(%r13), %rax
+ 896 0a04 85C9     		testl	%ecx, %ecx
+ 897 0a06 0F853102 		jne	.L327
+ 897      0000
+ 898 0a0c 39C2     		cmpl	%eax, %edx
+ 899 0a0e 0F8CB103 		jl	.L355
+ 899      0000
+ 900              	.L203:
+ 901 0a14 C74487FC 		movl	$1, -4(%rdi,%rax,4)
+ 901      01000000 
+ 902              	.L338:
+ 903 0a1c 4963452C 		movslq	44(%r13), %rax
+ 904 0a20 48C1E003 		salq	$3, %rax
+ 905 0a24 4C896C06 		movq	%r13, -8(%rsi,%rax)
+ 905      F8
+ 906 0a29 498B5578 		movq	120(%r13), %rdx
+ 907 0a2d 48C74402 		movq	$0, -8(%rdx,%rax)
+ 907      F8000000 
+ 907      00
+ 908 0a36 E965FEFF 		jmp	.L189
+ 908      FF
+ 909              	.L191:
+ 910 0a3b 49635560 		movslq	96(%r13), %rdx
+ 911 0a3f 4963452C 		movslq	44(%r13), %rax
+ 912 0a43 498B7568 		movq	104(%r13), %rsi
+ 913 0a47 498B4D70 		movq	112(%r13), %rcx
+ 914 0a4b 39C2     		cmpl	%eax, %edx
+ 915 0a4d 0F8C7F02 		jl	.L356
+ 915      0000
+ 916 0a53 C74486FC 		movl	$1, -4(%rsi,%rax,4)
+ 916      01000000 
+ 917 0a5b 4963452C 		movslq	44(%r13), %rax
+ 918 0a5f 48C1E003 		salq	$3, %rax
+ 919 0a63 4C896C01 		movq	%r13, -8(%rcx,%rax)
+ 919      F8
+ 920 0a68 498B5578 		movq	120(%r13), %rdx
+ 921 0a6c 48C74402 		movq	$0, -8(%rdx,%rax)
+ 921      F8000000 
+ 921      00
+ 922 0a75 E926FEFF 		jmp	.L189
+ 922      FF
+ 923              	.L142:
+ 924 0a7a 4883C308 		addq	$8, %rbx
+ 925 0a7e F60001   		testb	$1, (%rax)
+ 926 0a81 0F8429FA 		je	.L141
+ 926      FFFF
+ 927 0a87 E94AFAFF 		jmp	.L144
+ 927      FF
+ 928              	.L347:
+ 929 0a8c 89048F   		movl	%eax, (%rdi,%rcx,4)
+ 930 0a8f 48635360 		movslq	96(%rbx), %rdx
+ 931 0a93 48892CD6 		movq	%rbp, (%rsi,%rdx,8)
+ 932 0a97 488B4B78 		movq	120(%rbx), %rcx
+ 933 0a9b 4889D0   		movq	%rdx, %rax
+ 934 0a9e 83C001   		addl	$1, %eax
+ 935 0aa1 4D8B7D00 		movq	0(%r13), %r15
+ 936 0aa5 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 936      00000000 
+ 937 0aad 894360   		movl	%eax, 96(%rbx)
+ 938 0ab0 E959FBFF 		jmp	.L148
+ 938      FF
+ 939              	.L207:
+ 940 0ab5 498B4424 		movq	64(%r12), %rax
+ 940      40
+ 941 0aba 4885C0   		testq	%rax, %rax
+ 942 0abd 0F84DDFD 		je	.L189
+ 942      FFFF
+ 943 0ac3 4D8B6424 		movq	48(%r12), %r12
+ 943      30
+ 944 0ac8 488B1D00 		movq	optarg@GOTPCREL(%rip), %rbx
+ 944      000000
+ 945 0acf E9E5FEFF 		jmp	.L346
+ 945      FF
+ 946              	.L350:
+ 947 0ad4 488B7C24 		movq	32(%rsp), %rdi
+ 947      20
+ 948 0ad9 4C89EB   		movq	%r13, %rbx
+ 949 0adc 4C8B6C24 		movq	48(%rsp), %r13
+ 949      30
+ 950 0ae1 E8000000 		call	free@PLT
+ 950      00
+ 951 0ae6 4C89F7   		movq	%r14, %rdi
+ 952 0ae9 E8000000 		call	free@PLT
+ 952      00
+ 953              	.L188:
+ 954 0aee 488B7424 		movq	16(%rsp), %rsi
+ 954      10
+ 955 0af3 48C74424 		movq	$0, 32(%rsp)
+ 955      20000000 
+ 955      00
+ 956 0afc 31C0     		xorl	%eax, %eax
+ 957 0afe 48C74424 		movq	$0, 40(%rsp)
+ 957      28000000 
+ 957      00
+ 958 0b07 4531F6   		xorl	%r14d, %r14d
+ 959 0b0a 4531FF   		xorl	%r15d, %r15d
+ 960              	.L211:
+ 961 0b0d 4A8B14FE 		movq	(%rsi,%r15,8), %rdx
+ 962 0b11 F60201   		testb	$1, (%rdx)
+ 963 0b14 752E     		jne	.L357
+ 964              	.L219:
+ 965 0b16 48634D00 		movslq	0(%rbp), %rcx
+ 966 0b1a 394C240C 		cmpl	%ecx, 12(%rsp)
+ 967 0b1e 0F8E10FB 		jle	.L358
+ 967      FFFF
+ 968 0b24 48837A10 		cmpq	$0, 16(%rdx)
+ 968      00
+ 969 0b29 0F84A900 		je	.L359
+ 969      0000
+ 970              	.L214:
+ 971 0b2f 488B7424 		movq	16(%rsp), %rsi
+ 971      10
+ 972 0b34 4183C601 		addl	$1, %r14d
+ 973 0b38 4D63FE   		movslq	%r14d, %r15
+ 974 0b3b 4A8B14FE 		movq	(%rsi,%r15,8), %rdx
+ 975 0b3f F60201   		testb	$1, (%rdx)
+ 976 0b42 74D2     		je	.L219
+ 977              	.L357:
+ 978 0b44 85C0     		testl	%eax, %eax
+ 979 0b46 48635360 		movslq	96(%rbx), %rdx
+ 980 0b4a 0F85EB02 		jne	.L220
+ 980      0000
+ 981 0b50 8B4500   		movl	0(%rbp), %eax
+ 982 0b53 4C8B4424 		movq	24(%rsp), %r8
+ 982      18
+ 983 0b58 8B7C240C 		movl	12(%rsp), %edi
+ 984 0b5c EB2B     		jmp	.L224
+ 985 0b5e 6690     		.p2align 4,,10
+ 986              		.p2align 3
+ 987              	.L225:
+ 988 0b60 41C74489 		movl	$1, -4(%r9,%rcx,4)
+ 988      FC010000 
+ 988      00
+ 989 0b69 4863432C 		movslq	44(%rbx), %rax
+ 990 0b6d 48C1E003 		salq	$3, %rax
+ 991 0b71 48895C06 		movq	%rbx, -8(%rsi,%rax)
+ 991      F8
+ 992 0b76 488B5378 		movq	120(%rbx), %rdx
+ 993 0b7a 48C74402 		movq	$0, -8(%rdx,%rax)
+ 993      F8000000 
+ 993      00
+ 994 0b83 8B5360   		movl	96(%rbx), %edx
+ 995              	.L226:
+ 996 0b86 8B4500   		movl	0(%rbp), %eax
+ 997              	.L224:
+ 998 0b89 39C7     		cmpl	%eax, %edi
+ 999 0b8b 0F8EA6FA 		jle	.L213
+ 999      FFFF
+ 1000 0b91 8D4801   		leal	1(%rax), %ecx
+ 1001 0b94 4C8B4B68 		movq	104(%rbx), %r9
+ 1002 0b98 488B7370 		movq	112(%rbx), %rsi
+ 1003 0b9c 894D00   		movl	%ecx, 0(%rbp)
+ 1004 0b9f 48634B2C 		movslq	44(%rbx), %rcx
+ 1005 0ba3 39D1     		cmpl	%edx, %ecx
+ 1006 0ba5 7EB9     		jle	.L225
+ 1007 0ba7 4898     		cltq
+ 1008 0ba9 4863D2   		movslq	%edx, %rdx
+ 1009 0bac 4D8B14C0 		movq	(%r8,%rax,8), %r10
+ 1010 0bb0 41C70491 		movl	$3, (%r9,%rdx,4)
+ 1010      03000000 
+ 1011 0bb8 48634360 		movslq	96(%rbx), %rax
+ 1012 0bbc 48891CC6 		movq	%rbx, (%rsi,%rax,8)
+ 1013 0bc0 488B4B78 		movq	120(%rbx), %rcx
+ 1014 0bc4 4889C2   		movq	%rax, %rdx
+ 1015 0bc7 83C201   		addl	$1, %edx
+ 1016 0bca 4C8914C1 		movq	%r10, (%rcx,%rax,8)
+ 1017 0bce 895360   		movl	%edx, 96(%rbx)
+ 1018 0bd1 EBB3     		jmp	.L226
+ 1019              		.p2align 4,,10
+ 1020 0bd3 0F1F4400 		.p2align 3
+ 1020      00
+ 1021              	.L359:
+ 1022 0bd8 48837A08 		cmpq	$0, 8(%rdx)
+ 1022      00
+ 1023 0bdd 0F854CFF 		jne	.L214
+ 1023      FFFF
+ 1024 0be3 4C8B4240 		movq	64(%rdx), %r8
+ 1025 0be7 4D85C0   		testq	%r8, %r8
+ 1026 0bea 0F84BA03 		je	.L360
+ 1026      0000
+ 1027 0bf0 4C8B6230 		movq	48(%rdx), %r12
+ 1028 0bf4 488B4424 		movq	24(%rsp), %rax
+ 1028      18
+ 1029 0bf9 4C89E7   		movq	%r12, %rdi
+ 1030 0bfc 488B34C8 		movq	(%rax,%rcx,8), %rsi
+ 1031 0c00 41FFD0   		call	*%r8
+ 1032 0c03 85C0     		testl	%eax, %eax
+ 1033 0c05 750E     		jne	.L218
+ 1034 0c07 83450001 		addl	$1, 0(%rbp)
+ 1035 0c0b 488B7424 		movq	16(%rsp), %rsi
+ 1035      10
+ 1036 0c10 E9F8FEFF 		jmp	.L211
+ 1036      FF
+ 1037              	.L218:
+ 1038 0c15 48635500 		movslq	0(%rbp), %rdx
+ 1039 0c19 488B7424 		movq	24(%rsp), %rsi
+ 1039      18
+ 1040 0c1e 4183C601 		addl	$1, %r14d
+ 1041 0c22 4C896424 		movq	%r12, 32(%rsp)
+ 1041      20
+ 1042 0c27 4D63FE   		movslq	%r14d, %r15
+ 1043 0c2a 488B34D6 		movq	(%rsi,%rdx,8), %rsi
+ 1044 0c2e 48897424 		movq	%rsi, 40(%rsp)
+ 1044      28
+ 1045 0c33 488B7424 		movq	16(%rsp), %rsi
+ 1045      10
+ 1046 0c38 E9D0FEFF 		jmp	.L211
+ 1046      FF
+ 1047              	.L327:
+ 1048 0c3d 39C2     		cmpl	%eax, %edx
+ 1049 0c3f 0F8DCFFD 		jge	.L203
+ 1049      FFFF
+ 1050 0c45 890C97   		movl	%ecx, (%rdi,%rdx,4)
+ 1051 0c48 49635560 		movslq	96(%r13), %rdx
+ 1052 0c4c 4C892CD6 		movq	%r13, (%rsi,%rdx,8)
+ 1053 0c50 498B4D78 		movq	120(%r13), %rcx
+ 1054 0c54 4889D0   		movq	%rdx, %rax
+ 1055 0c57 83C001   		addl	$1, %eax
+ 1056 0c5a 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 1056      00000000 
+ 1057 0c62 41894560 		movl	%eax, 96(%r13)
+ 1058 0c66 E935FCFF 		jmp	.L189
+ 1058      FF
+ 1059              	.L230:
+ 1060 0c6b 48634B60 		movslq	96(%rbx), %rcx
+ 1061 0c6f 4863532C 		movslq	44(%rbx), %rdx
+ 1062 0c73 488B7B68 		movq	104(%rbx), %rdi
+ 1063 0c77 488B7370 		movq	112(%rbx), %rsi
+ 1064 0c7b 39D1     		cmpl	%edx, %ecx
+ 1065 0c7d 0F8CCE00 		jl	.L361
+ 1065      0000
+ 1066 0c83 C74497FC 		movl	$1, -4(%rdi,%rdx,4)
+ 1066      01000000 
+ 1067 0c8b 4863432C 		movslq	44(%rbx), %rax
+ 1068 0c8f 48C1E003 		salq	$3, %rax
+ 1069 0c93 48895C06 		movq	%rbx, -8(%rsi,%rax)
+ 1069      F8
+ 1070 0c98 488B5378 		movq	120(%rbx), %rdx
+ 1071 0c9c 48C74402 		movq	$0, -8(%rdx,%rax)
+ 1071      F8000000 
+ 1071      00
+ 1072              	.L339:
+ 1073 0ca5 498B4500 		movq	0(%r13), %rax
+ 1074              	.L229:
+ 1075 0ca9 4983C508 		addq	$8, %r13
+ 1076 0cad F60001   		testb	$1, (%rax)
+ 1077 0cb0 0F8589F9 		jne	.L228
+ 1077      FFFF
+ 1078              	.L232:
+ 1079 0cb6 498B4500 		movq	0(%r13), %rax
+ 1080 0cba 488B5048 		movq	72(%rax), %rdx
+ 1081 0cbe 4885D2   		testq	%rdx, %rdx
+ 1082 0cc1 74E6     		je	.L229
+ 1083 0cc3 488B6830 		movq	48(%rax), %rbp
+ 1084 0cc7 4889EF   		movq	%rbp, %rdi
+ 1085 0cca FFD2     		call	*%rdx
+ 1086 0ccc 85C0     		testl	%eax, %eax
+ 1087 0cce 74D5     		je	.L339
+ 1088 0cd0 EB99     		jmp	.L230
+ 1089              	.L356:
+ 1090 0cd2 48634500 		movslq	0(%rbp), %rax
+ 1091 0cd6 488B5C24 		movq	24(%rsp), %rbx
+ 1091      18
+ 1092 0cdb 488B7CC3 		movq	-8(%rbx,%rax,8), %rdi
+ 1092      F8
+ 1093 0ce0 C7049605 		movl	$5, (%rsi,%rdx,4)
+ 1093      000000
+ 1094 0ce7 49635560 		movslq	96(%r13), %rdx
+ 1095 0ceb 4C892CD1 		movq	%r13, (%rcx,%rdx,8)
+ 1096 0cef 498B4D78 		movq	120(%r13), %rcx
+ 1097 0cf3 4889D0   		movq	%rdx, %rax
+ 1098 0cf6 83C001   		addl	$1, %eax
+ 1099 0cf9 48893CD1 		movq	%rdi, (%rcx,%rdx,8)
+ 1100 0cfd 41894560 		movl	%eax, 96(%r13)
+ 1101 0d01 E99AFBFF 		jmp	.L189
+ 1101      FF
+ 1102              	.L353:
+ 1103 0d06 F60002   		testb	$2, (%rax)
+ 1104 0d09 0F849DFC 		je	.L194
+ 1104      FFFF
+ 1105 0d0f 49635560 		movslq	96(%r13), %rdx
+ 1106 0d13 4963452C 		movslq	44(%r13), %rax
+ 1107 0d17 498B7D68 		movq	104(%r13), %rdi
+ 1108 0d1b 498B7570 		movq	112(%r13), %rsi
+ 1109 0d1f 39C2     		cmpl	%eax, %edx
+ 1110 0d21 0F8C4C02 		jl	.L362
+ 1110      0000
+ 1111 0d27 C74487FC 		movl	$1, -4(%rdi,%rax,4)
+ 1111      01000000 
+ 1112 0d2f 4963452C 		movslq	44(%r13), %rax
+ 1113 0d33 48C1E003 		salq	$3, %rax
+ 1114 0d37 4C896C06 		movq	%r13, -8(%rsi,%rax)
+ 1114      F8
+ 1115 0d3c 498B5578 		movq	120(%r13), %rdx
+ 1116 0d40 48C74402 		movq	$0, -8(%rdx,%rax)
+ 1116      F8000000 
+ 1116      00
+ 1117 0d49 488B01   		movq	(%rcx), %rax
+ 1118 0d4c E95BFCFF 		jmp	.L194
+ 1118      FF
+ 1119              	.L361:
+ 1120 0d51 89048F   		movl	%eax, (%rdi,%rcx,4)
+ 1121 0d54 48635360 		movslq	96(%rbx), %rdx
+ 1122 0d58 48892CD6 		movq	%rbp, (%rsi,%rdx,8)
+ 1123 0d5c 488B4B78 		movq	120(%rbx), %rcx
+ 1124 0d60 4889D0   		movq	%rdx, %rax
+ 1125 0d63 83C001   		addl	$1, %eax
+ 1126 0d66 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 1126      00000000 
+ 1127 0d6e 894360   		movl	%eax, 96(%rbx)
+ 1128 0d71 498B4500 		movq	0(%r13), %rax
+ 1129 0d75 E92FFFFF 		jmp	.L229
+ 1129      FF
+ 1130              	.L352:
+ 1131 0d7a 891C86   		movl	%ebx, (%rsi,%rax,4)
+ 1132 0d7d 49635560 		movslq	96(%r13), %rdx
+ 1133 0d81 4C892CD7 		movq	%r13, (%rdi,%rdx,8)
+ 1134 0d85 498B4D78 		movq	120(%r13), %rcx
+ 1135 0d89 4889D0   		movq	%rdx, %rax
+ 1136 0d8c 83C001   		addl	$1, %eax
+ 1137 0d8f 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 1137      00000000 
+ 1138 0d97 41894560 		movl	%eax, 96(%r13)
+ 1139 0d9b E900FBFF 		jmp	.L189
+ 1139      FF
+ 1140              	.L354:
+ 1141 0da0 4C8B03   		movq	(%rbx), %r8
+ 1142 0da3 89048F   		movl	%eax, (%rdi,%rcx,4)
+ 1143 0da6 49635560 		movslq	96(%r13), %rdx
+ 1144 0daa 4C8924D6 		movq	%r12, (%rsi,%rdx,8)
+ 1145 0dae 498B4D78 		movq	120(%r13), %rcx
+ 1146 0db2 4889D0   		movq	%rdx, %rax
+ 1147 0db5 83C001   		addl	$1, %eax
+ 1148 0db8 4C8904D1 		movq	%r8, (%rcx,%rdx,8)
+ 1149 0dbc 41894560 		movl	%eax, 96(%r13)
+ 1150 0dc0 E9DBFAFF 		jmp	.L189
+ 1150      FF
+ 1151              	.L355:
+ 1152 0dc5 48634500 		movslq	0(%rbp), %rax
+ 1153 0dc9 488B5C24 		movq	24(%rsp), %rbx
+ 1153      18
+ 1154 0dce 4C8B44C3 		movq	-8(%rbx,%rax,8), %r8
+ 1154      F8
+ 1155 0dd3 C7049704 		movl	$4, (%rdi,%rdx,4)
+ 1155      000000
+ 1156 0dda 49635560 		movslq	96(%r13), %rdx
+ 1157 0dde 4C892CD6 		movq	%r13, (%rsi,%rdx,8)
+ 1158 0de2 498B4D78 		movq	120(%r13), %rcx
+ 1159 0de6 4889D0   		movq	%rdx, %rax
+ 1160 0de9 83C001   		addl	$1, %eax
+ 1161 0dec 4C8904D1 		movq	%r8, (%rcx,%rdx,8)
+ 1162 0df0 41894560 		movl	%eax, 96(%r13)
+ 1163 0df4 E9A7FAFF 		jmp	.L189
+ 1163      FF
+ 1164              	.L154:
+ 1165 0df9 48635360 		movslq	96(%rbx), %rdx
+ 1166 0dfd 4863432C 		movslq	44(%rbx), %rax
+ 1167 0e01 488B7368 		movq	104(%rbx), %rsi
+ 1168 0e05 488B4B70 		movq	112(%rbx), %rcx
+ 1169 0e09 39C2     		cmpl	%eax, %edx
+ 1170 0e0b 0F8C0E01 		jl	.L363
+ 1170      0000
+ 1171 0e11 C74486FC 		movl	$1, -4(%rsi,%rax,4)
+ 1171      01000000 
+ 1172 0e19 4863432C 		movslq	44(%rbx), %rax
+ 1173 0e1d 48C1E003 		salq	$3, %rax
+ 1174 0e21 48895C01 		movq	%rbx, -8(%rcx,%rax)
+ 1174      F8
+ 1175 0e26 488B5378 		movq	120(%rbx), %rdx
+ 1176 0e2a 48C74402 		movq	$0, -8(%rdx,%rax)
+ 1176      F8000000 
+ 1176      00
+ 1177 0e33 8B4360   		movl	96(%rbx), %eax
+ 1178 0e36 E911F8FF 		jmp	.L140
+ 1178      FF
+ 1179              	.L220:
+ 1180 0e3b 48634B2C 		movslq	44(%rbx), %rcx
+ 1181 0e3f 488B7B68 		movq	104(%rbx), %rdi
+ 1182 0e43 488B7370 		movq	112(%rbx), %rsi
+ 1183 0e47 39D1     		cmpl	%edx, %ecx
+ 1184 0e49 0F8FF900 		jg	.L364
+ 1184      0000
+ 1185 0e4f C7448FFC 		movl	$1, -4(%rdi,%rcx,4)
+ 1185      01000000 
+ 1186 0e57 4863432C 		movslq	44(%rbx), %rax
+ 1187 0e5b 48C1E003 		salq	$3, %rax
+ 1188 0e5f 48895C06 		movq	%rbx, -8(%rsi,%rax)
+ 1188      F8
+ 1189 0e64 488B5378 		movq	120(%rbx), %rdx
+ 1190 0e68 48C74402 		movq	$0, -8(%rdx,%rax)
+ 1190      F8000000 
+ 1190      00
+ 1191 0e71 8B5360   		movl	96(%rbx), %edx
+ 1192              	.L223:
+ 1193 0e74 8B4500   		movl	0(%rbp), %eax
+ 1194 0e77 4C8B4424 		movq	24(%rsp), %r8
+ 1194      18
+ 1195 0e7c 8B7C240C 		movl	12(%rsp), %edi
+ 1196 0e80 83C001   		addl	$1, %eax
+ 1197 0e83 894500   		movl	%eax, 0(%rbp)
+ 1198 0e86 E9FEFCFF 		jmp	.L224
+ 1198      FF
+ 1199              	.L238:
+ 1200 0e8b 4C89FB   		movq	%r15, %rbx
+ 1201 0e8e E979F6FF 		jmp	.L145
+ 1201      FF
+ 1202              	.L185:
+ 1203 0e93 48635360 		movslq	96(%rbx), %rdx
+ 1204 0e97 4863432C 		movslq	44(%rbx), %rax
+ 1205 0e9b 488B7368 		movq	104(%rbx), %rsi
+ 1206 0e9f 488B4B70 		movq	112(%rbx), %rcx
+ 1207 0ea3 39C2     		cmpl	%eax, %edx
+ 1208 0ea5 7C4A     		jl	.L365
+ 1209 0ea7 C74486FC 		movl	$1, -4(%rsi,%rax,4)
+ 1209      01000000 
+ 1210 0eaf 4863432C 		movslq	44(%rbx), %rax
+ 1211 0eb3 48C1E003 		salq	$3, %rax
+ 1212 0eb7 48895C01 		movq	%rbx, -8(%rcx,%rax)
+ 1212      F8
+ 1213 0ebc 488B5378 		movq	120(%rbx), %rdx
+ 1214 0ec0 48C74402 		movq	$0, -8(%rdx,%rax)
+ 1214      F8000000 
+ 1214      00
+ 1215              	.L187:
+ 1216 0ec9 488B7C24 		movq	32(%rsp), %rdi
+ 1216      20
+ 1217 0ece E8000000 		call	free@PLT
+ 1217      00
+ 1218 0ed3 4C89F7   		movq	%r14, %rdi
+ 1219 0ed6 E8000000 		call	free@PLT
+ 1219      00
+ 1220 0edb 488B2D00 		movq	optind@GOTPCREL(%rip), %rbp
+ 1220      000000
+ 1221 0ee2 E907FCFF 		jmp	.L188
+ 1221      FF
+ 1222              	.L241:
+ 1223 0ee7 BD020000 		movl	$2, %ebp
+ 1223      00
+ 1224 0eec E901F9FF 		jmp	.L172
+ 1224      FF
+ 1225              	.L365:
+ 1226 0ef1 C7049602 		movl	$2, (%rsi,%rdx,4)
+ 1226      000000
+ 1227 0ef8 48635360 		movslq	96(%rbx), %rdx
+ 1228 0efc 48891CD1 		movq	%rbx, (%rcx,%rdx,8)
+ 1229 0f00 488B4B78 		movq	120(%rbx), %rcx
+ 1230 0f04 4889D0   		movq	%rdx, %rax
+ 1231 0f07 83C001   		addl	$1, %eax
+ 1232 0f0a 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 1232      00000000 
+ 1233 0f12 894360   		movl	%eax, 96(%rbx)
+ 1234 0f15 EBB2     		jmp	.L187
+ 1235              	.L239:
+ 1236 0f17 4531C0   		xorl	%r8d, %r8d
+ 1237 0f1a E970F8FF 		jmp	.L161
+ 1237      FF
+ 1238              	.L363:
+ 1239 0f1f C7049602 		movl	$2, (%rsi,%rdx,4)
+ 1239      000000
+ 1240 0f26 48635360 		movslq	96(%rbx), %rdx
+ 1241 0f2a 48891CD1 		movq	%rbx, (%rcx,%rdx,8)
+ 1242 0f2e 488B4B78 		movq	120(%rbx), %rcx
+ 1243 0f32 4889D0   		movq	%rdx, %rax
+ 1244 0f35 83C001   		addl	$1, %eax
+ 1245 0f38 48C704D1 		movq	$0, (%rcx,%rdx,8)
+ 1245      00000000 
+ 1246 0f40 894360   		movl	%eax, 96(%rbx)
+ 1247 0f43 E904F7FF 		jmp	.L140
+ 1247      FF
+ 1248              	.L364:
+ 1249 0f48 890497   		movl	%eax, (%rdi,%rdx,4)
+ 1250 0f4b 48634360 		movslq	96(%rbx), %rax
+ 1251 0f4f 488B7C24 		movq	32(%rsp), %rdi
+ 1251      20
+ 1252 0f54 48893CC6 		movq	%rdi, (%rsi,%rax,8)
+ 1253 0f58 488B7424 		movq	40(%rsp), %rsi
+ 1253      28
+ 1254 0f5d 4889C2   		movq	%rax, %rdx
+ 1255 0f60 488B4B78 		movq	120(%rbx), %rcx
+ 1256 0f64 83C201   		addl	$1, %edx
+ 1257 0f67 488934C1 		movq	%rsi, (%rcx,%rax,8)
+ 1258 0f6b 895360   		movl	%edx, 96(%rbx)
+ 1259 0f6e E901FFFF 		jmp	.L223
+ 1259      FF
+ 1260              	.L362:
+ 1261 0f73 48634500 		movslq	0(%rbp), %rax
+ 1262 0f77 4C8B5C24 		movq	24(%rsp), %r11
+ 1262      18
+ 1263 0f7c 4D8B44C3 		movq	-8(%r11,%rax,8), %r8
+ 1263      F8
+ 1264 0f81 C7049705 		movl	$5, (%rdi,%rdx,4)
+ 1264      000000
+ 1265 0f88 49635560 		movslq	96(%r13), %rdx
+ 1266 0f8c 4C892CD6 		movq	%r13, (%rsi,%rdx,8)
+ 1267 0f90 498B7578 		movq	120(%r13), %rsi
+ 1268 0f94 4889D0   		movq	%rdx, %rax
+ 1269 0f97 83C001   		addl	$1, %eax
+ 1270 0f9a 4C8904D6 		movq	%r8, (%rsi,%rdx,8)
+ 1271 0f9e 41894560 		movl	%eax, 96(%r13)
+ 1272 0fa2 488B01   		movq	(%rcx), %rax
+ 1273 0fa5 E902FAFF 		jmp	.L194
+ 1273      FF
+ 1274              	.L360:
+ 1275 0faa 4183C601 		addl	$1, %r14d
+ 1276 0fae 4D63FE   		movslq	%r14d, %r15
+ 1277 0fb1 E957FBFF 		jmp	.L211
+ 1277      FF
+ 1278              		.cfi_endproc
+ 1279              	.LFE49:
+ 1281              		.section	.rodata.str1.1
+ 1282              	.LC2:
+ 1283 0005 00       		.string	""
+ 1284              	.LC3:
+ 1285 0006 7C00     		.string	"|"
+ 1286              		.text
+ 1287 0fb6 662E0F1F 		.p2align 4,,15
+ 1287      84000000 
+ 1287      0000
+ 1288              		.globl	arg_print_option
+ 1290              	arg_print_option:
+ 1291              	.LFB53:
+ 1292              		.cfi_startproc
+ 1293 0fc0 4154     		pushq	%r12
+ 1294              		.cfi_def_cfa_offset 16
+ 1295              		.cfi_offset 12, -16
+ 1296 0fc2 55       		pushq	%rbp
+ 1297              		.cfi_def_cfa_offset 24
+ 1298              		.cfi_offset 6, -24
+ 1299 0fc3 4889FD   		movq	%rdi, %rbp
+ 1300 0fc6 53       		pushq	%rbx
+ 1301              		.cfi_def_cfa_offset 32
+ 1302              		.cfi_offset 3, -32
+ 1303 0fc7 4989CA   		movq	%rcx, %r10
+ 1304 0fca B9170000 		movl	$23, %ecx
+ 1304      00
+ 1305 0fcf 660FEFC0 		pxor	%xmm0, %xmm0
+ 1306 0fd3 4C8D0D00 		leaq	.LC3(%rip), %r9
+ 1306      000000
+ 1307 0fda 4881ECD0 		subq	$208, %rsp
+ 1307      000000
+ 1308              		.cfi_def_cfa_offset 240
+ 1309 0fe1 4C89C3   		movq	%r8, %rbx
+ 1310 0fe4 64488B04 		movq	%fs:40, %rax
+ 1310      25280000 
+ 1310      00
+ 1311 0fed 48898424 		movq	%rax, 200(%rsp)
+ 1311      C8000000 
+ 1312 0ff5 31C0     		xorl	%eax, %eax
+ 1313 0ff7 488D7C24 		leaq	16(%rsp), %rdi
+ 1313      10
+ 1314 0ffc 4D85C0   		testq	%r8, %r8
+ 1315 0fff 4989E4   		movq	%rsp, %r12
+ 1316 1002 0F290424 		movaps	%xmm0, (%rsp)
+ 1317 1006 F348AB   		rep stosq
+ 1318 1009 488D0500 		leaq	.LC2(%rip), %rax
+ 1318      000000
+ 1319 1010 4C89D1   		movq	%r10, %rcx
+ 1320 1013 4C89E7   		movq	%r12, %rdi
+ 1321 1016 480F44D8 		cmove	%rax, %rbx
+ 1322 101a 4531C0   		xorl	%r8d, %r8d
+ 1323 101d E8DEEFFF 		call	arg_cat_optionv.constprop.1
+ 1323      FF
+ 1324 1022 4889EE   		movq	%rbp, %rsi
+ 1325 1025 4C89E7   		movq	%r12, %rdi
+ 1326 1028 E8000000 		call	fputs@PLT
+ 1326      00
+ 1327 102d 4889EE   		movq	%rbp, %rsi
+ 1328 1030 4889DF   		movq	%rbx, %rdi
+ 1329 1033 E8000000 		call	fputs@PLT
+ 1329      00
+ 1330 1038 488B8424 		movq	200(%rsp), %rax
+ 1330      C8000000 
+ 1331 1040 64483304 		xorq	%fs:40, %rax
+ 1331      25280000 
+ 1331      00
+ 1332 1049 750C     		jne	.L370
+ 1333 104b 4881C4D0 		addq	$208, %rsp
+ 1333      000000
+ 1334              		.cfi_remember_state
+ 1335              		.cfi_def_cfa_offset 32
+ 1336 1052 5B       		popq	%rbx
+ 1337              		.cfi_def_cfa_offset 24
+ 1338 1053 5D       		popq	%rbp
+ 1339              		.cfi_def_cfa_offset 16
+ 1340 1054 415C     		popq	%r12
+ 1341              		.cfi_def_cfa_offset 8
+ 1342 1056 C3       		ret
+ 1343              	.L370:
+ 1344              		.cfi_restore_state
+ 1345 1057 E8000000 		call	__stack_chk_fail@PLT
+ 1345      00
+ 1346              		.cfi_endproc
+ 1347              	.LFE53:
+ 1349              		.section	.rodata.str1.1
+ 1350              	.LC4:
+ 1351 0008 205B2D25 		.string	" [-%c"
+ 1351      6300
+ 1352              	.LC5:
+ 1353 000e 202D2563 		.string	" -%c"
+ 1353      00
+ 1354              	.LC6:
+ 1355 0013 5B256300 		.string	"[%c"
+ 1356              	.LC7:
+ 1357 0017 256300   		.string	"%c"
+ 1358              	.LC8:
+ 1359 001a 5D00     		.string	"]"
+ 1360              	.LC9:
+ 1361 001c 257300   		.string	"%s"
+ 1362              	.LC10:
+ 1363 001f 20257300 		.string	" %s"
+ 1364              	.LC11:
+ 1365 0023 205B2573 		.string	" [%s]"
+ 1365      5D00
+ 1366              	.LC12:
+ 1367 0029 205B2573 		.string	" [%s] [%s]"
+ 1367      5D205B25 
+ 1367      735D00
+ 1368              	.LC13:
+ 1369 0034 205B2573 		.string	" [%s]..."
+ 1369      5D2E2E2E 
+ 1369      00
+ 1370              		.text
+ 1371 105c 0F1F4000 		.p2align 4,,15
+ 1372              		.globl	arg_print_syntax
+ 1374              	arg_print_syntax:
+ 1375              	.LFB55:
+ 1376              		.cfi_startproc
+ 1377 1060 4157     		pushq	%r15
+ 1378              		.cfi_def_cfa_offset 16
+ 1379              		.cfi_offset 15, -16
+ 1380 1062 4156     		pushq	%r14
+ 1381              		.cfi_def_cfa_offset 24
+ 1382              		.cfi_offset 14, -24
+ 1383 1064 4155     		pushq	%r13
+ 1384              		.cfi_def_cfa_offset 32
+ 1385              		.cfi_offset 13, -32
+ 1386 1066 4154     		pushq	%r12
+ 1387              		.cfi_def_cfa_offset 40
+ 1388              		.cfi_offset 12, -40
+ 1389 1068 4989FC   		movq	%rdi, %r12
+ 1390 106b 55       		pushq	%rbp
+ 1391              		.cfi_def_cfa_offset 48
+ 1392              		.cfi_offset 6, -48
+ 1393 106c 53       		pushq	%rbx
+ 1394              		.cfi_def_cfa_offset 56
+ 1395              		.cfi_offset 3, -56
+ 1396 106d 4889F3   		movq	%rsi, %rbx
+ 1397 1070 4881EC18 		subq	$280, %rsp
+ 1397      010000
+ 1398              		.cfi_def_cfa_offset 336
+ 1399 1077 64488B04 		movq	%fs:40, %rax
+ 1399      25280000 
+ 1399      00
+ 1400 1080 48898424 		movq	%rax, 264(%rsp)
+ 1400      08010000 
+ 1401 1088 31C0     		xorl	%eax, %eax
+ 1402 108a 488B06   		movq	(%rsi), %rax
+ 1403 108d 48895424 		movq	%rdx, 40(%rsp)
+ 1403      28
+ 1404 1092 4885C0   		testq	%rax, %rax
+ 1405 1095 0F84F606 		je	.L372
+ 1405      0000
+ 1406 109b 0FB608   		movzbl	(%rax), %ecx
+ 1407 109e F6C101   		testb	$1, %cl
+ 1408 10a1 0F85EA06 		jne	.L372
+ 1408      0000
+ 1409 10a7 488D6E08 		leaq	8(%rsi), %rbp
+ 1410 10ab 488D3D00 		leaq	.LC4(%rip), %rdi
+ 1410      000000
+ 1411 10b2 488D1500 		leaq	.LC5(%rip), %rdx
+ 1411      000000
+ 1412 10b9 4C8D3500 		leaq	.LC6(%rip), %r14
+ 1412      000000
+ 1413 10c0 4C8D2D00 		leaq	.LC7(%rip), %r13
+ 1413      000000
+ 1414 10c7 4989EF   		movq	%rbp, %r15
+ 1415 10ca EB10     		jmp	.L376
+ 1416 10cc 0F1F4000 		.p2align 4,,10
+ 1417              		.p2align 3
+ 1418              	.L374:
+ 1419 10d0 0FB608   		movzbl	(%rax), %ecx
+ 1420 10d3 4983C708 		addq	$8, %r15
+ 1421 10d7 F6C101   		testb	$1, %cl
+ 1422 10da 7535     		jne	.L377
+ 1423              	.L376:
+ 1424 10dc 8B7028   		movl	40(%rax), %esi
+ 1425 10df 85F6     		testl	%esi, %esi
+ 1426 10e1 7E26     		jle	.L373
+ 1427 10e3 488B4008 		movq	8(%rax), %rax
+ 1428 10e7 4885C0   		testq	%rax, %rax
+ 1429 10ea 741D     		je	.L373
+ 1430 10ec 83E102   		andl	$2, %ecx
+ 1431 10ef 7518     		jne	.L373
+ 1432 10f1 0FBE08   		movsbl	(%rax), %ecx
+ 1433 10f4 4C89E7   		movq	%r12, %rdi
+ 1434 10f7 BE010000 		movl	$1, %esi
+ 1434      00
+ 1435 10fc 31C0     		xorl	%eax, %eax
+ 1436 10fe E8000000 		call	__fprintf_chk@PLT
+ 1436      00
+ 1437 1103 4C89F7   		movq	%r14, %rdi
+ 1438 1106 4C89EA   		movq	%r13, %rdx
+ 1439              	.L373:
+ 1440 1109 498B07   		movq	(%r15), %rax
+ 1441 110c 4885C0   		testq	%rax, %rax
+ 1442 110f 75BF     		jne	.L374
+ 1443              	.L377:
+ 1444 1111 488B03   		movq	(%rbx), %rax
+ 1445 1114 4885C0   		testq	%rax, %rax
+ 1446 1117 0F847406 		je	.L372
+ 1446      0000
+ 1447 111d 0FB630   		movzbl	(%rax), %esi
+ 1448 1120 40F6C601 		testb	$1, %sil
+ 1449 1124 0F856706 		jne	.L372
+ 1449      0000
+ 1450 112a 488D0D00 		leaq	.LC2(%rip), %rcx
+ 1450      000000
+ 1451 1131 4C8D3500 		leaq	.LC8(%rip), %r14
+ 1451      000000
+ 1452 1138 4C8D2D00 		leaq	.LC7(%rip), %r13
+ 1452      000000
+ 1453 113f EB14     		jmp	.L380
+ 1454              		.p2align 4,,10
+ 1455 1141 0F1F8000 		.p2align 3
+ 1455      000000
+ 1456              	.L572:
+ 1457 1148 0FB630   		movzbl	(%rax), %esi
+ 1458 114b 4883C508 		addq	$8, %rbp
+ 1459 114f 40F6C601 		testb	$1, %sil
+ 1460 1153 7539     		jne	.L379
+ 1461              	.L380:
+ 1462 1155 8B5028   		movl	40(%rax), %edx
+ 1463 1158 85D2     		testl	%edx, %edx
+ 1464 115a 7F29     		jg	.L378
+ 1465 115c 488B4008 		movq	8(%rax), %rax
+ 1466 1160 4885C0   		testq	%rax, %rax
+ 1467 1163 7420     		je	.L378
+ 1468 1165 83E602   		andl	$2, %esi
+ 1469 1168 751B     		jne	.L378
+ 1470 116a 0FBE08   		movsbl	(%rax), %ecx
+ 1471 116d 4889FA   		movq	%rdi, %rdx
+ 1472 1170 BE010000 		movl	$1, %esi
+ 1472      00
+ 1473 1175 4C89E7   		movq	%r12, %rdi
+ 1474 1178 31C0     		xorl	%eax, %eax
+ 1475 117a E8000000 		call	__fprintf_chk@PLT
+ 1475      00
+ 1476 117f 4C89F1   		movq	%r14, %rcx
+ 1477 1182 4C89EF   		movq	%r13, %rdi
+ 1478              	.L378:
+ 1479 1185 488B4500 		movq	0(%rbp), %rax
+ 1480 1189 4885C0   		testq	%rax, %rax
+ 1481 118c 75BA     		jne	.L572
+ 1482              	.L379:
+ 1483 118e 488D1500 		leaq	.LC9(%rip), %rdx
+ 1483      000000
+ 1484 1195 31C0     		xorl	%eax, %eax
+ 1485 1197 BE010000 		movl	$1, %esi
+ 1485      00
+ 1486 119c 4C89E7   		movq	%r12, %rdi
+ 1487 119f E8000000 		call	__fprintf_chk@PLT
+ 1487      00
+ 1488 11a4 488B13   		movq	(%rbx), %rdx
+ 1489 11a7 4885D2   		testq	%rdx, %rdx
+ 1490 11aa 0F84BC00 		je	.L381
+ 1490      0000
+ 1491 11b0 F60201   		testb	$1, (%rdx)
+ 1492 11b3 0F85B300 		jne	.L381
+ 1492      0000
+ 1493 11b9 488D6C24 		leaq	64(%rsp), %rbp
+ 1493      40
+ 1494 11be 488D4424 		leaq	80(%rsp), %rax
+ 1494      50
+ 1495 11c3 4C8D3500 		leaq	.LC10(%rip), %r14
+ 1495      000000
+ 1496 11ca 4C8DADC8 		leaq	200(%rbp), %r13
+ 1496      000000
+ 1497 11d1 48894424 		movq	%rax, 8(%rsp)
+ 1497      08
+ 1498 11d6 662E0F1F 		.p2align 4,,10
+ 1498      84000000 
+ 1498      0000
+ 1499              		.p2align 3
+ 1500              	.L449:
+ 1501 11e0 488B7C24 		movq	8(%rsp), %rdi
+ 1501      08
+ 1502 11e5 31C0     		xorl	%eax, %eax
+ 1503 11e7 B9170000 		movl	$23, %ecx
+ 1503      00
+ 1504 11ec 660FEFC0 		pxor	%xmm0, %xmm0
+ 1505 11f0 F348AB   		rep stosq
+ 1506 11f3 0F294424 		movaps	%xmm0, 64(%rsp)
+ 1506      40
+ 1507 11f8 488B4A08 		movq	8(%rdx), %rcx
+ 1508 11fc 4885C9   		testq	%rcx, %rcx
+ 1509 11ff 0F84BB00 		je	.L382
+ 1509      0000
+ 1510 1205 0FB602   		movzbl	(%rdx), %eax
+ 1511 1208 A802     		testb	$2, %al
+ 1512 120a 744B     		je	.L384
+ 1513 120c 83E004   		andl	$4, %eax
+ 1514 120f 488B7218 		movq	24(%rdx), %rsi
+ 1515 1213 C644243D 		movb	$45, 61(%rsp)
+ 1515      2D
+ 1516 1218 89C7     		movl	%eax, %edi
+ 1517 121a 0FB601   		movzbl	(%rcx), %eax
+ 1518 121d C644243F 		movb	$0, 63(%rsp)
+ 1518      00
+ 1519 1222 8844243E 		movb	%al, 62(%rsp)
+ 1520 1226 4889E8   		movq	%rbp, %rax
+ 1521              	.L385:
+ 1522 1229 803800   		cmpb	$0, (%rax)
+ 1523 122c 0F840602 		je	.L573
+ 1523      0000
+ 1524 1232 4883C001 		addq	$1, %rax
+ 1525 1236 4C39E8   		cmpq	%r13, %rax
+ 1526 1239 75EE     		jne	.L385
+ 1527              	.L386:
+ 1528 123b 4885F6   		testq	%rsi, %rsi
+ 1529 123e C6842408 		movb	$0, 264(%rsp)
+ 1529      01000000 
+ 1530 1246 0F850403 		jne	.L574
+ 1530      0000
+ 1531              	.L408:
+ 1532 124c 807C2440 		cmpb	$0, 64(%rsp)
+ 1532      00
+ 1533 1251 0F856A01 		jne	.L575
+ 1533      0000
+ 1534              	.L384:
+ 1535 1257 4883C308 		addq	$8, %rbx
+ 1536 125b 488B13   		movq	(%rbx), %rdx
+ 1537 125e 4885D2   		testq	%rdx, %rdx
+ 1538 1261 7409     		je	.L381
+ 1539 1263 F60201   		testb	$1, (%rdx)
+ 1540 1266 0F8474FF 		je	.L449
+ 1540      FFFF
+ 1541              	.L381:
+ 1542 126c 488B4424 		movq	40(%rsp), %rax
+ 1542      28
+ 1543 1271 4885C0   		testq	%rax, %rax
+ 1544 1274 7419     		je	.L371
+ 1545 1276 488D1500 		leaq	.LC9(%rip), %rdx
+ 1545      000000
+ 1546 127d 4889C1   		movq	%rax, %rcx
+ 1547 1280 BE010000 		movl	$1, %esi
+ 1547      00
+ 1548 1285 4C89E7   		movq	%r12, %rdi
+ 1549 1288 31C0     		xorl	%eax, %eax
+ 1550 128a E8000000 		call	__fprintf_chk@PLT
+ 1550      00
+ 1551              	.L371:
+ 1552 128f 488B8424 		movq	264(%rsp), %rax
+ 1552      08010000 
+ 1553 1297 64483304 		xorq	%fs:40, %rax
+ 1553      25280000 
+ 1553      00
+ 1554 12a0 0F852405 		jne	.L576
+ 1554      0000
+ 1555 12a6 4881C418 		addq	$280, %rsp
+ 1555      010000
+ 1556              		.cfi_remember_state
+ 1557              		.cfi_def_cfa_offset 56
+ 1558 12ad 5B       		popq	%rbx
+ 1559              		.cfi_def_cfa_offset 48
+ 1560 12ae 5D       		popq	%rbp
+ 1561              		.cfi_def_cfa_offset 40
+ 1562 12af 415C     		popq	%r12
+ 1563              		.cfi_def_cfa_offset 32
+ 1564 12b1 415D     		popq	%r13
+ 1565              		.cfi_def_cfa_offset 24
+ 1566 12b3 415E     		popq	%r14
+ 1567              		.cfi_def_cfa_offset 16
+ 1568 12b5 415F     		popq	%r15
+ 1569              		.cfi_def_cfa_offset 8
+ 1570 12b7 C3       		ret
+ 1571 12b8 0F1F8400 		.p2align 4,,10
+ 1571      00000000 
+ 1572              		.p2align 3
+ 1573              	.L382:
+ 1574              		.cfi_restore_state
+ 1575 12c0 440FB63A 		movzbl	(%rdx), %r15d
+ 1576 12c4 4C8B5A10 		movq	16(%rdx), %r11
+ 1577 12c8 4C8B5218 		movq	24(%rdx), %r10
+ 1578 12cc 4183E704 		andl	$4, %r15d
+ 1579 12d0 4D85DB   		testq	%r11, %r11
+ 1580 12d3 44887C24 		movb	%r15b, 23(%rsp)
+ 1580      17
+ 1581 12d8 4989EF   		movq	%rbp, %r15
+ 1582 12db 0F843702 		je	.L577
+ 1582      0000
+ 1583              		.p2align 4,,10
+ 1584 12e1 0F1F8000 		.p2align 3
+ 1584      000000
+ 1585              	.L409:
+ 1586 12e8 41803F00 		cmpb	$0, (%r15)
+ 1587 12ec 0F847E02 		je	.L578
+ 1587      0000
+ 1588 12f2 4983C701 		addq	$1, %r15
+ 1589 12f6 4D39EF   		cmpq	%r13, %r15
+ 1590 12f9 75ED     		jne	.L409
+ 1591              	.L410:
+ 1592 12fb 488D3500 		leaq	.LC1(%rip), %rsi
+ 1592      000000
+ 1593 1302 4C89DF   		movq	%r11, %rdi
+ 1594 1305 41C60700 		movb	$0, (%r15)
+ 1595 1309 4C895424 		movq	%r10, 32(%rsp)
+ 1595      20
+ 1596 130e 4C895C24 		movq	%r11, 24(%rsp)
+ 1596      18
+ 1597 1313 E8000000 		call	strcspn@PLT
+ 1597      00
+ 1598 1318 4C8B5C24 		movq	24(%rsp), %r11
+ 1598      18
+ 1599 131d 4C89EA   		movq	%r13, %rdx
+ 1600 1320 B9C80000 		movl	$200, %ecx
+ 1600      00
+ 1601 1325 4C29FA   		subq	%r15, %rdx
+ 1602 1328 4C89FF   		movq	%r15, %rdi
+ 1603 132b 4839C2   		cmpq	%rax, %rdx
+ 1604 132e 480F47D0 		cmova	%rax, %rdx
+ 1605 1332 4C89DE   		movq	%r11, %rsi
+ 1606 1335 E8000000 		call	__strncat_chk@PLT
+ 1606      00
+ 1607 133a 4C8B5424 		movq	32(%rsp), %r10
+ 1607      20
+ 1608 133f 4D85D2   		testq	%r10, %r10
+ 1609 1342 0F8404FF 		je	.L408
+ 1609      FFFF
+ 1610              	.L416:
+ 1611 1348 807C2417 		cmpb	$0, 23(%rsp)
+ 1611      00
+ 1612 134d 41C60700 		movb	$0, (%r15)
+ 1613 1351 0F84B903 		je	.L460
+ 1613      0000
+ 1614 1357 4D39EF   		cmpq	%r13, %r15
+ 1615 135a 0F836204 		jnb	.L579
+ 1615      0000
+ 1616 1360 498D4701 		leaq	1(%r15), %rax
+ 1617 1364 41C6075B 		movb	$91, (%r15)
+ 1618 1368 4C39E8   		cmpq	%r13, %rax
+ 1619 136b 0F830303 		jnb	.L580
+ 1619      0000
+ 1620              	.L467:
+ 1621 1371 41C64701 		movb	$0, 1(%r15)
+ 1621      00
+ 1622 1376 EB18     		jmp	.L566
+ 1623 1378 0F1F8400 		.p2align 4,,10
+ 1623      00000000 
+ 1624              		.p2align 3
+ 1625              	.L424:
+ 1626 1380 4883C001 		addq	$1, %rax
+ 1627 1384 4983C201 		addq	$1, %r10
+ 1628 1388 8850FF   		movb	%dl, -1(%rax)
+ 1629 138b 4C39E8   		cmpq	%r13, %rax
+ 1630 138e 7410     		je	.L437
+ 1631              	.L566:
+ 1632 1390 410FB612 		movzbl	(%r10), %edx
+ 1633 1394 84D2     		testb	%dl, %dl
+ 1634 1396 75E8     		jne	.L424
+ 1635 1398 0F1F8400 		.p2align 4,,10
+ 1635      00000000 
+ 1636              		.p2align 3
+ 1637              	.L437:
+ 1638 13a0 4C39E8   		cmpq	%r13, %rax
+ 1639 13a3 C60000   		movb	$0, (%rax)
+ 1640 13a6 0F833301 		jnb	.L482
+ 1640      0000
+ 1641              	.L585:
+ 1642 13ac 488D5001 		leaq	1(%rax), %rdx
+ 1643 13b0 C6005D   		movb	$93, (%rax)
+ 1644              	.L435:
+ 1645 13b3 C60200   		movb	$0, (%rdx)
+ 1646              	.L586:
+ 1647 13b6 807C2440 		cmpb	$0, 64(%rsp)
+ 1647      00
+ 1648 13bb 0F8496FE 		je	.L384
+ 1648      FFFF
+ 1649              	.L575:
+ 1650 13c1 488B13   		movq	(%rbx), %rdx
+ 1651 13c4 8B4228   		movl	40(%rdx), %eax
+ 1652 13c7 85C0     		testl	%eax, %eax
+ 1653 13c9 7E29     		jle	.L444
+ 1654 13cb 4531FF   		xorl	%r15d, %r15d
+ 1655 13ce 6690     		.p2align 4,,10
+ 1656              		.p2align 3
+ 1657              	.L445:
+ 1658 13d0 4C89F2   		movq	%r14, %rdx
+ 1659 13d3 31C0     		xorl	%eax, %eax
+ 1660 13d5 4889E9   		movq	%rbp, %rcx
+ 1661 13d8 BE010000 		movl	$1, %esi
+ 1661      00
+ 1662 13dd 4C89E7   		movq	%r12, %rdi
+ 1663 13e0 4183C701 		addl	$1, %r15d
+ 1664 13e4 E8000000 		call	__fprintf_chk@PLT
+ 1664      00
+ 1665 13e9 488B13   		movq	(%rbx), %rdx
+ 1666 13ec 8B4228   		movl	40(%rdx), %eax
+ 1667 13ef 4439F8   		cmpl	%r15d, %eax
+ 1668 13f2 7FDC     		jg	.L445
+ 1669              	.L444:
+ 1670 13f4 8B522C   		movl	44(%rdx), %edx
+ 1671 13f7 29C2     		subl	%eax, %edx
+ 1672 13f9 83FA01   		cmpl	$1, %edx
+ 1673 13fc 0F84CE02 		je	.L447
+ 1673      0000
+ 1674 1402 83FA02   		cmpl	$2, %edx
+ 1675 1405 0F849D02 		je	.L448
+ 1675      0000
+ 1676 140b 85D2     		testl	%edx, %edx
+ 1677 140d 0F8444FE 		je	.L384
+ 1677      FFFF
+ 1678 1413 488D1500 		leaq	.LC13(%rip), %rdx
+ 1678      000000
+ 1679 141a 4889E9   		movq	%rbp, %rcx
+ 1680 141d BE010000 		movl	$1, %esi
+ 1680      00
+ 1681 1422 4C89E7   		movq	%r12, %rdi
+ 1682 1425 31C0     		xorl	%eax, %eax
+ 1683 1427 E8000000 		call	__fprintf_chk@PLT
+ 1683      00
+ 1684 142c E926FEFF 		jmp	.L384
+ 1684      FF
+ 1685              		.p2align 4,,10
+ 1686 1431 0F1F8000 		.p2align 3
+ 1686      000000
+ 1687              	.L573:
+ 1688 1438 4C39E8   		cmpq	%r13, %rax
+ 1689 143b 0F838E03 		jnb	.L581
+ 1689      0000
+ 1690 1441 B92D0000 		movl	$45, %ecx
+ 1690      00
+ 1691 1446 488D5424 		leaq	61(%rsp), %rdx
+ 1691      3D
+ 1692 144b EB0A     		jmp	.L387
+ 1693 144d 0F1F00   		.p2align 4,,10
+ 1694              		.p2align 3
+ 1695              	.L583:
+ 1696 1450 0FB60A   		movzbl	(%rdx), %ecx
+ 1697 1453 84C9     		testb	%cl, %cl
+ 1698 1455 7419     		je	.L582
+ 1699              	.L387:
+ 1700 1457 4883C001 		addq	$1, %rax
+ 1701 145b 4883C201 		addq	$1, %rdx
+ 1702 145f 8848FF   		movb	%cl, -1(%rax)
+ 1703 1462 4C39E8   		cmpq	%r13, %rax
+ 1704 1465 75E9     		jne	.L583
+ 1705 1467 E9CFFDFF 		jmp	.L386
+ 1705      FF
+ 1706 146c 0F1F4000 		.p2align 4,,10
+ 1707              		.p2align 3
+ 1708              	.L582:
+ 1709 1470 4885F6   		testq	%rsi, %rsi
+ 1710 1473 C60000   		movb	$0, (%rax)
+ 1711 1476 0F84D0FD 		je	.L408
+ 1711      FFFF
+ 1712 147c 4C39E8   		cmpq	%r13, %rax
+ 1713 147f 0F832903 		jnb	.L396
+ 1713      0000
+ 1714 1485 488D5001 		leaq	1(%rax), %rdx
+ 1715 1489 C60020   		movb	$32, (%rax)
+ 1716 148c 4C39EA   		cmpq	%r13, %rdx
+ 1717 148f 0F83C200 		jnb	.L395
+ 1717      0000
+ 1718 1495 4084FF   		testb	%dil, %dil
+ 1719 1498 C6400100 		movb	$0, 1(%rax)
+ 1720 149c 7466     		je	.L398
+ 1721 149e 4883C002 		addq	$2, %rax
+ 1722 14a2 C6025B   		movb	$91, (%rdx)
+ 1723 14a5 4C39E8   		cmpq	%r13, %rax
+ 1724 14a8 0F834002 		jnb	.L584
+ 1724      0000
+ 1725 14ae C6420100 		movb	$0, 1(%rdx)
+ 1726 14b2 EB18     		jmp	.L565
+ 1727              		.p2align 4,,10
+ 1728 14b4 0F1F4000 		.p2align 3
+ 1729              	.L405:
+ 1730 14b8 4883C001 		addq	$1, %rax
+ 1731 14bc 4883C601 		addq	$1, %rsi
+ 1732 14c0 8850FF   		movb	%dl, -1(%rax)
+ 1733 14c3 4C39E8   		cmpq	%r13, %rax
+ 1734 14c6 0F84D4FE 		je	.L437
+ 1734      FFFF
+ 1735              	.L565:
+ 1736 14cc 0FB616   		movzbl	(%rsi), %edx
+ 1737 14cf 84D2     		testb	%dl, %dl
+ 1738 14d1 75E5     		jne	.L405
+ 1739 14d3 4C39E8   		cmpq	%r13, %rax
+ 1740 14d6 C60000   		movb	$0, (%rax)
+ 1741 14d9 0F82CDFE 		jb	.L585
+ 1741      FFFF
+ 1742              	.L482:
+ 1743 14df 4889C2   		movq	%rax, %rdx
+ 1744 14e2 E9CCFEFF 		jmp	.L435
+ 1744      FF
+ 1745 14e7 660F1F84 		.p2align 4,,10
+ 1745      00000000 
+ 1745      00
+ 1746              		.p2align 3
+ 1747              	.L407:
+ 1748 14f0 4883C201 		addq	$1, %rdx
+ 1749 14f4 4883C601 		addq	$1, %rsi
+ 1750 14f8 8842FF   		movb	%al, -1(%rdx)
+ 1751 14fb 4C39EA   		cmpq	%r13, %rdx
+ 1752 14fe 0F84AFFE 		je	.L435
+ 1752      FFFF
+ 1753              	.L398:
+ 1754 1504 0FB606   		movzbl	(%rsi), %eax
+ 1755 1507 84C0     		testb	%al, %al
+ 1756 1509 75E5     		jne	.L407
+ 1757 150b C60200   		movb	$0, (%rdx)
+ 1758 150e E9A3FEFF 		jmp	.L586
+ 1758      FF
+ 1759              		.p2align 4,,10
+ 1760 1513 0F1F4400 		.p2align 3
+ 1760      00
+ 1761              	.L577:
+ 1762 1518 4D85D2   		testq	%r10, %r10
+ 1763 151b 0F842BFD 		je	.L408
+ 1763      FFFF
+ 1764 1521 807C2417 		cmpb	$0, 23(%rsp)
+ 1764      00
+ 1765 1526 4889E8   		movq	%rbp, %rax
+ 1766 1529 0F858100 		jne	.L587
+ 1766      0000
+ 1767 152f 90       		.p2align 4,,10
+ 1768              		.p2align 3
+ 1769              	.L428:
+ 1770 1530 803800   		cmpb	$0, (%rax)
+ 1771 1533 0F84E701 		je	.L588
+ 1771      0000
+ 1772 1539 4883C001 		addq	$1, %rax
+ 1773 153d 4C39E8   		cmpq	%r13, %rax
+ 1774 1540 75EE     		jne	.L428
+ 1775              	.L439:
+ 1776 1542 C60000   		movb	$0, (%rax)
+ 1777 1545 E902FDFF 		jmp	.L408
+ 1777      FF
+ 1778 154a 660F1F44 		.p2align 4,,10
+ 1778      0000
+ 1779              		.p2align 3
+ 1780              	.L574:
+ 1781 1550 488D95C8 		leaq	200(%rbp), %rdx
+ 1781      000000
+ 1782              	.L395:
+ 1783 1557 4084FF   		testb	%dil, %dil
+ 1784 155a C60200   		movb	$0, (%rdx)
+ 1785 155d 0F855702 		jne	.L400
+ 1785      0000
+ 1786 1563 4C39EA   		cmpq	%r13, %rdx
+ 1787 1566 729C     		jb	.L398
+ 1788 1568 E946FEFF 		jmp	.L435
+ 1788      FF
+ 1789 156d 0F1F00   		.p2align 4,,10
+ 1790              		.p2align 3
+ 1791              	.L578:
+ 1792 1570 4D39EF   		cmpq	%r13, %r15
+ 1793 1573 0F8382FD 		jnb	.L410
+ 1793      FFFF
+ 1794 1579 BA2D0000 		movl	$45, %edx
+ 1794      00
+ 1795 157e 488D0500 		leaq	.LC0(%rip), %rax
+ 1795      000000
+ 1796 1585 EB10     		jmp	.L411
+ 1797 1587 660F1F84 		.p2align 4,,10
+ 1797      00000000 
+ 1797      00
+ 1798              		.p2align 3
+ 1799              	.L590:
+ 1800 1590 0FB610   		movzbl	(%rax), %edx
+ 1801 1593 84D2     		testb	%dl, %dl
+ 1802 1595 7449     		je	.L589
+ 1803              	.L411:
+ 1804 1597 4983C701 		addq	$1, %r15
+ 1805 159b 4883C001 		addq	$1, %rax
+ 1806 159f 418857FF 		movb	%dl, -1(%r15)
+ 1807 15a3 4D39EF   		cmpq	%r13, %r15
+ 1808 15a6 75E8     		jne	.L590
+ 1809 15a8 E94EFDFF 		jmp	.L410
+ 1809      FF
+ 1810 15ad 0F1F00   		.p2align 4,,10
+ 1811              		.p2align 3
+ 1812              	.L587:
+ 1813 15b0 4889EA   		movq	%rbp, %rdx
+ 1814              		.p2align 4,,10
+ 1815 15b3 0F1F4400 		.p2align 3
+ 1815      00
+ 1816              	.L427:
+ 1817 15b8 803A00   		cmpb	$0, (%rdx)
+ 1818 15bb 0F849701 		je	.L591
+ 1818      0000
+ 1819 15c1 4883C201 		addq	$1, %rdx
+ 1820 15c5 4C39EA   		cmpq	%r13, %rdx
+ 1821 15c8 75EE     		jne	.L427
+ 1822 15ca C6842408 		movb	$0, 264(%rsp)
+ 1822      01000000 
+ 1823 15d2 4C89EA   		movq	%r13, %rdx
+ 1824 15d5 E9D9FDFF 		jmp	.L435
+ 1824      FF
+ 1825 15da 660F1F44 		.p2align 4,,10
+ 1825      0000
+ 1826              		.p2align 3
+ 1827              	.L589:
+ 1828 15e0 488D3500 		leaq	.LC1(%rip), %rsi
+ 1828      000000
+ 1829 15e7 4C89DF   		movq	%r11, %rdi
+ 1830 15ea 41C60700 		movb	$0, (%r15)
+ 1831 15ee 4C895424 		movq	%r10, 32(%rsp)
+ 1831      20
+ 1832 15f3 4C895C24 		movq	%r11, 24(%rsp)
+ 1832      18
+ 1833 15f8 E8000000 		call	strcspn@PLT
+ 1833      00
+ 1834 15fd 4C8B5C24 		movq	24(%rsp), %r11
+ 1834      18
+ 1835 1602 4C89EA   		movq	%r13, %rdx
+ 1836 1605 B9C80000 		movl	$200, %ecx
+ 1836      00
+ 1837 160a 4C29FA   		subq	%r15, %rdx
+ 1838 160d 4C89FF   		movq	%r15, %rdi
+ 1839 1610 4839C2   		cmpq	%rax, %rdx
+ 1840 1613 480F47D0 		cmova	%rax, %rdx
+ 1841 1617 4C89DE   		movq	%r11, %rsi
+ 1842 161a E8000000 		call	__strncat_chk@PLT
+ 1842      00
+ 1843 161f 4C8B5424 		movq	32(%rsp), %r10
+ 1843      20
+ 1844 1624 4D85D2   		testq	%r10, %r10
+ 1845 1627 7514     		jne	.L456
+ 1846 1629 E91EFCFF 		jmp	.L408
+ 1846      FF
+ 1847 162e 6690     		.p2align 4,,10
+ 1848              		.p2align 3
+ 1849              	.L592:
+ 1850 1630 4983C701 		addq	$1, %r15
+ 1851 1634 4D39EF   		cmpq	%r13, %r15
+ 1852 1637 0F830BFD 		jnb	.L416
+ 1852      FFFF
+ 1853              	.L456:
+ 1854 163d 41803F00 		cmpb	$0, (%r15)
+ 1855 1641 75ED     		jne	.L592
+ 1856 1643 498D5701 		leaq	1(%r15), %rdx
+ 1857 1647 41C6073D 		movb	$61, (%r15)
+ 1858 164b 4C39EA   		cmpq	%r13, %rdx
+ 1859 164e 0F83A300 		jnb	.L593
+ 1859      0000
+ 1860 1654 807C2417 		cmpb	$0, 23(%rsp)
+ 1860      00
+ 1861 1659 41C64701 		movb	$0, 1(%r15)
+ 1861      00
+ 1862 165e 4989D7   		movq	%rdx, %r15
+ 1863 1661 742E     		je	.L418
+ 1864 1663 498D4701 		leaq	1(%r15), %rax
+ 1865 1667 41C6075B 		movb	$91, (%r15)
+ 1866 166b 4C39E8   		cmpq	%r13, %rax
+ 1867 166e 0F82FDFC 		jb	.L467
+ 1867      FFFF
+ 1868              	.L580:
+ 1869 1674 41C64701 		movb	$0, 1(%r15)
+ 1869      00
+ 1870 1679 E922FDFF 		jmp	.L437
+ 1870      FF
+ 1871 167e 6690     		.p2align 4,,10
+ 1872              		.p2align 3
+ 1873              	.L594:
+ 1874 1680 4983C701 		addq	$1, %r15
+ 1875 1684 4983C201 		addq	$1, %r10
+ 1876 1688 418847FF 		movb	%al, -1(%r15)
+ 1877 168c 4D39EF   		cmpq	%r13, %r15
+ 1878 168f 7408     		je	.L419
+ 1879              	.L418:
+ 1880 1691 410FB602 		movzbl	(%r10), %eax
+ 1881 1695 84C0     		testb	%al, %al
+ 1882 1697 75E7     		jne	.L594
+ 1883              	.L419:
+ 1884 1699 41C60700 		movb	$0, (%r15)
+ 1885 169d E9AAFBFF 		jmp	.L408
+ 1885      FF
+ 1886              		.p2align 4,,10
+ 1887 16a2 660F1F44 		.p2align 3
+ 1887      0000
+ 1888              	.L448:
+ 1889 16a8 488D1500 		leaq	.LC12(%rip), %rdx
+ 1889      000000
+ 1890 16af 4989E8   		movq	%rbp, %r8
+ 1891 16b2 4889E9   		movq	%rbp, %rcx
+ 1892 16b5 BE010000 		movl	$1, %esi
+ 1892      00
+ 1893 16ba 4C89E7   		movq	%r12, %rdi
+ 1894 16bd 31C0     		xorl	%eax, %eax
+ 1895 16bf E8000000 		call	__fprintf_chk@PLT
+ 1895      00
+ 1896 16c4 E98EFBFF 		jmp	.L384
+ 1896      FF
+ 1897 16c9 0F1F8000 		.p2align 4,,10
+ 1897      000000
+ 1898              		.p2align 3
+ 1899              	.L447:
+ 1900 16d0 488D1500 		leaq	.LC11(%rip), %rdx
+ 1900      000000
+ 1901 16d7 4889E9   		movq	%rbp, %rcx
+ 1902 16da BE010000 		movl	$1, %esi
+ 1902      00
+ 1903 16df 4C89E7   		movq	%r12, %rdi
+ 1904 16e2 31C0     		xorl	%eax, %eax
+ 1905 16e4 E8000000 		call	__fprintf_chk@PLT
+ 1905      00
+ 1906 16e9 E969FBFF 		jmp	.L384
+ 1906      FF
+ 1907              	.L584:
+ 1908 16ee C6420100 		movb	$0, 1(%rdx)
+ 1909 16f2 E9A9FCFF 		jmp	.L437
+ 1909      FF
+ 1910              	.L593:
+ 1911 16f7 807C2417 		cmpb	$0, 23(%rsp)
+ 1911      00
+ 1912 16fc 41C64701 		movb	$0, 1(%r15)
+ 1912      00
+ 1913 1701 4989D7   		movq	%rdx, %r15
+ 1914 1704 0F85A9FC 		jne	.L435
+ 1914      FFFF
+ 1915 170a 660F1F44 		.p2align 4,,10
+ 1915      0000
+ 1916              		.p2align 3
+ 1917              	.L460:
+ 1918 1710 4D39EF   		cmpq	%r13, %r15
+ 1919 1713 0F8278FF 		jb	.L418
+ 1919      FFFF
+ 1920 1719 E97BFFFF 		jmp	.L419
+ 1920      FF
+ 1921 171e 6690     		.p2align 4,,10
+ 1922              		.p2align 3
+ 1923              	.L588:
+ 1924 1720 4C39E8   		cmpq	%r13, %rax
+ 1925 1723 721F     		jb	.L567
+ 1926 1725 E918FEFF 		jmp	.L439
+ 1926      FF
+ 1927 172a 660F1F44 		.p2align 4,,10
+ 1927      0000
+ 1928              		.p2align 3
+ 1929              	.L440:
+ 1930 1730 4883C001 		addq	$1, %rax
+ 1931 1734 4983C201 		addq	$1, %r10
+ 1932 1738 8850FF   		movb	%dl, -1(%rax)
+ 1933 173b 4C39E8   		cmpq	%r13, %rax
+ 1934 173e 0F84FEFD 		je	.L439
+ 1934      FFFF
+ 1935              	.L567:
+ 1936 1744 410FB612 		movzbl	(%r10), %edx
+ 1937 1748 84D2     		testb	%dl, %dl
+ 1938 174a 75E4     		jne	.L440
+ 1939 174c C60000   		movb	$0, (%rax)
+ 1940 174f E9F8FAFF 		jmp	.L408
+ 1940      FF
+ 1941              		.p2align 4,,10
+ 1942 1754 0F1F4000 		.p2align 3
+ 1943              	.L591:
+ 1944 1758 4C39EA   		cmpq	%r13, %rdx
+ 1945 175b 7340     		jnb	.L595
+ 1946 175d 488D4201 		leaq	1(%rdx), %rax
+ 1947 1761 C6025B   		movb	$91, (%rdx)
+ 1948 1764 4C39E8   		cmpq	%r13, %rax
+ 1949 1767 7337     		jnb	.L431
+ 1950 1769 C6420100 		movb	$0, 1(%rdx)
+ 1951 176d EB15     		jmp	.L463
+ 1952 176f 90       		.p2align 4,,10
+ 1953              		.p2align 3
+ 1954              	.L596:
+ 1955 1770 4883C001 		addq	$1, %rax
+ 1956 1774 4983C201 		addq	$1, %r10
+ 1957 1778 8850FF   		movb	%dl, -1(%rax)
+ 1958 177b 4C39E8   		cmpq	%r13, %rax
+ 1959 177e 0F841CFC 		je	.L437
+ 1959      FFFF
+ 1960              	.L463:
+ 1961 1784 410FB612 		movzbl	(%r10), %edx
+ 1962 1788 84D2     		testb	%dl, %dl
+ 1963 178a 75E4     		jne	.L596
+ 1964 178c E90FFCFF 		jmp	.L437
+ 1964      FF
+ 1965              	.L372:
+ 1966 1791 488D0D00 		leaq	.LC2(%rip), %rcx
+ 1966      000000
+ 1967 1798 E9F1F9FF 		jmp	.L379
+ 1967      FF
+ 1968              	.L595:
+ 1969 179d 4889D0   		movq	%rdx, %rax
+ 1970              	.L431:
+ 1971 17a0 4C39E8   		cmpq	%r13, %rax
+ 1972 17a3 C60000   		movb	$0, (%rax)
+ 1973 17a6 0F83F4FB 		jnb	.L437
+ 1973      FFFF
+ 1974 17ac EBD6     		jmp	.L463
+ 1975              	.L396:
+ 1976 17ae 4084FF   		testb	%dil, %dil
+ 1977 17b1 4889C2   		movq	%rax, %rdx
+ 1978 17b4 0F84F9FB 		je	.L435
+ 1978      FFFF
+ 1979              	.L400:
+ 1980 17ba C60200   		movb	$0, (%rdx)
+ 1981 17bd E9F1FBFF 		jmp	.L435
+ 1981      FF
+ 1982              	.L579:
+ 1983 17c2 4C89FA   		movq	%r15, %rdx
+ 1984 17c5 E9E9FBFF 		jmp	.L435
+ 1984      FF
+ 1985              	.L576:
+ 1986 17ca E8000000 		call	__stack_chk_fail@PLT
+ 1986      00
+ 1987              	.L581:
+ 1988 17cf 4885F6   		testq	%rsi, %rsi
+ 1989 17d2 4889C2   		movq	%rax, %rdx
+ 1990 17d5 0F857CFD 		jne	.L395
+ 1990      FFFF
+ 1991 17db E96CFAFF 		jmp	.L408
+ 1991      FF
+ 1992              		.cfi_endproc
+ 1993              	.LFE55:
+ 1995              		.p2align 4,,15
+ 1996              		.globl	arg_print_syntaxv
+ 1998              	arg_print_syntaxv:
+ 1999              	.LFB56:
+ 2000              		.cfi_startproc
+ 2001 17e0 4157     		pushq	%r15
+ 2002              		.cfi_def_cfa_offset 16
+ 2003              		.cfi_offset 15, -16
+ 2004 17e2 4156     		pushq	%r14
+ 2005              		.cfi_def_cfa_offset 24
+ 2006              		.cfi_offset 14, -24
+ 2007 17e4 4155     		pushq	%r13
+ 2008              		.cfi_def_cfa_offset 32
+ 2009              		.cfi_offset 13, -32
+ 2010 17e6 4154     		pushq	%r12
+ 2011              		.cfi_def_cfa_offset 40
+ 2012              		.cfi_offset 12, -40
+ 2013 17e8 4989FC   		movq	%rdi, %r12
+ 2014 17eb 55       		pushq	%rbp
+ 2015              		.cfi_def_cfa_offset 48
+ 2016              		.cfi_offset 6, -48
+ 2017 17ec 53       		pushq	%rbx
+ 2018              		.cfi_def_cfa_offset 56
+ 2019              		.cfi_offset 3, -56
+ 2020 17ed 4889F3   		movq	%rsi, %rbx
+ 2021 17f0 4881ECE8 		subq	$232, %rsp
+ 2021      000000
+ 2022              		.cfi_def_cfa_offset 288
+ 2023 17f7 488B36   		movq	(%rsi), %rsi
+ 2024 17fa 64488B04 		movq	%fs:40, %rax
+ 2024      25280000 
+ 2024      00
+ 2025 1803 48898424 		movq	%rax, 216(%rsp)
+ 2025      D8000000 
+ 2026 180b 31C0     		xorl	%eax, %eax
+ 2027 180d 48895424 		movq	%rdx, 8(%rsp)
+ 2027      08
+ 2028 1812 4885F6   		testq	%rsi, %rsi
+ 2029 1815 0F84DA00 		je	.L598
+ 2029      0000
+ 2030 181b F60601   		testb	$1, (%rsi)
+ 2031 181e 0F85D100 		jne	.L598
+ 2031      0000
+ 2032 1824 4C8D7424 		leaq	32(%rsp), %r14
+ 2032      20
+ 2033 1829 488D6C24 		leaq	16(%rsp), %rbp
+ 2033      10
+ 2034 182e 4C8D2D00 		leaq	.LC10(%rip), %r13
+ 2034      000000
+ 2035              		.p2align 4,,10
+ 2036 1835 0F1F00   		.p2align 3
+ 2037              	.L605:
+ 2038 1838 31C0     		xorl	%eax, %eax
+ 2039 183a B9170000 		movl	$23, %ecx
+ 2039      00
+ 2040 183f 4C89F7   		movq	%r14, %rdi
+ 2041 1842 F348AB   		rep stosq
+ 2042 1845 660FEFC0 		pxor	%xmm0, %xmm0
+ 2043 1849 4C8D0D00 		leaq	.LC3(%rip), %r9
+ 2043      000000
+ 2044 1850 4889EF   		movq	%rbp, %rdi
+ 2045 1853 0F294424 		movaps	%xmm0, 16(%rsp)
+ 2045      10
+ 2046 1858 440FB606 		movzbl	(%rsi), %r8d
+ 2047 185c 488B5610 		movq	16(%rsi), %rdx
+ 2048 1860 488B4E18 		movq	24(%rsi), %rcx
+ 2049 1864 488B7608 		movq	8(%rsi), %rsi
+ 2050 1868 4183E004 		andl	$4, %r8d
+ 2051 186c 450FBEC0 		movsbl	%r8b, %r8d
+ 2052 1870 E88BE7FF 		call	arg_cat_optionv.constprop.1
+ 2052      FF
+ 2053 1875 488B13   		movq	(%rbx), %rdx
+ 2054 1878 8B4228   		movl	40(%rdx), %eax
+ 2055 187b 85C0     		testl	%eax, %eax
+ 2056 187d 7E2D     		jle	.L599
+ 2057 187f 4531FF   		xorl	%r15d, %r15d
+ 2058              		.p2align 4,,10
+ 2059 1882 660F1F44 		.p2align 3
+ 2059      0000
+ 2060              	.L600:
+ 2061 1888 4C89EA   		movq	%r13, %rdx
+ 2062 188b 31C0     		xorl	%eax, %eax
+ 2063 188d 4889E9   		movq	%rbp, %rcx
+ 2064 1890 BE010000 		movl	$1, %esi
+ 2064      00
+ 2065 1895 4C89E7   		movq	%r12, %rdi
+ 2066 1898 4183C701 		addl	$1, %r15d
+ 2067 189c E8000000 		call	__fprintf_chk@PLT
+ 2067      00
+ 2068 18a1 488B13   		movq	(%rbx), %rdx
+ 2069 18a4 8B4228   		movl	40(%rdx), %eax
+ 2070 18a7 4439F8   		cmpl	%r15d, %eax
+ 2071 18aa 7FDC     		jg	.L600
+ 2072              	.L599:
+ 2073 18ac 8B522C   		movl	44(%rdx), %edx
+ 2074 18af 29C2     		subl	%eax, %edx
+ 2075 18b1 83FA01   		cmpl	$1, %edx
+ 2076 18b4 0F848600 		je	.L602
+ 2076      0000
+ 2077 18ba 83FA02   		cmpl	$2, %edx
+ 2078 18bd 0F849D00 		je	.L603
+ 2078      0000
+ 2079 18c3 85D2     		testl	%edx, %edx
+ 2080 18c5 7419     		je	.L604
+ 2081 18c7 488D1500 		leaq	.LC13(%rip), %rdx
+ 2081      000000
+ 2082 18ce 4889E9   		movq	%rbp, %rcx
+ 2083 18d1 BE010000 		movl	$1, %esi
+ 2083      00
+ 2084 18d6 4C89E7   		movq	%r12, %rdi
+ 2085 18d9 31C0     		xorl	%eax, %eax
+ 2086 18db E8000000 		call	__fprintf_chk@PLT
+ 2086      00
+ 2087              	.L604:
+ 2088 18e0 4883C308 		addq	$8, %rbx
+ 2089 18e4 488B33   		movq	(%rbx), %rsi
+ 2090 18e7 4885F6   		testq	%rsi, %rsi
+ 2091 18ea 7409     		je	.L598
+ 2092 18ec F60601   		testb	$1, (%rsi)
+ 2093 18ef 0F8443FF 		je	.L605
+ 2093      FFFF
+ 2094              	.L598:
+ 2095 18f5 488B4424 		movq	8(%rsp), %rax
+ 2095      08
+ 2096 18fa 4885C0   		testq	%rax, %rax
+ 2097 18fd 7419     		je	.L597
+ 2098 18ff 488D1500 		leaq	.LC9(%rip), %rdx
+ 2098      000000
+ 2099 1906 4889C1   		movq	%rax, %rcx
+ 2100 1909 BE010000 		movl	$1, %esi
+ 2100      00
+ 2101 190e 4C89E7   		movq	%r12, %rdi
+ 2102 1911 31C0     		xorl	%eax, %eax
+ 2103 1913 E8000000 		call	__fprintf_chk@PLT
+ 2103      00
+ 2104              	.L597:
+ 2105 1918 488B8424 		movq	216(%rsp), %rax
+ 2105      D8000000 
+ 2106 1920 64483304 		xorq	%fs:40, %rax
+ 2106      25280000 
+ 2106      00
+ 2107 1929 7556     		jne	.L625
+ 2108 192b 4881C4E8 		addq	$232, %rsp
+ 2108      000000
+ 2109              		.cfi_remember_state
+ 2110              		.cfi_def_cfa_offset 56
+ 2111 1932 5B       		popq	%rbx
+ 2112              		.cfi_def_cfa_offset 48
+ 2113 1933 5D       		popq	%rbp
+ 2114              		.cfi_def_cfa_offset 40
+ 2115 1934 415C     		popq	%r12
+ 2116              		.cfi_def_cfa_offset 32
+ 2117 1936 415D     		popq	%r13
+ 2118              		.cfi_def_cfa_offset 24
+ 2119 1938 415E     		popq	%r14
+ 2120              		.cfi_def_cfa_offset 16
+ 2121 193a 415F     		popq	%r15
+ 2122              		.cfi_def_cfa_offset 8
+ 2123 193c C3       		ret
+ 2124 193d 0F1F00   		.p2align 4,,10
+ 2125              		.p2align 3
+ 2126              	.L602:
+ 2127              		.cfi_restore_state
+ 2128 1940 488D1500 		leaq	.LC11(%rip), %rdx
+ 2128      000000
+ 2129 1947 4889E9   		movq	%rbp, %rcx
+ 2130 194a BE010000 		movl	$1, %esi
+ 2130      00
+ 2131 194f 4C89E7   		movq	%r12, %rdi
+ 2132 1952 31C0     		xorl	%eax, %eax
+ 2133 1954 E8000000 		call	__fprintf_chk@PLT
+ 2133      00
+ 2134 1959 EB85     		jmp	.L604
+ 2135 195b 0F1F4400 		.p2align 4,,10
+ 2135      00
+ 2136              		.p2align 3
+ 2137              	.L603:
+ 2138 1960 488D1500 		leaq	.LC12(%rip), %rdx
+ 2138      000000
+ 2139 1967 4989E8   		movq	%rbp, %r8
+ 2140 196a 4889E9   		movq	%rbp, %rcx
+ 2141 196d BE010000 		movl	$1, %esi
+ 2141      00
+ 2142 1972 4C89E7   		movq	%r12, %rdi
+ 2143 1975 31C0     		xorl	%eax, %eax
+ 2144 1977 E8000000 		call	__fprintf_chk@PLT
+ 2144      00
+ 2145 197c E95FFFFF 		jmp	.L604
+ 2145      FF
+ 2146              	.L625:
+ 2147 1981 E8000000 		call	__stack_chk_fail@PLT
+ 2147      00
+ 2148              		.cfi_endproc
+ 2149              	.LFE56:
+ 2151              		.section	.rodata.str1.1
+ 2152              	.LC14:
+ 2153 003d 2020252D 		.string	"  %-20s %s\n"
+ 2153      32307320 
+ 2153      25730A00 
+ 2154              	.LC15:
+ 2155 0049 2C2000   		.string	", "
+ 2156              		.text
+ 2157 1986 662E0F1F 		.p2align 4,,15
+ 2157      84000000 
+ 2157      0000
+ 2158              		.globl	arg_print_glossary
+ 2160              	arg_print_glossary:
+ 2161              	.LFB57:
+ 2162              		.cfi_startproc
+ 2163 1990 4156     		pushq	%r14
+ 2164              		.cfi_def_cfa_offset 16
+ 2165              		.cfi_offset 14, -16
+ 2166 1992 4155     		pushq	%r13
+ 2167              		.cfi_def_cfa_offset 24
+ 2168              		.cfi_offset 13, -24
+ 2169 1994 4154     		pushq	%r12
+ 2170              		.cfi_def_cfa_offset 32
+ 2171              		.cfi_offset 12, -32
+ 2172 1996 55       		pushq	%rbp
+ 2173              		.cfi_def_cfa_offset 40
+ 2174              		.cfi_offset 6, -40
+ 2175 1997 4889D5   		movq	%rdx, %rbp
+ 2176 199a 53       		pushq	%rbx
+ 2177              		.cfi_def_cfa_offset 48
+ 2178              		.cfi_offset 3, -48
+ 2179 199b 4881ECD0 		subq	$208, %rsp
+ 2179      000000
+ 2180              		.cfi_def_cfa_offset 256
+ 2181 19a2 4C8B0E   		movq	(%rsi), %r9
+ 2182 19a5 64488B04 		movq	%fs:40, %rax
+ 2182      25280000 
+ 2182      00
+ 2183 19ae 48898424 		movq	%rax, 200(%rsp)
+ 2183      C8000000 
+ 2184 19b6 31C0     		xorl	%eax, %eax
+ 2185 19b8 488D0500 		leaq	.LC14(%rip), %rax
+ 2185      000000
+ 2186 19bf 4885D2   		testq	%rdx, %rdx
+ 2187 19c2 480F44E8 		cmove	%rax, %rbp
+ 2188 19c6 41F60101 		testb	$1, (%r9)
+ 2189 19ca 0F858300 		jne	.L626
+ 2189      0000
+ 2190 19d0 488D5E08 		leaq	8(%rsi), %rbx
+ 2191 19d4 4989FE   		movq	%rdi, %r14
+ 2192 19d7 4989E4   		movq	%rsp, %r12
+ 2193 19da 660F1F44 		.p2align 4,,10
+ 2193      0000
+ 2194              		.p2align 3
+ 2195              	.L629:
+ 2196 19e0 49837920 		cmpq	$0, 32(%r9)
+ 2196      00
+ 2197 19e5 0F849500 		je	.L630
+ 2197      0000
+ 2198 19eb 488D7C24 		leaq	16(%rsp), %rdi
+ 2198      10
+ 2199 19f0 31C0     		xorl	%eax, %eax
+ 2200 19f2 B9170000 		movl	$23, %ecx
+ 2200      00
+ 2201 19f7 660FEFC0 		pxor	%xmm0, %xmm0
+ 2202 19fb 4883C308 		addq	$8, %rbx
+ 2203 19ff F348AB   		rep stosq
+ 2204 1a02 4C89E7   		movq	%r12, %rdi
+ 2205 1a05 0F290424 		movaps	%xmm0, (%rsp)
+ 2206 1a09 450FB601 		movzbl	(%r9), %r8d
+ 2207 1a0d 4D8B6920 		movq	32(%r9), %r13
+ 2208 1a11 498B4918 		movq	24(%r9), %rcx
+ 2209 1a15 498B5110 		movq	16(%r9), %rdx
+ 2210 1a19 498B7108 		movq	8(%r9), %rsi
+ 2211 1a1d 4183E004 		andl	$4, %r8d
+ 2212 1a21 4C8D0D00 		leaq	.LC15(%rip), %r9
+ 2212      000000
+ 2213 1a28 450FBEC0 		movsbl	%r8b, %r8d
+ 2214 1a2c E8CFE5FF 		call	arg_cat_optionv.constprop.1
+ 2214      FF
+ 2215 1a31 31C0     		xorl	%eax, %eax
+ 2216 1a33 4D89E8   		movq	%r13, %r8
+ 2217 1a36 4C89E1   		movq	%r12, %rcx
+ 2218 1a39 4889EA   		movq	%rbp, %rdx
+ 2219 1a3c BE010000 		movl	$1, %esi
+ 2219      00
+ 2220 1a41 4C89F7   		movq	%r14, %rdi
+ 2221 1a44 E8000000 		call	__fprintf_chk@PLT
+ 2221      00
+ 2222 1a49 4C8B4BF8 		movq	-8(%rbx), %r9
+ 2223 1a4d 41F60101 		testb	$1, (%r9)
+ 2224 1a51 748D     		je	.L629
+ 2225              	.L626:
+ 2226 1a53 488B8424 		movq	200(%rsp), %rax
+ 2226      C8000000 
+ 2227 1a5b 64483304 		xorq	%fs:40, %rax
+ 2227      25280000 
+ 2227      00
+ 2228 1a64 752D     		jne	.L640
+ 2229 1a66 4881C4D0 		addq	$208, %rsp
+ 2229      000000
+ 2230              		.cfi_remember_state
+ 2231              		.cfi_def_cfa_offset 48
+ 2232 1a6d 5B       		popq	%rbx
+ 2233              		.cfi_def_cfa_offset 40
+ 2234 1a6e 5D       		popq	%rbp
+ 2235              		.cfi_def_cfa_offset 32
+ 2236 1a6f 415C     		popq	%r12
+ 2237              		.cfi_def_cfa_offset 24
+ 2238 1a71 415D     		popq	%r13
+ 2239              		.cfi_def_cfa_offset 16
+ 2240 1a73 415E     		popq	%r14
+ 2241              		.cfi_def_cfa_offset 8
+ 2242 1a75 C3       		ret
+ 2243 1a76 662E0F1F 		.p2align 4,,10
+ 2243      84000000 
+ 2243      0000
+ 2244              		.p2align 3
+ 2245              	.L630:
+ 2246              		.cfi_restore_state
+ 2247 1a80 4C8B0B   		movq	(%rbx), %r9
+ 2248 1a83 4883C308 		addq	$8, %rbx
+ 2249 1a87 41F60101 		testb	$1, (%r9)
+ 2250 1a8b 0F844FFF 		je	.L629
+ 2250      FFFF
+ 2251 1a91 EBC0     		jmp	.L626
+ 2252              	.L640:
+ 2253 1a93 E8000000 		call	__stack_chk_fail@PLT
+ 2253      00
+ 2254              		.cfi_endproc
+ 2255              	.LFE57:
+ 2257              		.section	.rodata.str1.1
+ 2258              	.LC16:
+ 2259 004c 2020252D 		.string	"  %-25s %s\n"
+ 2259      32357320 
+ 2259      25730A00 
+ 2260              	.LC17:
+ 2261 0058 2020252D 		.string	"  %-25s "
+ 2261      32357320 
+ 2261      00
+ 2262              		.text
+ 2263 1a98 0F1F8400 		.p2align 4,,15
+ 2263      00000000 
+ 2264              		.globl	arg_print_glossary_gnu
+ 2266              	arg_print_glossary_gnu:
+ 2267              	.LFB59:
+ 2268              		.cfi_startproc
+ 2269 1aa0 4157     		pushq	%r15
+ 2270              		.cfi_def_cfa_offset 16
+ 2271              		.cfi_offset 15, -16
+ 2272 1aa2 4156     		pushq	%r14
+ 2273              		.cfi_def_cfa_offset 24
+ 2274              		.cfi_offset 14, -24
+ 2275 1aa4 4155     		pushq	%r13
+ 2276              		.cfi_def_cfa_offset 32
+ 2277              		.cfi_offset 13, -32
+ 2278 1aa6 4154     		pushq	%r12
+ 2279              		.cfi_def_cfa_offset 40
+ 2280              		.cfi_offset 12, -40
+ 2281 1aa8 55       		pushq	%rbp
+ 2282              		.cfi_def_cfa_offset 48
+ 2283              		.cfi_offset 6, -48
+ 2284 1aa9 53       		pushq	%rbx
+ 2285              		.cfi_def_cfa_offset 56
+ 2286              		.cfi_offset 3, -56
+ 2287 1aaa 4889FB   		movq	%rdi, %rbx
+ 2288 1aad 4881EC08 		subq	$264, %rsp
+ 2288      010000
+ 2289              		.cfi_def_cfa_offset 320
+ 2290 1ab4 488B06   		movq	(%rsi), %rax
+ 2291 1ab7 64488B0C 		movq	%fs:40, %rcx
+ 2291      25280000 
+ 2291      00
+ 2292 1ac0 48898C24 		movq	%rcx, 248(%rsp)
+ 2292      F8000000 
+ 2293 1ac8 31C9     		xorl	%ecx, %ecx
+ 2294 1aca 48897424 		movq	%rsi, 24(%rsp)
+ 2294      18
+ 2295 1acf F60001   		testb	$1, (%rax)
+ 2296 1ad2 0F85E801 		jne	.L642
+ 2296      0000
+ 2297 1ad8 488D4C24 		leaq	48(%rsp), %rcx
+ 2297      30
+ 2298 1add 48894C24 		movq	%rcx, 32(%rsp)
+ 2298      20
+ 2299              		.p2align 4,,10
+ 2300 1ae2 660F1F44 		.p2align 3
+ 2300      0000
+ 2301              	.L657:
+ 2302 1ae8 48837820 		cmpq	$0, 32(%rax)
+ 2302      00
+ 2303 1aed 0F84B601 		je	.L643
+ 2303      0000
+ 2304 1af3 488D7C24 		leaq	64(%rsp), %rdi
+ 2304      40
+ 2305 1af8 31C0     		xorl	%eax, %eax
+ 2306 1afa B9170000 		movl	$23, %ecx
+ 2306      00
+ 2307 1aff 660FEFC0 		pxor	%xmm0, %xmm0
+ 2308 1b03 F348AB   		rep stosq
+ 2309 1b06 488B4424 		movq	24(%rsp), %rax
+ 2309      18
+ 2310 1b0b 0F294424 		movaps	%xmm0, 48(%rsp)
+ 2310      30
+ 2311 1b10 488B00   		movq	(%rax), %rax
+ 2312 1b13 488B7008 		movq	8(%rax), %rsi
+ 2313 1b17 488B5010 		movq	16(%rax), %rdx
+ 2314 1b1b 488B4818 		movq	24(%rax), %rcx
+ 2315 1b1f 4C8B6020 		movq	32(%rax), %r12
+ 2316 1b23 4885F6   		testq	%rsi, %rsi
+ 2317 1b26 7515     		jne	.L644
+ 2318 1b28 4885D2   		testq	%rdx, %rdx
+ 2319 1b2b 7410     		je	.L644
+ 2320 1b2d 488B7C24 		movq	32(%rsp), %rdi
+ 2320      20
+ 2321 1b32 C6442434 		movb	$0, 52(%rsp)
+ 2321      00
+ 2322 1b37 C7072020 		movl	$538976288, (%rdi)
+ 2322      2020
+ 2323              	.L644:
+ 2324 1b3d 440FB600 		movzbl	(%rax), %r8d
+ 2325 1b41 4C8B7424 		movq	32(%rsp), %r14
+ 2325      20
+ 2326 1b46 4C8D0D00 		leaq	.LC15(%rip), %r9
+ 2326      000000
+ 2327 1b4d 4C89F7   		movq	%r14, %rdi
+ 2328 1b50 4183E004 		andl	$4, %r8d
+ 2329 1b54 450FBEC0 		movsbl	%r8b, %r8d
+ 2330 1b58 E8A3E4FF 		call	arg_cat_optionv.constprop.1
+ 2330      FF
+ 2331 1b5d 4C89F2   		movq	%r14, %rdx
+ 2332              	.L645:
+ 2333 1b60 8B0A     		movl	(%rdx), %ecx
+ 2334 1b62 4883C204 		addq	$4, %rdx
+ 2335 1b66 8D81FFFE 		leal	-16843009(%rcx), %eax
+ 2335      FEFE
+ 2336 1b6c F7D1     		notl	%ecx
+ 2337 1b6e 21C8     		andl	%ecx, %eax
+ 2338 1b70 25808080 		andl	$-2139062144, %eax
+ 2338      80
+ 2339 1b75 74E9     		je	.L645
+ 2340 1b77 89C1     		movl	%eax, %ecx
+ 2341 1b79 C1E910   		shrl	$16, %ecx
+ 2342 1b7c A9808000 		testl	$32896, %eax
+ 2342      00
+ 2343 1b81 0F44C1   		cmove	%ecx, %eax
+ 2344 1b84 488D4A02 		leaq	2(%rdx), %rcx
+ 2345 1b88 480F44D1 		cmove	%rcx, %rdx
+ 2346 1b8c 89C1     		movl	%eax, %ecx
+ 2347 1b8e 00C1     		addb	%al, %cl
+ 2348 1b90 4883DA03 		sbbq	$3, %rdx
+ 2349 1b94 482B5424 		subq	32(%rsp), %rdx
+ 2349      20
+ 2350 1b99 4883FA19 		cmpq	$25, %rdx
+ 2351 1b9d 7627     		jbe	.L647
+ 2352 1b9f 488B4C24 		movq	32(%rsp), %rcx
+ 2352      20
+ 2353 1ba4 4C8D0500 		leaq	.LC2(%rip), %r8
+ 2353      000000
+ 2354 1bab 488D1500 		leaq	.LC16(%rip), %rdx
+ 2354      000000
+ 2355 1bb2 BE010000 		movl	$1, %esi
+ 2355      00
+ 2356 1bb7 4889DF   		movq	%rbx, %rdi
+ 2357 1bba 31C0     		xorl	%eax, %eax
+ 2358 1bbc E8000000 		call	__fprintf_chk@PLT
+ 2358      00
+ 2359 1bc1 C6442430 		movb	$0, 48(%rsp)
+ 2359      00
+ 2360              	.L647:
+ 2361 1bc6 488B4C24 		movq	32(%rsp), %rcx
+ 2361      20
+ 2362 1bcb 488D1500 		leaq	.LC17(%rip), %rdx
+ 2362      000000
+ 2363 1bd2 BE010000 		movl	$1, %esi
+ 2363      00
+ 2364 1bd7 4889DF   		movq	%rbx, %rdi
+ 2365 1bda 31C0     		xorl	%eax, %eax
+ 2366 1bdc E8000000 		call	__fprintf_chk@PLT
+ 2366      00
+ 2367 1be1 4C89E7   		movq	%r12, %rdi
+ 2368 1be4 E8000000 		call	strlen@PLT
+ 2368      00
+ 2369 1be9 448D6801 		leal	1(%rax), %r13d
+ 2370 1bed 85C0     		testl	%eax, %eax
+ 2371 1bef 89442428 		movl	%eax, 40(%rsp)
+ 2372 1bf3 44896C24 		movl	%r13d, 44(%rsp)
+ 2372      2C
+ 2373 1bf8 0F84AB00 		je	.L643
+ 2373      0000
+ 2374 1bfe E8000000 		call	__ctype_b_loc@PLT
+ 2374      00
+ 2375 1c03 4531FF   		xorl	%r15d, %r15d
+ 2376 1c06 48894424 		movq	%rax, 16(%rsp)
+ 2376      10
+ 2377 1c0b 0F1F4400 		.p2align 4,,10
+ 2377      00
+ 2378              		.p2align 3
+ 2379              	.L649:
+ 2380 1c10 488B4424 		movq	16(%rsp), %rax
+ 2380      10
+ 2381 1c15 488B38   		movq	(%rax), %rdi
+ 2382 1c18 EB0A     		jmp	.L656
+ 2383 1c1a 660F1F44 		.p2align 4,,10
+ 2383      0000
+ 2384              		.p2align 3
+ 2385              	.L650:
+ 2386 1c20 4183C701 		addl	$1, %r15d
+ 2387              	.L656:
+ 2388 1c24 4489F8   		movl	%r15d, %eax
+ 2389 1c27 498D1404 		leaq	(%r12,%rax), %rdx
+ 2390 1c2b 480FBE32 		movsbq	(%rdx), %rsi
+ 2391 1c2f F6447701 		testb	$32, 1(%rdi,%rsi,2)
+ 2391      20
+ 2392 1c34 75EA     		jne	.L650
+ 2393 1c36 4489EF   		movl	%r13d, %edi
+ 2394 1c39 418D7734 		leal	52(%r15), %esi
+ 2395 1c3d 4429FF   		subl	%r15d, %edi
+ 2396 1c40 83FF34   		cmpl	$52, %edi
+ 2397 1c43 440F47EE 		cmova	%esi, %r13d
+ 2398 1c47 418D4DFF 		leal	-1(%r13), %ecx
+ 2399 1c4b 4139CF   		cmpl	%ecx, %r15d
+ 2400 1c4e 894C240C 		movl	%ecx, 12(%rsp)
+ 2401 1c52 7336     		jnb	.L652
+ 2402 1c54 498D6C04 		leaq	1(%r12,%rax), %rbp
+ 2402      01
+ 2403 1c59 B8FEFFFF 		movl	$-2, %eax
+ 2403      FF
+ 2404 1c5e 4989D6   		movq	%rdx, %r14
+ 2405 1c61 4429F8   		subl	%r15d, %eax
+ 2406 1c64 4401E8   		addl	%r13d, %eax
+ 2407 1c67 4801C5   		addq	%rax, %rbp
+ 2408 1c6a 660F1F44 		.p2align 4,,10
+ 2408      0000
+ 2409              		.p2align 3
+ 2410              	.L653:
+ 2411 1c70 410FBE3E 		movsbl	(%r14), %edi
+ 2412 1c74 4889DE   		movq	%rbx, %rsi
+ 2413 1c77 4983C601 		addq	$1, %r14
+ 2414 1c7b E8000000 		call	fputc@PLT
+ 2414      00
+ 2415 1c80 4939EE   		cmpq	%rbp, %r14
+ 2416 1c83 75EB     		jne	.L653
+ 2417 1c85 448B7C24 		movl	12(%rsp), %r15d
+ 2417      0C
+ 2418              	.L652:
+ 2419 1c8a 4889DE   		movq	%rbx, %rsi
+ 2420 1c8d BF0A0000 		movl	$10, %edi
+ 2420      00
+ 2421 1c92 E8000000 		call	fputc@PLT
+ 2421      00
+ 2422 1c97 44396C24 		cmpl	%r13d, 40(%rsp)
+ 2422      28
+ 2423 1c9c 775A     		ja	.L671
+ 2424              	.L654:
+ 2425 1c9e 44397C24 		cmpl	%r15d, 12(%rsp)
+ 2425      0C
+ 2426 1ca3 0F8767FF 		ja	.L649
+ 2426      FFFF
+ 2427              	.L643:
+ 2428 1ca9 48834424 		addq	$8, 24(%rsp)
+ 2428      1808
+ 2429 1caf 488B4424 		movq	24(%rsp), %rax
+ 2429      18
+ 2430 1cb4 488B00   		movq	(%rax), %rax
+ 2431 1cb7 F60001   		testb	$1, (%rax)
+ 2432 1cba 0F8428FE 		je	.L657
+ 2432      FFFF
+ 2433              	.L642:
+ 2434 1cc0 4889DE   		movq	%rbx, %rsi
+ 2435 1cc3 BF0A0000 		movl	$10, %edi
+ 2435      00
+ 2436 1cc8 E8000000 		call	fputc@PLT
+ 2436      00
+ 2437 1ccd 488B8424 		movq	248(%rsp), %rax
+ 2437      F8000000 
+ 2438 1cd5 64483304 		xorq	%fs:40, %rax
+ 2438      25280000 
+ 2438      00
+ 2439 1cde 7544     		jne	.L672
+ 2440 1ce0 4881C408 		addq	$264, %rsp
+ 2440      010000
+ 2441              		.cfi_remember_state
+ 2442              		.cfi_def_cfa_offset 56
+ 2443 1ce7 5B       		popq	%rbx
+ 2444              		.cfi_def_cfa_offset 48
+ 2445 1ce8 5D       		popq	%rbp
+ 2446              		.cfi_def_cfa_offset 40
+ 2447 1ce9 415C     		popq	%r12
+ 2448              		.cfi_def_cfa_offset 32
+ 2449 1ceb 415D     		popq	%r13
+ 2450              		.cfi_def_cfa_offset 24
+ 2451 1ced 415E     		popq	%r14
+ 2452              		.cfi_def_cfa_offset 16
+ 2453 1cef 415F     		popq	%r15
+ 2454              		.cfi_def_cfa_offset 8
+ 2455 1cf1 C3       		ret
+ 2456              		.p2align 4,,10
+ 2457 1cf2 660F1F44 		.p2align 3
+ 2457      0000
+ 2458              	.L671:
+ 2459              		.cfi_restore_state
+ 2460 1cf8 BD1C0000 		movl	$28, %ebp
+ 2460      00
+ 2461 1cfd 0F1F00   		.p2align 4,,10
+ 2462              		.p2align 3
+ 2463              	.L655:
+ 2464 1d00 4889DE   		movq	%rbx, %rsi
+ 2465 1d03 BF200000 		movl	$32, %edi
+ 2465      00
+ 2466 1d08 E8000000 		call	fputc@PLT
+ 2466      00
+ 2467 1d0d 83ED01   		subl	$1, %ebp
+ 2468 1d10 75EE     		jne	.L655
+ 2469 1d12 8B442428 		movl	40(%rsp), %eax
+ 2470 1d16 448B6C24 		movl	44(%rsp), %r13d
+ 2470      2C
+ 2471 1d1b 8944240C 		movl	%eax, 12(%rsp)
+ 2472 1d1f E97AFFFF 		jmp	.L654
+ 2472      FF
+ 2473              	.L672:
+ 2474 1d24 E8000000 		call	__stack_chk_fail@PLT
+ 2474      00
+ 2475              		.cfi_endproc
+ 2476              	.LFE59:
+ 2478 1d29 0F1F8000 		.p2align 4,,15
+ 2478      000000
+ 2479              		.globl	arg_nullcheck
+ 2481              	arg_nullcheck:
+ 2482              	.LFB60:
+ 2483              		.cfi_startproc
+ 2484 1d30 4885FF   		testq	%rdi, %rdi
+ 2485 1d33 B8010000 		movl	$1, %eax
+ 2485      00
+ 2486 1d38 750F     		jne	.L675
+ 2487 1d3a EB1A     		jmp	.L673
+ 2488 1d3c 0F1F4000 		.p2align 4,,10
+ 2489              		.p2align 3
+ 2490              	.L682:
+ 2491 1d40 4883C708 		addq	$8, %rdi
+ 2492 1d44 F60001   		testb	$1, (%rax)
+ 2493 1d47 7517     		jne	.L681
+ 2494              	.L675:
+ 2495 1d49 488B07   		movq	(%rdi), %rax
+ 2496 1d4c 4885C0   		testq	%rax, %rax
+ 2497 1d4f 75EF     		jne	.L682
+ 2498 1d51 B8010000 		movl	$1, %eax
+ 2498      00
+ 2499              	.L673:
+ 2500 1d56 F3C3     		rep ret
+ 2501 1d58 0F1F8400 		.p2align 4,,10
+ 2501      00000000 
+ 2502              		.p2align 3
+ 2503              	.L681:
+ 2504 1d60 31C0     		xorl	%eax, %eax
+ 2505 1d62 C3       		ret
+ 2506              		.cfi_endproc
+ 2507              	.LFE60:
+ 2509 1d63 0F1F0066 		.p2align 4,,15
+ 2509      2E0F1F84 
+ 2509      00000000 
+ 2509      00
+ 2510              		.globl	arg_free
+ 2512              	arg_free:
+ 2513              	.LFB61:
+ 2514              		.cfi_startproc
+ 2515 1d70 55       		pushq	%rbp
+ 2516              		.cfi_def_cfa_offset 16
+ 2517              		.cfi_offset 6, -16
+ 2518 1d71 53       		pushq	%rbx
+ 2519              		.cfi_def_cfa_offset 24
+ 2520              		.cfi_offset 3, -24
+ 2521 1d72 4889FB   		movq	%rdi, %rbx
+ 2522 1d75 4883EC08 		subq	$8, %rsp
+ 2523              		.cfi_def_cfa_offset 32
+ 2524 1d79 EB1E     		jmp	.L685
+ 2525 1d7b 0F1F4400 		.p2align 4,,10
+ 2525      00
+ 2526              		.p2align 3
+ 2527              	.L692:
+ 2528 1d80 0FB62F   		movzbl	(%rdi), %ebp
+ 2529 1d83 4883C308 		addq	$8, %rbx
+ 2530 1d87 E8000000 		call	free@PLT
+ 2530      00
+ 2531 1d8c 48C743F8 		movq	$0, -8(%rbx)
+ 2531      00000000 
+ 2532 1d94 83E501   		andl	$1, %ebp
+ 2533 1d97 7508     		jne	.L683
+ 2534              	.L685:
+ 2535 1d99 488B3B   		movq	(%rbx), %rdi
+ 2536 1d9c 4885FF   		testq	%rdi, %rdi
+ 2537 1d9f 75DF     		jne	.L692
+ 2538              	.L683:
+ 2539 1da1 4883C408 		addq	$8, %rsp
+ 2540              		.cfi_def_cfa_offset 24
+ 2541 1da5 5B       		popq	%rbx
+ 2542              		.cfi_def_cfa_offset 16
+ 2543 1da6 5D       		popq	%rbp
+ 2544              		.cfi_def_cfa_offset 8
+ 2545 1da7 C3       		ret
+ 2546              		.cfi_endproc
+ 2547              	.LFE61:
+ 2549 1da8 0F1F8400 		.p2align 4,,15
+ 2549      00000000 
+ 2550              		.globl	arg_freetable
+ 2552              	arg_freetable:
+ 2553              	.LFB62:
+ 2554              		.cfi_startproc
+ 2555 1db0 4885F6   		testq	%rsi, %rsi
+ 2556 1db3 743B     		je	.L705
+ 2557 1db5 55       		pushq	%rbp
+ 2558              		.cfi_def_cfa_offset 16
+ 2559              		.cfi_offset 6, -16
+ 2560 1db6 53       		pushq	%rbx
+ 2561              		.cfi_def_cfa_offset 24
+ 2562              		.cfi_offset 3, -24
+ 2563 1db7 488D2CF7 		leaq	(%rdi,%rsi,8), %rbp
+ 2564 1dbb 4889FB   		movq	%rdi, %rbx
+ 2565 1dbe 4883EC08 		subq	$8, %rsp
+ 2566              		.cfi_def_cfa_offset 32
+ 2567              		.p2align 4,,10
+ 2568 1dc2 660F1F44 		.p2align 3
+ 2568      0000
+ 2569              	.L696:
+ 2570 1dc8 488B3B   		movq	(%rbx), %rdi
+ 2571 1dcb 4885FF   		testq	%rdi, %rdi
+ 2572 1dce 740C     		je	.L695
+ 2573 1dd0 E8000000 		call	free@PLT
+ 2573      00
+ 2574 1dd5 48C70300 		movq	$0, (%rbx)
+ 2574      000000
+ 2575              	.L695:
+ 2576 1ddc 4883C308 		addq	$8, %rbx
+ 2577 1de0 4839DD   		cmpq	%rbx, %rbp
+ 2578 1de3 75E3     		jne	.L696
+ 2579 1de5 4883C408 		addq	$8, %rsp
+ 2580              		.cfi_def_cfa_offset 24
+ 2581 1de9 5B       		popq	%rbx
+ 2582              		.cfi_def_cfa_offset 16
+ 2583 1dea 5D       		popq	%rbp
+ 2584              		.cfi_def_cfa_offset 8
+ 2585 1deb C3       		ret
+ 2586 1dec 0F1F4000 		.p2align 4,,10
+ 2587              		.p2align 3
+ 2588              	.L705:
+ 2589              		.cfi_restore 3
+ 2590              		.cfi_restore 6
+ 2591 1df0 F3C3     		rep ret
+ 2592              		.cfi_endproc
+ 2593              	.LFE62:
+ 2595              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+ 2596              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 argtable2.c
+     /tmp/ccJSwbnJ.s:10     .text:0000000000000000 arg_cat_optionv.constprop.1
+     /tmp/ccJSwbnJ.s:445    .text:0000000000000490 arg_parse
+     /tmp/ccJSwbnJ.s:1290   .text:0000000000000fc0 arg_print_option
+     /tmp/ccJSwbnJ.s:1374   .text:0000000000001060 arg_print_syntax
+     /tmp/ccJSwbnJ.s:1998   .text:00000000000017e0 arg_print_syntaxv
+     /tmp/ccJSwbnJ.s:2160   .text:0000000000001990 arg_print_glossary
+     /tmp/ccJSwbnJ.s:2266   .text:0000000000001aa0 arg_print_glossary_gnu
+     /tmp/ccJSwbnJ.s:2481   .text:0000000000001d30 arg_nullcheck
+     /tmp/ccJSwbnJ.s:2512   .text:0000000000001d70 arg_free
+     /tmp/ccJSwbnJ.s:2552   .text:0000000000001db0 arg_freetable
+     /tmp/ccJSwbnJ.s:3      .rodata.str1.1:0000000000000000 .LC0
+     /tmp/ccJSwbnJ.s:5      .rodata.str1.1:0000000000000003 .LC1
+     /tmp/ccJSwbnJ.s:1284   .rodata.str1.1:0000000000000006 .LC3
+     /tmp/ccJSwbnJ.s:1282   .rodata.str1.1:0000000000000005 .LC2
+     /tmp/ccJSwbnJ.s:1350   .rodata.str1.1:0000000000000008 .LC4
+     /tmp/ccJSwbnJ.s:1352   .rodata.str1.1:000000000000000e .LC5
+     /tmp/ccJSwbnJ.s:1354   .rodata.str1.1:0000000000000013 .LC6
+     /tmp/ccJSwbnJ.s:1356   .rodata.str1.1:0000000000000017 .LC7
+     /tmp/ccJSwbnJ.s:1358   .rodata.str1.1:000000000000001a .LC8
+     /tmp/ccJSwbnJ.s:1360   .rodata.str1.1:000000000000001c .LC9
+     /tmp/ccJSwbnJ.s:1362   .rodata.str1.1:000000000000001f .LC10
+     /tmp/ccJSwbnJ.s:1368   .rodata.str1.1:0000000000000034 .LC13
+     /tmp/ccJSwbnJ.s:1366   .rodata.str1.1:0000000000000029 .LC12
+     /tmp/ccJSwbnJ.s:1364   .rodata.str1.1:0000000000000023 .LC11
+     /tmp/ccJSwbnJ.s:2152   .rodata.str1.1:000000000000003d .LC14
+     /tmp/ccJSwbnJ.s:2154   .rodata.str1.1:0000000000000049 .LC15
+     /tmp/ccJSwbnJ.s:2258   .rodata.str1.1:000000000000004c .LC16
+     /tmp/ccJSwbnJ.s:2260   .rodata.str1.1:0000000000000058 .LC17
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+strcspn
+strncat
+__stack_chk_fail
+malloc
+memcpy
+strlen
+strchr
+free
+optind
+opterr
+getopt_long
+optarg
+optopt
+fputs
+__fprintf_chk
+__strncat_chk
+__ctype_b_loc
+fputc

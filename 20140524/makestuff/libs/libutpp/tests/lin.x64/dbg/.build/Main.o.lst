@@ -1,0 +1,67 @@
+   1              		.file	"Main.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	main
+   6              	main:
+   7              	.LFB1088:
+   8              		.file 1 "Main.cpp"
+   1:Main.cpp      **** #include "../UnitTest++.h"
+   2:Main.cpp      **** #include "../TestReporterStdout.h"
+   3:Main.cpp      **** 
+   4:Main.cpp      **** 
+   5:Main.cpp      **** int main(int, char const *[])
+   6:Main.cpp      **** {
+   9              		.loc 1 6 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+  16 0004 4883EC10 		subq	$16, %rsp
+  17 0008 897DFC   		movl	%edi, -4(%rbp)
+  18 000b 488975F0 		movq	%rsi, -16(%rbp)
+   7:Main.cpp      ****     return UnitTest::RunAllTests();
+  19              		.loc 1 7 0
+  20 000f E8000000 		call	_ZN8UnitTest11RunAllTestsEv@PLT
+  20      00
+   8:Main.cpp      **** }
+  21              		.loc 1 8 0
+  22 0014 C9       		leave
+  23              		.cfi_def_cfa 7, 8
+  24 0015 C3       		ret
+  25              		.cfi_endproc
+  26              	.LFE1088:
+  28              	.Letext0:
+  29              		.file 2 "../TestDetails.h"
+  30              		.file 3 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
+  31              		.file 4 "/usr/include/c++/7/cwchar"
+  32              		.file 5 "/usr/include/c++/7/debug/debug.h"
+  33              		.file 6 "/usr/include/c++/7/clocale"
+  34              		.file 7 "/usr/include/c++/7/cwctype"
+  35              		.file 8 "/usr/include/c++/7/bits/predefined_ops.h"
+  36              		.file 9 "/usr/include/c++/7/ext/new_allocator.h"
+  37              		.file 10 "/usr/include/c++/7/ext/numeric_traits.h"
+  38              		.file 11 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
+  39              		.file 12 "<built-in>"
+  40              		.file 13 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
+  41              		.file 14 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
+  42              		.file 15 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
+  43              		.file 16 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
+  44              		.file 17 "/usr/include/wchar.h"
+  45              		.file 18 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
+  46              		.file 19 "/usr/include/locale.h"
+  47              		.file 20 "/usr/include/x86_64-linux-gnu/bits/types.h"
+  48              		.file 21 "/usr/include/time.h"
+  49              		.file 22 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h"
+  50              		.file 23 "/usr/include/wctype.h"
+  51              		.file 24 "/usr/include/signal.h"
+  52              		.file 25 "/usr/include/x86_64-linux-gnu/sys/time.h"
+  53              		.file 26 "/usr/include/c++/7/new"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Main.cpp
+     /tmp/ccWQuB5w.s:6      .text:0000000000000000 main
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+_ZN8UnitTest11RunAllTestsEv

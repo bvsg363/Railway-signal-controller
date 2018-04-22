@@ -1,0 +1,179 @@
+   1              		.file	"sig.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.local	m_sigint
+   5              		.comm	m_sigint,1,1
+   6              		.globl	sigIsRaised
+   8              	sigIsRaised:
+   9              	.LFB4:
+  10              		.file 1 "sig.c"
+   1:sig.c         **** #include <makestuff.h>
+   2:sig.c         **** #ifdef WIN32
+   3:sig.c         **** 	#include <windows.h>
+   4:sig.c         **** #else
+   5:sig.c         **** 	#define _POSIX_SOURCE
+   6:sig.c         **** 	#include <signal.h>
+   7:sig.c         **** #endif
+   8:sig.c         **** 
+   9:sig.c         **** static bool m_sigint = false;
+  10:sig.c         **** 
+  11:sig.c         **** bool sigIsRaised(void) {
+  11              		.loc 1 11 0
+  12              		.cfi_startproc
+  13 0000 55       		pushq	%rbp
+  14              		.cfi_def_cfa_offset 16
+  15              		.cfi_offset 6, -16
+  16 0001 4889E5   		movq	%rsp, %rbp
+  17              		.cfi_def_cfa_register 6
+  12:sig.c         **** 	return m_sigint;
+  18              		.loc 1 12 0
+  19 0004 0FB60500 		movzbl	m_sigint(%rip), %eax
+  19      000000
+  13:sig.c         **** }
+  20              		.loc 1 13 0
+  21 000b 5D       		popq	%rbp
+  22              		.cfi_def_cfa 7, 8
+  23 000c C3       		ret
+  24              		.cfi_endproc
+  25              	.LFE4:
+  28              	sigHandler:
+  29              	.LFB5:
+  14:sig.c         **** 
+  15:sig.c         **** #ifdef WIN32
+  16:sig.c         **** 	static BOOL sigHandler(DWORD signum) {
+  17:sig.c         **** 		if ( signum == CTRL_C_EVENT ) {
+  18:sig.c         **** 			m_sigint = true;
+  19:sig.c         **** 			return TRUE;
+  20:sig.c         **** 		}
+  21:sig.c         **** 		return FALSE;
+  22:sig.c         **** 	}
+  23:sig.c         **** #else
+  24:sig.c         **** 	static void sigHandler(int signum) {
+  30              		.loc 1 24 0
+  31              		.cfi_startproc
+  32 000d 55       		pushq	%rbp
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 6, -16
+  35 000e 4889E5   		movq	%rsp, %rbp
+  36              		.cfi_def_cfa_register 6
+  37 0011 897DFC   		movl	%edi, -4(%rbp)
+  25:sig.c         **** 		(void)signum;
+  26:sig.c         **** 		m_sigint = true;
+  38              		.loc 1 26 0
+  39 0014 C6050000 		movb	$1, m_sigint(%rip)
+  39      000001
+  27:sig.c         **** 	}
+  40              		.loc 1 27 0
+  41 001b 90       		nop
+  42 001c 5D       		popq	%rbp
+  43              		.cfi_def_cfa 7, 8
+  44 001d C3       		ret
+  45              		.cfi_endproc
+  46              	.LFE5:
+  48              		.globl	sigRegisterHandler
+  50              	sigRegisterHandler:
+  51              	.LFB6:
+  28:sig.c         **** #endif
+  29:sig.c         **** 
+  30:sig.c         **** void sigRegisterHandler(void) {
+  52              		.loc 1 30 0
+  53              		.cfi_startproc
+  54 001e 55       		pushq	%rbp
+  55              		.cfi_def_cfa_offset 16
+  56              		.cfi_offset 6, -16
+  57 001f 4889E5   		movq	%rsp, %rbp
+  58              		.cfi_def_cfa_register 6
+  59 0022 4881EC40 		subq	$320, %rsp
+  59      010000
+  60              		.loc 1 30 0
+  61 0029 64488B04 		movq	%fs:40, %rax
+  61      25280000 
+  61      00
+  62 0032 488945F8 		movq	%rax, -8(%rbp)
+  63 0036 31C0     		xorl	%eax, %eax
+  31:sig.c         **** 	#ifdef WIN32
+  32:sig.c         **** 		SetConsoleCtrlHandler((PHANDLER_ROUTINE)sigHandler, TRUE);
+  33:sig.c         **** 	#else
+  34:sig.c         **** 		struct sigaction newAction, oldAction;
+  35:sig.c         **** 		newAction.sa_handler = sigHandler;
+  64              		.loc 1 35 0
+  65 0038 488D05CE 		leaq	sigHandler(%rip), %rax
+  65      FFFFFF
+  66 003f 488985C0 		movq	%rax, -320(%rbp)
+  66      FEFFFF
+  36:sig.c         **** 		sigemptyset(&newAction.sa_mask);
+  67              		.loc 1 36 0
+  68 0046 488D85C0 		leaq	-320(%rbp), %rax
+  68      FEFFFF
+  69 004d 4883C008 		addq	$8, %rax
+  70 0051 4889C7   		movq	%rax, %rdi
+  71 0054 E8000000 		call	sigemptyset@PLT
+  71      00
+  37:sig.c         **** 		newAction.sa_flags = 0;
+  72              		.loc 1 37 0
+  73 0059 C78548FF 		movl	$0, -184(%rbp)
+  73      FFFF0000 
+  73      0000
+  38:sig.c         **** 		sigaction(SIGINT, NULL, &oldAction);
+  74              		.loc 1 38 0
+  75 0063 488D8560 		leaq	-160(%rbp), %rax
+  75      FFFFFF
+  76 006a 4889C2   		movq	%rax, %rdx
+  77 006d BE000000 		movl	$0, %esi
+  77      00
+  78 0072 BF020000 		movl	$2, %edi
+  78      00
+  79 0077 E8000000 		call	sigaction@PLT
+  79      00
+  39:sig.c         **** 		if ( oldAction.sa_handler != SIG_IGN ) {
+  80              		.loc 1 39 0
+  81 007c 488B8560 		movq	-160(%rbp), %rax
+  81      FFFFFF
+  82 0083 4883F801 		cmpq	$1, %rax
+  83 0087 7419     		je	.L7
+  40:sig.c         **** 			sigaction(SIGINT, &newAction, NULL);
+  84              		.loc 1 40 0
+  85 0089 488D85C0 		leaq	-320(%rbp), %rax
+  85      FEFFFF
+  86 0090 BA000000 		movl	$0, %edx
+  86      00
+  87 0095 4889C6   		movq	%rax, %rsi
+  88 0098 BF020000 		movl	$2, %edi
+  88      00
+  89 009d E8000000 		call	sigaction@PLT
+  89      00
+  90              	.L7:
+  41:sig.c         **** 		}
+  42:sig.c         **** 	#endif
+  43:sig.c         **** }
+  91              		.loc 1 43 0
+  92 00a2 90       		nop
+  93 00a3 488B45F8 		movq	-8(%rbp), %rax
+  94 00a7 64483304 		xorq	%fs:40, %rax
+  94      25280000 
+  94      00
+  95 00b0 7405     		je	.L6
+  96 00b2 E8000000 		call	__stack_chk_fail@PLT
+  96      00
+  97              	.L6:
+  98 00b7 C9       		leave
+  99              		.cfi_def_cfa 7, 8
+ 100 00b8 C3       		ret
+ 101              		.cfi_endproc
+ 102              	.LFE6:
+ 104              	.Letext0:
+ 105              		.file 2 "/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h"
+ 106              		.file 3 "/usr/include/signal.h"
+ 107              		.file 4 "/usr/include/x86_64-linux-gnu/bits/sigaction.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sig.c
+                             .bss:0000000000000000 m_sigint
+     /tmp/ccBa4tmK.s:8      .text:0000000000000000 sigIsRaised
+     /tmp/ccBa4tmK.s:28     .text:000000000000000d sigHandler
+     /tmp/ccBa4tmK.s:50     .text:000000000000001e sigRegisterHandler
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+sigemptyset
+sigaction
+__stack_chk_fail

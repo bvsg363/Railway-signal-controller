@@ -1,0 +1,1147 @@
+   1              		.file	"DeferredTestResult.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata
+   5              	.LC0:
+   6 0000 00       		.string	""
+   7              		.text
+   8              		.align 2
+   9              		.globl	_ZN8UnitTest18DeferredTestResultC2Ev
+  11              	_ZN8UnitTest18DeferredTestResultC2Ev:
+  12              	.LFB891:
+  13              		.file 1 "DeferredTestResult.cpp"
+   1:DeferredTestResult.cpp **** #include "DeferredTestResult.h"
+   2:DeferredTestResult.cpp **** #include "Config.h"
+   3:DeferredTestResult.cpp **** 
+   4:DeferredTestResult.cpp **** namespace UnitTest
+   5:DeferredTestResult.cpp **** {
+   6:DeferredTestResult.cpp **** 
+   7:DeferredTestResult.cpp **** DeferredTestResult::DeferredTestResult()
+  14              		.loc 1 7 0
+  15              		.cfi_startproc
+  16              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+  17              		.cfi_lsda 0x1b,.LLSDA891
+  18 0000 55       		pushq	%rbp
+  19              		.cfi_def_cfa_offset 16
+  20              		.cfi_offset 6, -16
+  21 0001 4889E5   		movq	%rsp, %rbp
+  22              		.cfi_def_cfa_register 6
+  23 0004 53       		pushq	%rbx
+  24 0005 4883EC28 		subq	$40, %rsp
+  25              		.cfi_offset 3, -24
+  26 0009 48897DD8 		movq	%rdi, -40(%rbp)
+  27              		.loc 1 7 0
+  28 000d 64488B04 		movq	%fs:40, %rax
+  28      25280000 
+  28      00
+  29 0016 488945E8 		movq	%rax, -24(%rbp)
+  30 001a 31C0     		xorl	%eax, %eax
+  31              	.LBB2:
+   8:DeferredTestResult.cpp **** 	: suiteName("")
+   9:DeferredTestResult.cpp **** 	, testName("")
+  10:DeferredTestResult.cpp **** 	, failureFile("")
+  11:DeferredTestResult.cpp **** 	, timeElapsed(0.0f)
+  12:DeferredTestResult.cpp **** 	, failed(false)
+  32              		.loc 1 12 0
+  33 001c 488B5DD8 		movq	-40(%rbp), %rbx
+  34 0020 488D45E7 		leaq	-25(%rbp), %rax
+  35 0024 4889C7   		movq	%rax, %rdi
+  36 0027 E8000000 		call	_ZNSaIcEC1Ev@PLT
+  36      00
+  37 002c 488D45E7 		leaq	-25(%rbp), %rax
+  38 0030 4889C2   		movq	%rax, %rdx
+  39 0033 488D3500 		leaq	.LC0(%rip), %rsi
+  39      000000
+  40 003a 4889DF   		movq	%rbx, %rdi
+  41              	.LEHB0:
+  42 003d E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+  42      00
+  43              	.LEHE0:
+  44              		.loc 1 12 0 is_stmt 0 discriminator 2
+  45 0042 488D45E7 		leaq	-25(%rbp), %rax
+  46 0046 4889C7   		movq	%rax, %rdi
+  47 0049 E8000000 		call	_ZNSaIcED1Ev@PLT
+  47      00
+  48 004e 488B45D8 		movq	-40(%rbp), %rax
+  49 0052 488D5820 		leaq	32(%rax), %rbx
+  50 0056 488D45E7 		leaq	-25(%rbp), %rax
+  51 005a 4889C7   		movq	%rax, %rdi
+  52 005d E8000000 		call	_ZNSaIcEC1Ev@PLT
+  52      00
+  53 0062 488D45E7 		leaq	-25(%rbp), %rax
+  54 0066 4889C2   		movq	%rax, %rdx
+  55 0069 488D3500 		leaq	.LC0(%rip), %rsi
+  55      000000
+  56 0070 4889DF   		movq	%rbx, %rdi
+  57              	.LEHB1:
+  58 0073 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+  58      00
+  59              	.LEHE1:
+  60              		.loc 1 12 0 discriminator 4
+  61 0078 488D45E7 		leaq	-25(%rbp), %rax
+  62 007c 4889C7   		movq	%rax, %rdi
+  63 007f E8000000 		call	_ZNSaIcED1Ev@PLT
+  63      00
+  64 0084 488B45D8 		movq	-40(%rbp), %rax
+  65 0088 488D5840 		leaq	64(%rax), %rbx
+  66 008c 488D45E7 		leaq	-25(%rbp), %rax
+  67 0090 4889C7   		movq	%rax, %rdi
+  68 0093 E8000000 		call	_ZNSaIcEC1Ev@PLT
+  68      00
+  69 0098 488D45E7 		leaq	-25(%rbp), %rax
+  70 009c 4889C2   		movq	%rax, %rdx
+  71 009f 488D3500 		leaq	.LC0(%rip), %rsi
+  71      000000
+  72 00a6 4889DF   		movq	%rbx, %rdi
+  73              	.LEHB2:
+  74 00a9 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+  74      00
+  75              	.LEHE2:
+  76              		.loc 1 12 0 discriminator 6
+  77 00ae 488D45E7 		leaq	-25(%rbp), %rax
+  78 00b2 4889C7   		movq	%rax, %rdi
+  79 00b5 E8000000 		call	_ZNSaIcED1Ev@PLT
+  79      00
+  80 00ba 488B45D8 		movq	-40(%rbp), %rax
+  81 00be 4883C060 		addq	$96, %rax
+  82 00c2 4889C7   		movq	%rax, %rdi
+  83              	.LEHB3:
+  84 00c5 E8000000 		call	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev@PLT
+  84      00
+  85              	.LEHE3:
+  86              		.loc 1 12 0 discriminator 8
+  87 00ca 488B45D8 		movq	-40(%rbp), %rax
+  88 00ce 660FEFC0 		pxor	%xmm0, %xmm0
+  89 00d2 F30F1140 		movss	%xmm0, 120(%rax)
+  89      78
+  90 00d7 488B45D8 		movq	-40(%rbp), %rax
+  91 00db C6407C00 		movb	$0, 124(%rax)
+  92              	.LBE2:
+  13:DeferredTestResult.cpp **** {
+  14:DeferredTestResult.cpp **** }
+  93              		.loc 1 14 0 is_stmt 1 discriminator 8
+  94 00df 90       		nop
+  95 00e0 488B45E8 		movq	-24(%rbp), %rax
+  96 00e4 64483304 		xorq	%fs:40, %rax
+  96      25280000 
+  96      00
+  97 00ed 747D     		je	.L8
+  98 00ef EB76     		jmp	.L13
+  99              	.L9:
+ 100 00f1 4889C3   		movq	%rax, %rbx
+ 101              	.LBB3:
+  12:DeferredTestResult.cpp **** {
+ 102              		.loc 1 12 0
+ 103 00f4 488D45E7 		leaq	-25(%rbp), %rax
+ 104 00f8 4889C7   		movq	%rax, %rdi
+ 105 00fb E8000000 		call	_ZNSaIcED1Ev@PLT
+ 105      00
+ 106 0100 4889D8   		movq	%rbx, %rax
+ 107 0103 4889C7   		movq	%rax, %rdi
+ 108              	.LEHB4:
+ 109 0106 E8000000 		call	_Unwind_Resume@PLT
+ 109      00
+ 110              	.LEHE4:
+ 111              	.L10:
+ 112 010b 4889C3   		movq	%rax, %rbx
+ 113 010e 488D45E7 		leaq	-25(%rbp), %rax
+ 114 0112 4889C7   		movq	%rax, %rdi
+ 115 0115 E8000000 		call	_ZNSaIcED1Ev@PLT
+ 115      00
+ 116 011a EB34     		jmp	.L4
+ 117              	.L11:
+ 118 011c 4889C3   		movq	%rax, %rbx
+ 119 011f 488D45E7 		leaq	-25(%rbp), %rax
+ 120 0123 4889C7   		movq	%rax, %rdi
+ 121 0126 E8000000 		call	_ZNSaIcED1Ev@PLT
+ 121      00
+ 122 012b EB13     		jmp	.L6
+ 123              	.L12:
+ 124 012d 4889C3   		movq	%rax, %rbx
+ 125 0130 488B45D8 		movq	-40(%rbp), %rax
+ 126 0134 4883C040 		addq	$64, %rax
+ 127 0138 4889C7   		movq	%rax, %rdi
+ 128 013b E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 128      00
+ 129              	.L6:
+ 130 0140 488B45D8 		movq	-40(%rbp), %rax
+ 131 0144 4883C020 		addq	$32, %rax
+ 132 0148 4889C7   		movq	%rax, %rdi
+ 133 014b E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 133      00
+ 134              	.L4:
+ 135 0150 488B45D8 		movq	-40(%rbp), %rax
+ 136 0154 4889C7   		movq	%rax, %rdi
+ 137 0157 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 137      00
+ 138 015c 4889D8   		movq	%rbx, %rax
+ 139 015f 4889C7   		movq	%rax, %rdi
+ 140              	.LEHB5:
+ 141 0162 E8000000 		call	_Unwind_Resume@PLT
+ 141      00
+ 142              	.LEHE5:
+ 143              	.L13:
+ 144              	.LBE3:
+ 145              		.loc 1 14 0
+ 146 0167 E8000000 		call	__stack_chk_fail@PLT
+ 146      00
+ 147              	.L8:
+ 148 016c 4883C428 		addq	$40, %rsp
+ 149 0170 5B       		popq	%rbx
+ 150 0171 5D       		popq	%rbp
+ 151              		.cfi_def_cfa 7, 8
+ 152 0172 C3       		ret
+ 153              		.cfi_endproc
+ 154              	.LFE891:
+ 155              		.globl	__gxx_personality_v0
+ 156              		.section	.gcc_except_table,"a",@progbits
+ 157              	.LLSDA891:
+ 158 0000 FF       		.byte	0xff
+ 159 0001 FF       		.byte	0xff
+ 160 0002 01       		.byte	0x1
+ 161 0003 20       		.uleb128 .LLSDACSE891-.LLSDACSB891
+ 162              	.LLSDACSB891:
+ 163 0004 3D       		.uleb128 .LEHB0-.LFB891
+ 164 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 165 0006 F101     		.uleb128 .L9-.LFB891
+ 166 0008 00       		.uleb128 0
+ 167 0009 73       		.uleb128 .LEHB1-.LFB891
+ 168 000a 05       		.uleb128 .LEHE1-.LEHB1
+ 169 000b 8B02     		.uleb128 .L10-.LFB891
+ 170 000d 00       		.uleb128 0
+ 171 000e A901     		.uleb128 .LEHB2-.LFB891
+ 172 0010 05       		.uleb128 .LEHE2-.LEHB2
+ 173 0011 9C02     		.uleb128 .L11-.LFB891
+ 174 0013 00       		.uleb128 0
+ 175 0014 C501     		.uleb128 .LEHB3-.LFB891
+ 176 0016 05       		.uleb128 .LEHE3-.LEHB3
+ 177 0017 AD02     		.uleb128 .L12-.LFB891
+ 178 0019 00       		.uleb128 0
+ 179 001a 8602     		.uleb128 .LEHB4-.LFB891
+ 180 001c 05       		.uleb128 .LEHE4-.LEHB4
+ 181 001d 00       		.uleb128 0
+ 182 001e 00       		.uleb128 0
+ 183 001f E202     		.uleb128 .LEHB5-.LFB891
+ 184 0021 05       		.uleb128 .LEHE5-.LEHB5
+ 185 0022 00       		.uleb128 0
+ 186 0023 00       		.uleb128 0
+ 187              	.LLSDACSE891:
+ 188              		.text
+ 190              		.globl	_ZN8UnitTest18DeferredTestResultC1Ev
+ 191              		.set	_ZN8UnitTest18DeferredTestResultC1Ev,_ZN8UnitTest18DeferredTestResultC2Ev
+ 192 0173 90       		.align 2
+ 193              		.globl	_ZN8UnitTest18DeferredTestResultC2EPKcS2_
+ 195              	_ZN8UnitTest18DeferredTestResultC2EPKcS2_:
+ 196              	.LFB894:
+  15:DeferredTestResult.cpp **** 
+  16:DeferredTestResult.cpp **** DeferredTestResult::DeferredTestResult(char const* suite, char const* test)
+ 197              		.loc 1 16 0
+ 198              		.cfi_startproc
+ 199              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 200              		.cfi_lsda 0x1b,.LLSDA894
+ 201 0174 55       		pushq	%rbp
+ 202              		.cfi_def_cfa_offset 16
+ 203              		.cfi_offset 6, -16
+ 204 0175 4889E5   		movq	%rsp, %rbp
+ 205              		.cfi_def_cfa_register 6
+ 206 0178 53       		pushq	%rbx
+ 207 0179 4883EC38 		subq	$56, %rsp
+ 208              		.cfi_offset 3, -24
+ 209 017d 48897DD8 		movq	%rdi, -40(%rbp)
+ 210 0181 488975D0 		movq	%rsi, -48(%rbp)
+ 211 0185 488955C8 		movq	%rdx, -56(%rbp)
+ 212              		.loc 1 16 0
+ 213 0189 64488B04 		movq	%fs:40, %rax
+ 213      25280000 
+ 213      00
+ 214 0192 488945E8 		movq	%rax, -24(%rbp)
+ 215 0196 31C0     		xorl	%eax, %eax
+ 216              	.LBB4:
+  17:DeferredTestResult.cpp **** 	: suiteName(suite)
+  18:DeferredTestResult.cpp **** 	, testName(test)
+  19:DeferredTestResult.cpp **** 	, failureFile("")
+  20:DeferredTestResult.cpp **** 	, timeElapsed(0.0f)
+  21:DeferredTestResult.cpp **** 	, failed(false)
+ 217              		.loc 1 21 0
+ 218 0198 488B5DD8 		movq	-40(%rbp), %rbx
+ 219 019c 488D45E7 		leaq	-25(%rbp), %rax
+ 220 01a0 4889C7   		movq	%rax, %rdi
+ 221 01a3 E8000000 		call	_ZNSaIcEC1Ev@PLT
+ 221      00
+ 222 01a8 488D55E7 		leaq	-25(%rbp), %rdx
+ 223 01ac 488B45D0 		movq	-48(%rbp), %rax
+ 224 01b0 4889C6   		movq	%rax, %rsi
+ 225 01b3 4889DF   		movq	%rbx, %rdi
+ 226              	.LEHB6:
+ 227 01b6 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+ 227      00
+ 228              	.LEHE6:
+ 229              		.loc 1 21 0 is_stmt 0 discriminator 2
+ 230 01bb 488D45E7 		leaq	-25(%rbp), %rax
+ 231 01bf 4889C7   		movq	%rax, %rdi
+ 232 01c2 E8000000 		call	_ZNSaIcED1Ev@PLT
+ 232      00
+ 233 01c7 488B45D8 		movq	-40(%rbp), %rax
+ 234 01cb 488D5820 		leaq	32(%rax), %rbx
+ 235 01cf 488D45E7 		leaq	-25(%rbp), %rax
+ 236 01d3 4889C7   		movq	%rax, %rdi
+ 237 01d6 E8000000 		call	_ZNSaIcEC1Ev@PLT
+ 237      00
+ 238 01db 488D55E7 		leaq	-25(%rbp), %rdx
+ 239 01df 488B45C8 		movq	-56(%rbp), %rax
+ 240 01e3 4889C6   		movq	%rax, %rsi
+ 241 01e6 4889DF   		movq	%rbx, %rdi
+ 242              	.LEHB7:
+ 243 01e9 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+ 243      00
+ 244              	.LEHE7:
+ 245              		.loc 1 21 0 discriminator 4
+ 246 01ee 488D45E7 		leaq	-25(%rbp), %rax
+ 247 01f2 4889C7   		movq	%rax, %rdi
+ 248 01f5 E8000000 		call	_ZNSaIcED1Ev@PLT
+ 248      00
+ 249 01fa 488B45D8 		movq	-40(%rbp), %rax
+ 250 01fe 488D5840 		leaq	64(%rax), %rbx
+ 251 0202 488D45E7 		leaq	-25(%rbp), %rax
+ 252 0206 4889C7   		movq	%rax, %rdi
+ 253 0209 E8000000 		call	_ZNSaIcEC1Ev@PLT
+ 253      00
+ 254 020e 488D45E7 		leaq	-25(%rbp), %rax
+ 255 0212 4889C2   		movq	%rax, %rdx
+ 256 0215 488D3500 		leaq	.LC0(%rip), %rsi
+ 256      000000
+ 257 021c 4889DF   		movq	%rbx, %rdi
+ 258              	.LEHB8:
+ 259 021f E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@PLT
+ 259      00
+ 260              	.LEHE8:
+ 261              		.loc 1 21 0 discriminator 6
+ 262 0224 488D45E7 		leaq	-25(%rbp), %rax
+ 263 0228 4889C7   		movq	%rax, %rdi
+ 264 022b E8000000 		call	_ZNSaIcED1Ev@PLT
+ 264      00
+ 265 0230 488B45D8 		movq	-40(%rbp), %rax
+ 266 0234 4883C060 		addq	$96, %rax
+ 267 0238 4889C7   		movq	%rax, %rdi
+ 268              	.LEHB9:
+ 269 023b E8000000 		call	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev@PLT
+ 269      00
+ 270              	.LEHE9:
+ 271              		.loc 1 21 0 discriminator 8
+ 272 0240 488B45D8 		movq	-40(%rbp), %rax
+ 273 0244 660FEFC0 		pxor	%xmm0, %xmm0
+ 274 0248 F30F1140 		movss	%xmm0, 120(%rax)
+ 274      78
+ 275 024d 488B45D8 		movq	-40(%rbp), %rax
+ 276 0251 C6407C00 		movb	$0, 124(%rax)
+ 277              	.LBE4:
+  22:DeferredTestResult.cpp **** {
+  23:DeferredTestResult.cpp **** }
+ 278              		.loc 1 23 0 is_stmt 1 discriminator 8
+ 279 0255 90       		nop
+ 280 0256 488B45E8 		movq	-24(%rbp), %rax
+ 281 025a 64483304 		xorq	%fs:40, %rax
+ 281      25280000 
+ 281      00
+ 282 0263 747D     		je	.L21
+ 283 0265 EB76     		jmp	.L26
+ 284              	.L22:
+ 285 0267 4889C3   		movq	%rax, %rbx
+ 286              	.LBB5:
+  21:DeferredTestResult.cpp **** {
+ 287              		.loc 1 21 0
+ 288 026a 488D45E7 		leaq	-25(%rbp), %rax
+ 289 026e 4889C7   		movq	%rax, %rdi
+ 290 0271 E8000000 		call	_ZNSaIcED1Ev@PLT
+ 290      00
+ 291 0276 4889D8   		movq	%rbx, %rax
+ 292 0279 4889C7   		movq	%rax, %rdi
+ 293              	.LEHB10:
+ 294 027c E8000000 		call	_Unwind_Resume@PLT
+ 294      00
+ 295              	.LEHE10:
+ 296              	.L23:
+ 297 0281 4889C3   		movq	%rax, %rbx
+ 298 0284 488D45E7 		leaq	-25(%rbp), %rax
+ 299 0288 4889C7   		movq	%rax, %rdi
+ 300 028b E8000000 		call	_ZNSaIcED1Ev@PLT
+ 300      00
+ 301 0290 EB34     		jmp	.L17
+ 302              	.L24:
+ 303 0292 4889C3   		movq	%rax, %rbx
+ 304 0295 488D45E7 		leaq	-25(%rbp), %rax
+ 305 0299 4889C7   		movq	%rax, %rdi
+ 306 029c E8000000 		call	_ZNSaIcED1Ev@PLT
+ 306      00
+ 307 02a1 EB13     		jmp	.L19
+ 308              	.L25:
+ 309 02a3 4889C3   		movq	%rax, %rbx
+ 310 02a6 488B45D8 		movq	-40(%rbp), %rax
+ 311 02aa 4883C040 		addq	$64, %rax
+ 312 02ae 4889C7   		movq	%rax, %rdi
+ 313 02b1 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 313      00
+ 314              	.L19:
+ 315 02b6 488B45D8 		movq	-40(%rbp), %rax
+ 316 02ba 4883C020 		addq	$32, %rax
+ 317 02be 4889C7   		movq	%rax, %rdi
+ 318 02c1 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 318      00
+ 319              	.L17:
+ 320 02c6 488B45D8 		movq	-40(%rbp), %rax
+ 321 02ca 4889C7   		movq	%rax, %rdi
+ 322 02cd E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 322      00
+ 323 02d2 4889D8   		movq	%rbx, %rax
+ 324 02d5 4889C7   		movq	%rax, %rdi
+ 325              	.LEHB11:
+ 326 02d8 E8000000 		call	_Unwind_Resume@PLT
+ 326      00
+ 327              	.LEHE11:
+ 328              	.L26:
+ 329              	.LBE5:
+ 330              		.loc 1 23 0
+ 331 02dd E8000000 		call	__stack_chk_fail@PLT
+ 331      00
+ 332              	.L21:
+ 333 02e2 4883C438 		addq	$56, %rsp
+ 334 02e6 5B       		popq	%rbx
+ 335 02e7 5D       		popq	%rbp
+ 336              		.cfi_def_cfa 7, 8
+ 337 02e8 C3       		ret
+ 338              		.cfi_endproc
+ 339              	.LFE894:
+ 340              		.section	.gcc_except_table
+ 341              	.LLSDA894:
+ 342 0024 FF       		.byte	0xff
+ 343 0025 FF       		.byte	0xff
+ 344 0026 01       		.byte	0x1
+ 345 0027 20       		.uleb128 .LLSDACSE894-.LLSDACSB894
+ 346              	.LLSDACSB894:
+ 347 0028 42       		.uleb128 .LEHB6-.LFB894
+ 348 0029 05       		.uleb128 .LEHE6-.LEHB6
+ 349 002a F301     		.uleb128 .L22-.LFB894
+ 350 002c 00       		.uleb128 0
+ 351 002d 75       		.uleb128 .LEHB7-.LFB894
+ 352 002e 05       		.uleb128 .LEHE7-.LEHB7
+ 353 002f 8D02     		.uleb128 .L23-.LFB894
+ 354 0031 00       		.uleb128 0
+ 355 0032 AB01     		.uleb128 .LEHB8-.LFB894
+ 356 0034 05       		.uleb128 .LEHE8-.LEHB8
+ 357 0035 9E02     		.uleb128 .L24-.LFB894
+ 358 0037 00       		.uleb128 0
+ 359 0038 C701     		.uleb128 .LEHB9-.LFB894
+ 360 003a 05       		.uleb128 .LEHE9-.LEHB9
+ 361 003b AF02     		.uleb128 .L25-.LFB894
+ 362 003d 00       		.uleb128 0
+ 363 003e 8802     		.uleb128 .LEHB10-.LFB894
+ 364 0040 05       		.uleb128 .LEHE10-.LEHB10
+ 365 0041 00       		.uleb128 0
+ 366 0042 00       		.uleb128 0
+ 367 0043 E402     		.uleb128 .LEHB11-.LFB894
+ 368 0045 05       		.uleb128 .LEHE11-.LEHB11
+ 369 0046 00       		.uleb128 0
+ 370 0047 00       		.uleb128 0
+ 371              	.LLSDACSE894:
+ 372              		.text
+ 374              		.globl	_ZN8UnitTest18DeferredTestResultC1EPKcS2_
+ 375              		.set	_ZN8UnitTest18DeferredTestResultC1EPKcS2_,_ZN8UnitTest18DeferredTestResultC2EPKcS2_
+ 376              		.section	.text._ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE
+ 377              		.align 2
+ 378              		.weak	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev
+ 380              	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:
+ 381              	.LFB913:
+ 382              		.file 2 "/usr/include/c++/7/bits/stl_vector.h"
+   1:/usr/include/c++/7/bits/stl_vector.h **** // Vector implementation -*- C++ -*-
+   2:/usr/include/c++/7/bits/stl_vector.h **** 
+   3:/usr/include/c++/7/bits/stl_vector.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
+   4:/usr/include/c++/7/bits/stl_vector.h **** //
+   5:/usr/include/c++/7/bits/stl_vector.h **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/7/bits/stl_vector.h **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/7/bits/stl_vector.h **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/7/bits/stl_vector.h **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/7/bits/stl_vector.h **** // any later version.
+  10:/usr/include/c++/7/bits/stl_vector.h **** 
+  11:/usr/include/c++/7/bits/stl_vector.h **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/7/bits/stl_vector.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/7/bits/stl_vector.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/7/bits/stl_vector.h **** // GNU General Public License for more details.
+  15:/usr/include/c++/7/bits/stl_vector.h **** 
+  16:/usr/include/c++/7/bits/stl_vector.h **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/7/bits/stl_vector.h **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/7/bits/stl_vector.h **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/7/bits/stl_vector.h **** 
+  20:/usr/include/c++/7/bits/stl_vector.h **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/7/bits/stl_vector.h **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/7/bits/stl_vector.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/7/bits/stl_vector.h **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/7/bits/stl_vector.h **** 
+  25:/usr/include/c++/7/bits/stl_vector.h **** /*
+  26:/usr/include/c++/7/bits/stl_vector.h ****  *
+  27:/usr/include/c++/7/bits/stl_vector.h ****  * Copyright (c) 1994
+  28:/usr/include/c++/7/bits/stl_vector.h ****  * Hewlett-Packard Company
+  29:/usr/include/c++/7/bits/stl_vector.h ****  *
+  30:/usr/include/c++/7/bits/stl_vector.h ****  * Permission to use, copy, modify, distribute and sell this software
+  31:/usr/include/c++/7/bits/stl_vector.h ****  * and its documentation for any purpose is hereby granted without fee,
+  32:/usr/include/c++/7/bits/stl_vector.h ****  * provided that the above copyright notice appear in all copies and
+  33:/usr/include/c++/7/bits/stl_vector.h ****  * that both that copyright notice and this permission notice appear
+  34:/usr/include/c++/7/bits/stl_vector.h ****  * in supporting documentation.  Hewlett-Packard Company makes no
+  35:/usr/include/c++/7/bits/stl_vector.h ****  * representations about the suitability of this software for any
+  36:/usr/include/c++/7/bits/stl_vector.h ****  * purpose.  It is provided "as is" without express or implied warranty.
+  37:/usr/include/c++/7/bits/stl_vector.h ****  *
+  38:/usr/include/c++/7/bits/stl_vector.h ****  *
+  39:/usr/include/c++/7/bits/stl_vector.h ****  * Copyright (c) 1996
+  40:/usr/include/c++/7/bits/stl_vector.h ****  * Silicon Graphics Computer Systems, Inc.
+  41:/usr/include/c++/7/bits/stl_vector.h ****  *
+  42:/usr/include/c++/7/bits/stl_vector.h ****  * Permission to use, copy, modify, distribute and sell this software
+  43:/usr/include/c++/7/bits/stl_vector.h ****  * and its documentation for any purpose is hereby granted without fee,
+  44:/usr/include/c++/7/bits/stl_vector.h ****  * provided that the above copyright notice appear in all copies and
+  45:/usr/include/c++/7/bits/stl_vector.h ****  * that both that copyright notice and this permission notice appear
+  46:/usr/include/c++/7/bits/stl_vector.h ****  * in supporting documentation.  Silicon Graphics makes no
+  47:/usr/include/c++/7/bits/stl_vector.h ****  * representations about the suitability of this  software for any
+  48:/usr/include/c++/7/bits/stl_vector.h ****  * purpose.  It is provided "as is" without express or implied warranty.
+  49:/usr/include/c++/7/bits/stl_vector.h ****  */
+  50:/usr/include/c++/7/bits/stl_vector.h **** 
+  51:/usr/include/c++/7/bits/stl_vector.h **** /** @file bits/stl_vector.h
+  52:/usr/include/c++/7/bits/stl_vector.h ****  *  This is an internal header file, included by other library headers.
+  53:/usr/include/c++/7/bits/stl_vector.h ****  *  Do not attempt to use it directly. @headername{vector}
+  54:/usr/include/c++/7/bits/stl_vector.h ****  */
+  55:/usr/include/c++/7/bits/stl_vector.h **** 
+  56:/usr/include/c++/7/bits/stl_vector.h **** #ifndef _STL_VECTOR_H
+  57:/usr/include/c++/7/bits/stl_vector.h **** #define _STL_VECTOR_H 1
+  58:/usr/include/c++/7/bits/stl_vector.h **** 
+  59:/usr/include/c++/7/bits/stl_vector.h **** #include <bits/stl_iterator_base_funcs.h>
+  60:/usr/include/c++/7/bits/stl_vector.h **** #include <bits/functexcept.h>
+  61:/usr/include/c++/7/bits/stl_vector.h **** #include <bits/concept_check.h>
+  62:/usr/include/c++/7/bits/stl_vector.h **** #if __cplusplus >= 201103L
+  63:/usr/include/c++/7/bits/stl_vector.h **** #include <initializer_list>
+  64:/usr/include/c++/7/bits/stl_vector.h **** #endif
+  65:/usr/include/c++/7/bits/stl_vector.h **** 
+  66:/usr/include/c++/7/bits/stl_vector.h **** #include <debug/assertions.h>
+  67:/usr/include/c++/7/bits/stl_vector.h **** 
+  68:/usr/include/c++/7/bits/stl_vector.h **** namespace std _GLIBCXX_VISIBILITY(default)
+  69:/usr/include/c++/7/bits/stl_vector.h **** {
+  70:/usr/include/c++/7/bits/stl_vector.h **** _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
+  71:/usr/include/c++/7/bits/stl_vector.h **** 
+  72:/usr/include/c++/7/bits/stl_vector.h ****   /// See bits/stl_deque.h's _Deque_base for an explanation.
+  73:/usr/include/c++/7/bits/stl_vector.h ****   template<typename _Tp, typename _Alloc>
+  74:/usr/include/c++/7/bits/stl_vector.h ****     struct _Vector_base
+  75:/usr/include/c++/7/bits/stl_vector.h ****     {
+  76:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+  77:/usr/include/c++/7/bits/stl_vector.h **** 	rebind<_Tp>::other _Tp_alloc_type;
+  78:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+  79:/usr/include/c++/7/bits/stl_vector.h ****        	pointer;
+  80:/usr/include/c++/7/bits/stl_vector.h **** 
+  81:/usr/include/c++/7/bits/stl_vector.h ****       struct _Vector_impl
+  82:/usr/include/c++/7/bits/stl_vector.h ****       : public _Tp_alloc_type
+  83:/usr/include/c++/7/bits/stl_vector.h ****       {
+  84:/usr/include/c++/7/bits/stl_vector.h **** 	pointer _M_start;
+  85:/usr/include/c++/7/bits/stl_vector.h **** 	pointer _M_finish;
+  86:/usr/include/c++/7/bits/stl_vector.h **** 	pointer _M_end_of_storage;
+  87:/usr/include/c++/7/bits/stl_vector.h **** 
+  88:/usr/include/c++/7/bits/stl_vector.h **** 	_Vector_impl()
+  89:/usr/include/c++/7/bits/stl_vector.h **** 	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+  90:/usr/include/c++/7/bits/stl_vector.h **** 	{ }
+  91:/usr/include/c++/7/bits/stl_vector.h **** 
+  92:/usr/include/c++/7/bits/stl_vector.h **** 	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+  93:/usr/include/c++/7/bits/stl_vector.h **** 	: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+  94:/usr/include/c++/7/bits/stl_vector.h **** 	{ }
+  95:/usr/include/c++/7/bits/stl_vector.h **** 
+  96:/usr/include/c++/7/bits/stl_vector.h **** #if __cplusplus >= 201103L
+  97:/usr/include/c++/7/bits/stl_vector.h **** 	_Vector_impl(_Tp_alloc_type&& __a) noexcept
+  98:/usr/include/c++/7/bits/stl_vector.h **** 	: _Tp_alloc_type(std::move(__a)),
+  99:/usr/include/c++/7/bits/stl_vector.h **** 	  _M_start(), _M_finish(), _M_end_of_storage()
+ 100:/usr/include/c++/7/bits/stl_vector.h **** 	{ }
+ 101:/usr/include/c++/7/bits/stl_vector.h **** #endif
+ 102:/usr/include/c++/7/bits/stl_vector.h **** 
+ 103:/usr/include/c++/7/bits/stl_vector.h **** 	void _M_swap_data(_Vector_impl& __x) _GLIBCXX_NOEXCEPT
+ 104:/usr/include/c++/7/bits/stl_vector.h **** 	{
+ 105:/usr/include/c++/7/bits/stl_vector.h **** 	  std::swap(_M_start, __x._M_start);
+ 106:/usr/include/c++/7/bits/stl_vector.h **** 	  std::swap(_M_finish, __x._M_finish);
+ 107:/usr/include/c++/7/bits/stl_vector.h **** 	  std::swap(_M_end_of_storage, __x._M_end_of_storage);
+ 108:/usr/include/c++/7/bits/stl_vector.h **** 	}
+ 109:/usr/include/c++/7/bits/stl_vector.h ****       };
+ 110:/usr/include/c++/7/bits/stl_vector.h **** 
+ 111:/usr/include/c++/7/bits/stl_vector.h ****     public:
+ 112:/usr/include/c++/7/bits/stl_vector.h ****       typedef _Alloc allocator_type;
+ 113:/usr/include/c++/7/bits/stl_vector.h **** 
+ 114:/usr/include/c++/7/bits/stl_vector.h ****       _Tp_alloc_type&
+ 115:/usr/include/c++/7/bits/stl_vector.h ****       _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+ 116:/usr/include/c++/7/bits/stl_vector.h ****       { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+ 117:/usr/include/c++/7/bits/stl_vector.h **** 
+ 118:/usr/include/c++/7/bits/stl_vector.h ****       const _Tp_alloc_type&
+ 119:/usr/include/c++/7/bits/stl_vector.h ****       _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+ 120:/usr/include/c++/7/bits/stl_vector.h ****       { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+ 121:/usr/include/c++/7/bits/stl_vector.h **** 
+ 122:/usr/include/c++/7/bits/stl_vector.h ****       allocator_type
+ 123:/usr/include/c++/7/bits/stl_vector.h ****       get_allocator() const _GLIBCXX_NOEXCEPT
+ 124:/usr/include/c++/7/bits/stl_vector.h ****       { return allocator_type(_M_get_Tp_allocator()); }
+ 125:/usr/include/c++/7/bits/stl_vector.h **** 
+ 126:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base()
+ 127:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl() { }
+ 128:/usr/include/c++/7/bits/stl_vector.h **** 
+ 129:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+ 130:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl(__a) { }
+ 131:/usr/include/c++/7/bits/stl_vector.h **** 
+ 132:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(size_t __n)
+ 133:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl()
+ 134:/usr/include/c++/7/bits/stl_vector.h ****       { _M_create_storage(__n); }
+ 135:/usr/include/c++/7/bits/stl_vector.h **** 
+ 136:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(size_t __n, const allocator_type& __a)
+ 137:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl(__a)
+ 138:/usr/include/c++/7/bits/stl_vector.h ****       { _M_create_storage(__n); }
+ 139:/usr/include/c++/7/bits/stl_vector.h **** 
+ 140:/usr/include/c++/7/bits/stl_vector.h **** #if __cplusplus >= 201103L
+ 141:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(_Tp_alloc_type&& __a) noexcept
+ 142:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl(std::move(__a)) { }
+ 143:/usr/include/c++/7/bits/stl_vector.h **** 
+ 144:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(_Vector_base&& __x) noexcept
+ 145:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl(std::move(__x._M_get_Tp_allocator()))
+ 146:/usr/include/c++/7/bits/stl_vector.h ****       { this->_M_impl._M_swap_data(__x._M_impl); }
+ 147:/usr/include/c++/7/bits/stl_vector.h **** 
+ 148:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_base(_Vector_base&& __x, const allocator_type& __a)
+ 149:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl(__a)
+ 150:/usr/include/c++/7/bits/stl_vector.h ****       {
+ 151:/usr/include/c++/7/bits/stl_vector.h **** 	if (__x.get_allocator() == __a)
+ 152:/usr/include/c++/7/bits/stl_vector.h **** 	  this->_M_impl._M_swap_data(__x._M_impl);
+ 153:/usr/include/c++/7/bits/stl_vector.h **** 	else
+ 154:/usr/include/c++/7/bits/stl_vector.h **** 	  {
+ 155:/usr/include/c++/7/bits/stl_vector.h **** 	    size_t __n = __x._M_impl._M_finish - __x._M_impl._M_start;
+ 156:/usr/include/c++/7/bits/stl_vector.h **** 	    _M_create_storage(__n);
+ 157:/usr/include/c++/7/bits/stl_vector.h **** 	  }
+ 158:/usr/include/c++/7/bits/stl_vector.h ****       }
+ 159:/usr/include/c++/7/bits/stl_vector.h **** #endif
+ 160:/usr/include/c++/7/bits/stl_vector.h **** 
+ 161:/usr/include/c++/7/bits/stl_vector.h ****       ~_Vector_base() _GLIBCXX_NOEXCEPT
+ 162:/usr/include/c++/7/bits/stl_vector.h ****       { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+ 163:/usr/include/c++/7/bits/stl_vector.h **** 		      - this->_M_impl._M_start); }
+ 164:/usr/include/c++/7/bits/stl_vector.h **** 
+ 165:/usr/include/c++/7/bits/stl_vector.h ****     public:
+ 166:/usr/include/c++/7/bits/stl_vector.h ****       _Vector_impl _M_impl;
+ 167:/usr/include/c++/7/bits/stl_vector.h **** 
+ 168:/usr/include/c++/7/bits/stl_vector.h ****       pointer
+ 169:/usr/include/c++/7/bits/stl_vector.h ****       _M_allocate(size_t __n)
+ 170:/usr/include/c++/7/bits/stl_vector.h ****       {
+ 171:/usr/include/c++/7/bits/stl_vector.h **** 	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+ 172:/usr/include/c++/7/bits/stl_vector.h **** 	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+ 173:/usr/include/c++/7/bits/stl_vector.h ****       }
+ 174:/usr/include/c++/7/bits/stl_vector.h **** 
+ 175:/usr/include/c++/7/bits/stl_vector.h ****       void
+ 176:/usr/include/c++/7/bits/stl_vector.h ****       _M_deallocate(pointer __p, size_t __n)
+ 177:/usr/include/c++/7/bits/stl_vector.h ****       {
+ 178:/usr/include/c++/7/bits/stl_vector.h **** 	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+ 179:/usr/include/c++/7/bits/stl_vector.h **** 	if (__p)
+ 180:/usr/include/c++/7/bits/stl_vector.h **** 	  _Tr::deallocate(_M_impl, __p, __n);
+ 181:/usr/include/c++/7/bits/stl_vector.h ****       }
+ 182:/usr/include/c++/7/bits/stl_vector.h **** 
+ 183:/usr/include/c++/7/bits/stl_vector.h ****     private:
+ 184:/usr/include/c++/7/bits/stl_vector.h ****       void
+ 185:/usr/include/c++/7/bits/stl_vector.h ****       _M_create_storage(size_t __n)
+ 186:/usr/include/c++/7/bits/stl_vector.h ****       {
+ 187:/usr/include/c++/7/bits/stl_vector.h **** 	this->_M_impl._M_start = this->_M_allocate(__n);
+ 188:/usr/include/c++/7/bits/stl_vector.h **** 	this->_M_impl._M_finish = this->_M_impl._M_start;
+ 189:/usr/include/c++/7/bits/stl_vector.h **** 	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+ 190:/usr/include/c++/7/bits/stl_vector.h ****       }
+ 191:/usr/include/c++/7/bits/stl_vector.h ****     };
+ 192:/usr/include/c++/7/bits/stl_vector.h **** 
+ 193:/usr/include/c++/7/bits/stl_vector.h **** 
+ 194:/usr/include/c++/7/bits/stl_vector.h ****   /**
+ 195:/usr/include/c++/7/bits/stl_vector.h ****    *  @brief A standard container which offers fixed time access to
+ 196:/usr/include/c++/7/bits/stl_vector.h ****    *  individual elements in any order.
+ 197:/usr/include/c++/7/bits/stl_vector.h ****    *
+ 198:/usr/include/c++/7/bits/stl_vector.h ****    *  @ingroup sequences
+ 199:/usr/include/c++/7/bits/stl_vector.h ****    *
+ 200:/usr/include/c++/7/bits/stl_vector.h ****    *  @tparam _Tp  Type of element.
+ 201:/usr/include/c++/7/bits/stl_vector.h ****    *  @tparam _Alloc  Allocator type, defaults to allocator<_Tp>.
+ 202:/usr/include/c++/7/bits/stl_vector.h ****    *
+ 203:/usr/include/c++/7/bits/stl_vector.h ****    *  Meets the requirements of a <a href="tables.html#65">container</a>, a
+ 204:/usr/include/c++/7/bits/stl_vector.h ****    *  <a href="tables.html#66">reversible container</a>, and a
+ 205:/usr/include/c++/7/bits/stl_vector.h ****    *  <a href="tables.html#67">sequence</a>, including the
+ 206:/usr/include/c++/7/bits/stl_vector.h ****    *  <a href="tables.html#68">optional sequence requirements</a> with the
+ 207:/usr/include/c++/7/bits/stl_vector.h ****    *  %exception of @c push_front and @c pop_front.
+ 208:/usr/include/c++/7/bits/stl_vector.h ****    *
+ 209:/usr/include/c++/7/bits/stl_vector.h ****    *  In some terminology a %vector can be described as a dynamic
+ 210:/usr/include/c++/7/bits/stl_vector.h ****    *  C-style array, it offers fast and efficient access to individual
+ 211:/usr/include/c++/7/bits/stl_vector.h ****    *  elements in any order and saves the user from worrying about
+ 212:/usr/include/c++/7/bits/stl_vector.h ****    *  memory and size allocation.  Subscripting ( @c [] ) access is
+ 213:/usr/include/c++/7/bits/stl_vector.h ****    *  also provided as with C-style arrays.
+ 214:/usr/include/c++/7/bits/stl_vector.h ****   */
+ 215:/usr/include/c++/7/bits/stl_vector.h ****   template<typename _Tp, typename _Alloc = std::allocator<_Tp> >
+ 216:/usr/include/c++/7/bits/stl_vector.h ****     class vector : protected _Vector_base<_Tp, _Alloc>
+ 217:/usr/include/c++/7/bits/stl_vector.h ****     {
+ 218:/usr/include/c++/7/bits/stl_vector.h **** #ifdef _GLIBCXX_CONCEPT_CHECKS
+ 219:/usr/include/c++/7/bits/stl_vector.h ****       // Concept requirements.
+ 220:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Alloc::value_type		_Alloc_value_type;
+ 221:/usr/include/c++/7/bits/stl_vector.h **** # if __cplusplus < 201103L
+ 222:/usr/include/c++/7/bits/stl_vector.h ****       __glibcxx_class_requires(_Tp, _SGIAssignableConcept)
+ 223:/usr/include/c++/7/bits/stl_vector.h **** # endif
+ 224:/usr/include/c++/7/bits/stl_vector.h ****       __glibcxx_class_requires2(_Tp, _Alloc_value_type, _SameTypeConcept)
+ 225:/usr/include/c++/7/bits/stl_vector.h **** #endif
+ 226:/usr/include/c++/7/bits/stl_vector.h **** 
+ 227:/usr/include/c++/7/bits/stl_vector.h ****       typedef _Vector_base<_Tp, _Alloc>			_Base;
+ 228:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Base::_Tp_alloc_type		_Tp_alloc_type;
+ 229:/usr/include/c++/7/bits/stl_vector.h ****       typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type>	_Alloc_traits;
+ 230:/usr/include/c++/7/bits/stl_vector.h **** 
+ 231:/usr/include/c++/7/bits/stl_vector.h ****     public:
+ 232:/usr/include/c++/7/bits/stl_vector.h ****       typedef _Tp					value_type;
+ 233:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Base::pointer			pointer;
+ 234:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Alloc_traits::const_pointer	const_pointer;
+ 235:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Alloc_traits::reference		reference;
+ 236:/usr/include/c++/7/bits/stl_vector.h ****       typedef typename _Alloc_traits::const_reference	const_reference;
+ 237:/usr/include/c++/7/bits/stl_vector.h ****       typedef __gnu_cxx::__normal_iterator<pointer, vector> iterator;
+ 238:/usr/include/c++/7/bits/stl_vector.h ****       typedef __gnu_cxx::__normal_iterator<const_pointer, vector>
+ 239:/usr/include/c++/7/bits/stl_vector.h ****       const_iterator;
+ 240:/usr/include/c++/7/bits/stl_vector.h ****       typedef std::reverse_iterator<const_iterator>	const_reverse_iterator;
+ 241:/usr/include/c++/7/bits/stl_vector.h ****       typedef std::reverse_iterator<iterator>		reverse_iterator;
+ 242:/usr/include/c++/7/bits/stl_vector.h ****       typedef size_t					size_type;
+ 243:/usr/include/c++/7/bits/stl_vector.h ****       typedef ptrdiff_t					difference_type;
+ 244:/usr/include/c++/7/bits/stl_vector.h ****       typedef _Alloc					allocator_type;
+ 245:/usr/include/c++/7/bits/stl_vector.h **** 
+ 246:/usr/include/c++/7/bits/stl_vector.h ****     protected:
+ 247:/usr/include/c++/7/bits/stl_vector.h ****       using _Base::_M_allocate;
+ 248:/usr/include/c++/7/bits/stl_vector.h ****       using _Base::_M_deallocate;
+ 249:/usr/include/c++/7/bits/stl_vector.h ****       using _Base::_M_impl;
+ 250:/usr/include/c++/7/bits/stl_vector.h ****       using _Base::_M_get_Tp_allocator;
+ 251:/usr/include/c++/7/bits/stl_vector.h **** 
+ 252:/usr/include/c++/7/bits/stl_vector.h ****     public:
+ 253:/usr/include/c++/7/bits/stl_vector.h ****       // [23.2.4.1] construct/copy/destroy
+ 254:/usr/include/c++/7/bits/stl_vector.h ****       // (assign() and get_allocator() are also listed in this section)
+ 255:/usr/include/c++/7/bits/stl_vector.h **** 
+ 256:/usr/include/c++/7/bits/stl_vector.h ****       /**
+ 257:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  Creates a %vector with no elements.
+ 258:/usr/include/c++/7/bits/stl_vector.h ****        */
+ 259:/usr/include/c++/7/bits/stl_vector.h ****       vector()
+ 383              		.loc 2 259 0
+ 384              		.cfi_startproc
+ 385 0000 55       		pushq	%rbp
+ 386              		.cfi_def_cfa_offset 16
+ 387              		.cfi_offset 6, -16
+ 388 0001 4889E5   		movq	%rsp, %rbp
+ 389              		.cfi_def_cfa_register 6
+ 390 0004 4883EC10 		subq	$16, %rsp
+ 391 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 392              	.LBB6:
+ 260:/usr/include/c++/7/bits/stl_vector.h **** #if __cplusplus >= 201103L
+ 261:/usr/include/c++/7/bits/stl_vector.h ****       noexcept(is_nothrow_default_constructible<_Alloc>::value)
+ 262:/usr/include/c++/7/bits/stl_vector.h **** #endif
+ 263:/usr/include/c++/7/bits/stl_vector.h ****       : _Base() { }
+ 393              		.loc 2 263 0
+ 394 000c 488B45F8 		movq	-8(%rbp), %rax
+ 395 0010 4889C7   		movq	%rax, %rdi
+ 396 0013 E8000000 		call	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2E
+ 396      00
+ 397              	.LBE6:
+ 398 0018 90       		nop
+ 399 0019 C9       		leave
+ 400              		.cfi_def_cfa 7, 8
+ 401 001a C3       		ret
+ 402              		.cfi_endproc
+ 403              	.LFE913:
+ 405              		.weak	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev
+ 406              		.set	_ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev,_ZNSt
+ 407              		.section	.text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEES
+ 408              		.align 2
+ 409              		.weak	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2
+ 411              	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:
+ 412              	.LFB936:
+ 126:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl() { }
+ 413              		.loc 2 126 0
+ 414              		.cfi_startproc
+ 415 0000 55       		pushq	%rbp
+ 416              		.cfi_def_cfa_offset 16
+ 417              		.cfi_offset 6, -16
+ 418 0001 4889E5   		movq	%rsp, %rbp
+ 419              		.cfi_def_cfa_register 6
+ 420 0004 4883EC10 		subq	$16, %rsp
+ 421 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 422              	.LBB7:
+ 127:/usr/include/c++/7/bits/stl_vector.h **** 
+ 423              		.loc 2 127 0
+ 424 000c 488B45F8 		movq	-8(%rbp), %rax
+ 425 0010 4889C7   		movq	%rax, %rdi
+ 426 0013 E8000000 		call	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_
+ 426      00
+ 427              	.LBE7:
+ 428 0018 90       		nop
+ 429 0019 C9       		leave
+ 430              		.cfi_def_cfa 7, 8
+ 431 001a C3       		ret
+ 432              		.cfi_endproc
+ 433              	.LFE936:
+ 435              		.weak	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1
+ 436              		.set	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1E
+ 437              		.section	.text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEES
+ 438              		.align 2
+ 439              		.weak	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12
+ 441              	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector
+ 442              	.LFB950:
+  88:/usr/include/c++/7/bits/stl_vector.h **** 	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+ 443              		.loc 2 88 0
+ 444              		.cfi_startproc
+ 445 0000 55       		pushq	%rbp
+ 446              		.cfi_def_cfa_offset 16
+ 447              		.cfi_offset 6, -16
+ 448 0001 4889E5   		movq	%rsp, %rbp
+ 449              		.cfi_def_cfa_register 6
+ 450 0004 4883EC10 		subq	$16, %rsp
+ 451 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 452              	.LBB8:
+  89:/usr/include/c++/7/bits/stl_vector.h **** 	{ }
+ 453              		.loc 2 89 0
+ 454 000c 488B45F8 		movq	-8(%rbp), %rax
+ 455 0010 4889C7   		movq	%rax, %rdi
+ 456 0013 E8000000 		call	_ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev@PLT
+ 456      00
+ 457 0018 488B45F8 		movq	-8(%rbp), %rax
+ 458 001c 48C70000 		movq	$0, (%rax)
+ 458      000000
+ 459 0023 488B45F8 		movq	-8(%rbp), %rax
+ 460 0027 48C74008 		movq	$0, 8(%rax)
+ 460      00000000 
+ 461 002f 488B45F8 		movq	-8(%rbp), %rax
+ 462 0033 48C74010 		movq	$0, 16(%rax)
+ 462      00000000 
+ 463              	.LBE8:
+  90:/usr/include/c++/7/bits/stl_vector.h **** 
+ 464              		.loc 2 90 0
+ 465 003b 90       		nop
+ 466 003c C9       		leave
+ 467              		.cfi_def_cfa 7, 8
+ 468 003d C3       		ret
+ 469              		.cfi_endproc
+ 470              	.LFE950:
+ 472              		.weak	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12
+ 473              		.set	_ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_
+ 474              		.section	.text._ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev,"axG",@pr
+ 475              		.align 2
+ 476              		.weak	_ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev
+ 478              	_ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:
+ 479              	.LFB966:
+ 480              		.file 3 "/usr/include/c++/7/bits/allocator.h"
+   1:/usr/include/c++/7/bits/allocator.h **** // Allocators -*- C++ -*-
+   2:/usr/include/c++/7/bits/allocator.h **** 
+   3:/usr/include/c++/7/bits/allocator.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
+   4:/usr/include/c++/7/bits/allocator.h **** //
+   5:/usr/include/c++/7/bits/allocator.h **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/7/bits/allocator.h **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/7/bits/allocator.h **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/7/bits/allocator.h **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/7/bits/allocator.h **** // any later version.
+  10:/usr/include/c++/7/bits/allocator.h **** 
+  11:/usr/include/c++/7/bits/allocator.h **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/7/bits/allocator.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/7/bits/allocator.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/7/bits/allocator.h **** // GNU General Public License for more details.
+  15:/usr/include/c++/7/bits/allocator.h **** 
+  16:/usr/include/c++/7/bits/allocator.h **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/7/bits/allocator.h **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/7/bits/allocator.h **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/7/bits/allocator.h **** 
+  20:/usr/include/c++/7/bits/allocator.h **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/7/bits/allocator.h **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/7/bits/allocator.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/7/bits/allocator.h **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/7/bits/allocator.h **** 
+  25:/usr/include/c++/7/bits/allocator.h **** /*
+  26:/usr/include/c++/7/bits/allocator.h ****  * Copyright (c) 1996-1997
+  27:/usr/include/c++/7/bits/allocator.h ****  * Silicon Graphics Computer Systems, Inc.
+  28:/usr/include/c++/7/bits/allocator.h ****  *
+  29:/usr/include/c++/7/bits/allocator.h ****  * Permission to use, copy, modify, distribute and sell this software
+  30:/usr/include/c++/7/bits/allocator.h ****  * and its documentation for any purpose is hereby granted without fee,
+  31:/usr/include/c++/7/bits/allocator.h ****  * provided that the above copyright notice appear in all copies and
+  32:/usr/include/c++/7/bits/allocator.h ****  * that both that copyright notice and this permission notice appear
+  33:/usr/include/c++/7/bits/allocator.h ****  * in supporting documentation.  Silicon Graphics makes no
+  34:/usr/include/c++/7/bits/allocator.h ****  * representations about the suitability of this software for any
+  35:/usr/include/c++/7/bits/allocator.h ****  * purpose.  It is provided "as is" without express or implied warranty.
+  36:/usr/include/c++/7/bits/allocator.h ****  */
+  37:/usr/include/c++/7/bits/allocator.h **** 
+  38:/usr/include/c++/7/bits/allocator.h **** /** @file bits/allocator.h
+  39:/usr/include/c++/7/bits/allocator.h ****  *  This is an internal header file, included by other library headers.
+  40:/usr/include/c++/7/bits/allocator.h ****  *  Do not attempt to use it directly. @headername{memory}
+  41:/usr/include/c++/7/bits/allocator.h ****  */
+  42:/usr/include/c++/7/bits/allocator.h **** 
+  43:/usr/include/c++/7/bits/allocator.h **** #ifndef _ALLOCATOR_H
+  44:/usr/include/c++/7/bits/allocator.h **** #define _ALLOCATOR_H 1
+  45:/usr/include/c++/7/bits/allocator.h **** 
+  46:/usr/include/c++/7/bits/allocator.h **** #include <bits/c++allocator.h> // Define the base class to std::allocator.
+  47:/usr/include/c++/7/bits/allocator.h **** #include <bits/memoryfwd.h>
+  48:/usr/include/c++/7/bits/allocator.h **** #if __cplusplus >= 201103L
+  49:/usr/include/c++/7/bits/allocator.h **** #include <type_traits>
+  50:/usr/include/c++/7/bits/allocator.h **** #endif
+  51:/usr/include/c++/7/bits/allocator.h **** 
+  52:/usr/include/c++/7/bits/allocator.h **** #define __cpp_lib_incomplete_container_elements 201505
+  53:/usr/include/c++/7/bits/allocator.h **** #if __cplusplus >= 201103L
+  54:/usr/include/c++/7/bits/allocator.h **** # define __cpp_lib_allocator_is_always_equal 201411
+  55:/usr/include/c++/7/bits/allocator.h **** #endif
+  56:/usr/include/c++/7/bits/allocator.h **** 
+  57:/usr/include/c++/7/bits/allocator.h **** namespace std _GLIBCXX_VISIBILITY(default)
+  58:/usr/include/c++/7/bits/allocator.h **** {
+  59:/usr/include/c++/7/bits/allocator.h **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  60:/usr/include/c++/7/bits/allocator.h **** 
+  61:/usr/include/c++/7/bits/allocator.h ****   /**
+  62:/usr/include/c++/7/bits/allocator.h ****    *  @addtogroup allocators
+  63:/usr/include/c++/7/bits/allocator.h ****    *  @{
+  64:/usr/include/c++/7/bits/allocator.h ****    */
+  65:/usr/include/c++/7/bits/allocator.h **** 
+  66:/usr/include/c++/7/bits/allocator.h ****   /// allocator<void> specialization.
+  67:/usr/include/c++/7/bits/allocator.h ****   template<>
+  68:/usr/include/c++/7/bits/allocator.h ****     class allocator<void>
+  69:/usr/include/c++/7/bits/allocator.h ****     {
+  70:/usr/include/c++/7/bits/allocator.h ****     public:
+  71:/usr/include/c++/7/bits/allocator.h ****       typedef size_t      size_type;
+  72:/usr/include/c++/7/bits/allocator.h ****       typedef ptrdiff_t   difference_type;
+  73:/usr/include/c++/7/bits/allocator.h ****       typedef void*       pointer;
+  74:/usr/include/c++/7/bits/allocator.h ****       typedef const void* const_pointer;
+  75:/usr/include/c++/7/bits/allocator.h ****       typedef void        value_type;
+  76:/usr/include/c++/7/bits/allocator.h **** 
+  77:/usr/include/c++/7/bits/allocator.h ****       template<typename _Tp1>
+  78:/usr/include/c++/7/bits/allocator.h **** 	struct rebind
+  79:/usr/include/c++/7/bits/allocator.h **** 	{ typedef allocator<_Tp1> other; };
+  80:/usr/include/c++/7/bits/allocator.h **** 
+  81:/usr/include/c++/7/bits/allocator.h **** #if __cplusplus >= 201103L
+  82:/usr/include/c++/7/bits/allocator.h ****       // _GLIBCXX_RESOLVE_LIB_DEFECTS
+  83:/usr/include/c++/7/bits/allocator.h ****       // 2103. std::allocator propagate_on_container_move_assignment
+  84:/usr/include/c++/7/bits/allocator.h ****       typedef true_type propagate_on_container_move_assignment;
+  85:/usr/include/c++/7/bits/allocator.h **** 
+  86:/usr/include/c++/7/bits/allocator.h ****       typedef true_type is_always_equal;
+  87:/usr/include/c++/7/bits/allocator.h **** 
+  88:/usr/include/c++/7/bits/allocator.h ****       template<typename _Up, typename... _Args>
+  89:/usr/include/c++/7/bits/allocator.h **** 	void
+  90:/usr/include/c++/7/bits/allocator.h **** 	construct(_Up* __p, _Args&&... __args)
+  91:/usr/include/c++/7/bits/allocator.h **** 	{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+  92:/usr/include/c++/7/bits/allocator.h **** 
+  93:/usr/include/c++/7/bits/allocator.h ****       template<typename _Up>
+  94:/usr/include/c++/7/bits/allocator.h **** 	void
+  95:/usr/include/c++/7/bits/allocator.h **** 	destroy(_Up* __p) { __p->~_Up(); }
+  96:/usr/include/c++/7/bits/allocator.h **** #endif
+  97:/usr/include/c++/7/bits/allocator.h ****     };
+  98:/usr/include/c++/7/bits/allocator.h **** 
+  99:/usr/include/c++/7/bits/allocator.h ****   /**
+ 100:/usr/include/c++/7/bits/allocator.h ****    * @brief  The @a standard allocator, as per [20.4].
+ 101:/usr/include/c++/7/bits/allocator.h ****    *
+ 102:/usr/include/c++/7/bits/allocator.h ****    *  See https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html#std.util.memory.allocator
+ 103:/usr/include/c++/7/bits/allocator.h ****    *  for further details.
+ 104:/usr/include/c++/7/bits/allocator.h ****    *
+ 105:/usr/include/c++/7/bits/allocator.h ****    *  @tparam  _Tp  Type of allocated object.
+ 106:/usr/include/c++/7/bits/allocator.h ****    */
+ 107:/usr/include/c++/7/bits/allocator.h ****   template<typename _Tp>
+ 108:/usr/include/c++/7/bits/allocator.h ****     class allocator: public __allocator_base<_Tp>
+ 109:/usr/include/c++/7/bits/allocator.h ****     {
+ 110:/usr/include/c++/7/bits/allocator.h ****    public:
+ 111:/usr/include/c++/7/bits/allocator.h ****       typedef size_t     size_type;
+ 112:/usr/include/c++/7/bits/allocator.h ****       typedef ptrdiff_t  difference_type;
+ 113:/usr/include/c++/7/bits/allocator.h ****       typedef _Tp*       pointer;
+ 114:/usr/include/c++/7/bits/allocator.h ****       typedef const _Tp* const_pointer;
+ 115:/usr/include/c++/7/bits/allocator.h ****       typedef _Tp&       reference;
+ 116:/usr/include/c++/7/bits/allocator.h ****       typedef const _Tp& const_reference;
+ 117:/usr/include/c++/7/bits/allocator.h ****       typedef _Tp        value_type;
+ 118:/usr/include/c++/7/bits/allocator.h **** 
+ 119:/usr/include/c++/7/bits/allocator.h ****       template<typename _Tp1>
+ 120:/usr/include/c++/7/bits/allocator.h **** 	struct rebind
+ 121:/usr/include/c++/7/bits/allocator.h **** 	{ typedef allocator<_Tp1> other; };
+ 122:/usr/include/c++/7/bits/allocator.h **** 
+ 123:/usr/include/c++/7/bits/allocator.h **** #if __cplusplus >= 201103L
+ 124:/usr/include/c++/7/bits/allocator.h ****       // _GLIBCXX_RESOLVE_LIB_DEFECTS
+ 125:/usr/include/c++/7/bits/allocator.h ****       // 2103. std::allocator propagate_on_container_move_assignment
+ 126:/usr/include/c++/7/bits/allocator.h ****       typedef true_type propagate_on_container_move_assignment;
+ 127:/usr/include/c++/7/bits/allocator.h **** 
+ 128:/usr/include/c++/7/bits/allocator.h ****       typedef true_type is_always_equal;
+ 129:/usr/include/c++/7/bits/allocator.h **** #endif
+ 130:/usr/include/c++/7/bits/allocator.h **** 
+ 131:/usr/include/c++/7/bits/allocator.h ****       allocator() throw() { }
+ 481              		.loc 3 131 0
+ 482              		.cfi_startproc
+ 483 0000 55       		pushq	%rbp
+ 484              		.cfi_def_cfa_offset 16
+ 485              		.cfi_offset 6, -16
+ 486 0001 4889E5   		movq	%rsp, %rbp
+ 487              		.cfi_def_cfa_register 6
+ 488 0004 4883EC10 		subq	$16, %rsp
+ 489 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 490              	.LBB9:
+ 491              		.loc 3 131 0
+ 492 000c 488B45F8 		movq	-8(%rbp), %rax
+ 493 0010 4889C7   		movq	%rax, %rdi
+ 494 0013 E8000000 		call	_ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC
+ 494      00
+ 495              	.LBE9:
+ 496 0018 90       		nop
+ 497 0019 C9       		leave
+ 498              		.cfi_def_cfa 7, 8
+ 499 001a C3       		ret
+ 500              		.cfi_endproc
+ 501              	.LFE966:
+ 503              		.weak	_ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev
+ 504              		.set	_ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev,_ZNSaISt4pairIiNSt7
+ 505              		.section	.text._ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcE
+ 506              		.align 2
+ 507              		.weak	_ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE
+ 509              	_ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:
+ 510              	.LFB981:
+ 511              		.file 4 "/usr/include/c++/7/ext/new_allocator.h"
+   1:/usr/include/c++/7/ext/new_allocator.h **** // Allocator that wraps operator new -*- C++ -*-
+   2:/usr/include/c++/7/ext/new_allocator.h **** 
+   3:/usr/include/c++/7/ext/new_allocator.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
+   4:/usr/include/c++/7/ext/new_allocator.h **** //
+   5:/usr/include/c++/7/ext/new_allocator.h **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/7/ext/new_allocator.h **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/7/ext/new_allocator.h **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/7/ext/new_allocator.h **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/7/ext/new_allocator.h **** // any later version.
+  10:/usr/include/c++/7/ext/new_allocator.h **** 
+  11:/usr/include/c++/7/ext/new_allocator.h **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/7/ext/new_allocator.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/7/ext/new_allocator.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/7/ext/new_allocator.h **** // GNU General Public License for more details.
+  15:/usr/include/c++/7/ext/new_allocator.h **** 
+  16:/usr/include/c++/7/ext/new_allocator.h **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/7/ext/new_allocator.h **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/7/ext/new_allocator.h **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/7/ext/new_allocator.h **** 
+  20:/usr/include/c++/7/ext/new_allocator.h **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/7/ext/new_allocator.h **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/7/ext/new_allocator.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/7/ext/new_allocator.h **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/7/ext/new_allocator.h **** 
+  25:/usr/include/c++/7/ext/new_allocator.h **** /** @file ext/new_allocator.h
+  26:/usr/include/c++/7/ext/new_allocator.h ****  *  This file is a GNU extension to the Standard C++ Library.
+  27:/usr/include/c++/7/ext/new_allocator.h ****  */
+  28:/usr/include/c++/7/ext/new_allocator.h **** 
+  29:/usr/include/c++/7/ext/new_allocator.h **** #ifndef _NEW_ALLOCATOR_H
+  30:/usr/include/c++/7/ext/new_allocator.h **** #define _NEW_ALLOCATOR_H 1
+  31:/usr/include/c++/7/ext/new_allocator.h **** 
+  32:/usr/include/c++/7/ext/new_allocator.h **** #include <bits/c++config.h>
+  33:/usr/include/c++/7/ext/new_allocator.h **** #include <new>
+  34:/usr/include/c++/7/ext/new_allocator.h **** #include <bits/functexcept.h>
+  35:/usr/include/c++/7/ext/new_allocator.h **** #include <bits/move.h>
+  36:/usr/include/c++/7/ext/new_allocator.h **** #if __cplusplus >= 201103L
+  37:/usr/include/c++/7/ext/new_allocator.h **** #include <type_traits>
+  38:/usr/include/c++/7/ext/new_allocator.h **** #endif
+  39:/usr/include/c++/7/ext/new_allocator.h **** 
+  40:/usr/include/c++/7/ext/new_allocator.h **** namespace __gnu_cxx _GLIBCXX_VISIBILITY(default)
+  41:/usr/include/c++/7/ext/new_allocator.h **** {
+  42:/usr/include/c++/7/ext/new_allocator.h **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  43:/usr/include/c++/7/ext/new_allocator.h **** 
+  44:/usr/include/c++/7/ext/new_allocator.h ****   using std::size_t;
+  45:/usr/include/c++/7/ext/new_allocator.h ****   using std::ptrdiff_t;
+  46:/usr/include/c++/7/ext/new_allocator.h **** 
+  47:/usr/include/c++/7/ext/new_allocator.h ****   /**
+  48:/usr/include/c++/7/ext/new_allocator.h ****    *  @brief  An allocator that uses global new, as per [20.4].
+  49:/usr/include/c++/7/ext/new_allocator.h ****    *  @ingroup allocators
+  50:/usr/include/c++/7/ext/new_allocator.h ****    *
+  51:/usr/include/c++/7/ext/new_allocator.h ****    *  This is precisely the allocator defined in the C++ Standard.
+  52:/usr/include/c++/7/ext/new_allocator.h ****    *    - all allocation calls operator new
+  53:/usr/include/c++/7/ext/new_allocator.h ****    *    - all deallocation calls operator delete
+  54:/usr/include/c++/7/ext/new_allocator.h ****    *
+  55:/usr/include/c++/7/ext/new_allocator.h ****    *  @tparam  _Tp  Type of allocated object.
+  56:/usr/include/c++/7/ext/new_allocator.h ****    */
+  57:/usr/include/c++/7/ext/new_allocator.h ****   template<typename _Tp>
+  58:/usr/include/c++/7/ext/new_allocator.h ****     class new_allocator
+  59:/usr/include/c++/7/ext/new_allocator.h ****     {
+  60:/usr/include/c++/7/ext/new_allocator.h ****     public:
+  61:/usr/include/c++/7/ext/new_allocator.h ****       typedef size_t     size_type;
+  62:/usr/include/c++/7/ext/new_allocator.h ****       typedef ptrdiff_t  difference_type;
+  63:/usr/include/c++/7/ext/new_allocator.h ****       typedef _Tp*       pointer;
+  64:/usr/include/c++/7/ext/new_allocator.h ****       typedef const _Tp* const_pointer;
+  65:/usr/include/c++/7/ext/new_allocator.h ****       typedef _Tp&       reference;
+  66:/usr/include/c++/7/ext/new_allocator.h ****       typedef const _Tp& const_reference;
+  67:/usr/include/c++/7/ext/new_allocator.h ****       typedef _Tp        value_type;
+  68:/usr/include/c++/7/ext/new_allocator.h **** 
+  69:/usr/include/c++/7/ext/new_allocator.h ****       template<typename _Tp1>
+  70:/usr/include/c++/7/ext/new_allocator.h **** 	struct rebind
+  71:/usr/include/c++/7/ext/new_allocator.h **** 	{ typedef new_allocator<_Tp1> other; };
+  72:/usr/include/c++/7/ext/new_allocator.h **** 
+  73:/usr/include/c++/7/ext/new_allocator.h **** #if __cplusplus >= 201103L
+  74:/usr/include/c++/7/ext/new_allocator.h ****       // _GLIBCXX_RESOLVE_LIB_DEFECTS
+  75:/usr/include/c++/7/ext/new_allocator.h ****       // 2103. propagate_on_container_move_assignment
+  76:/usr/include/c++/7/ext/new_allocator.h ****       typedef std::true_type propagate_on_container_move_assignment;
+  77:/usr/include/c++/7/ext/new_allocator.h **** #endif
+  78:/usr/include/c++/7/ext/new_allocator.h **** 
+  79:/usr/include/c++/7/ext/new_allocator.h ****       new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+ 512              		.loc 4 79 0
+ 513              		.cfi_startproc
+ 514 0000 55       		pushq	%rbp
+ 515              		.cfi_def_cfa_offset 16
+ 516              		.cfi_offset 6, -16
+ 517 0001 4889E5   		movq	%rsp, %rbp
+ 518              		.cfi_def_cfa_register 6
+ 519 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 520              		.loc 4 79 0
+ 521 0008 90       		nop
+ 522 0009 5D       		popq	%rbp
+ 523              		.cfi_def_cfa 7, 8
+ 524 000a C3       		ret
+ 525              		.cfi_endproc
+ 526              	.LFE981:
+ 528              		.weak	_ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE
+ 529              		.set	_ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC
+ 530              		.text
+ 531              	.Letext0:
+ 532              		.file 5 "/usr/include/c++/7/bits/basic_string.h"
+ 533              		.file 6 "/usr/include/c++/7/bits/basic_string.tcc"
+ 534              		.file 7 "/usr/include/c++/7/bits/stringfwd.h"
+ 535              		.file 8 "/usr/include/c++/7/bits/cpp_type_traits.h"
+ 536              		.file 9 "/usr/include/c++/7/bits/stl_iterator_base_types.h"
+ 537              		.file 10 "/usr/include/c++/7/cwchar"
+ 538              		.file 11 "/usr/include/c++/7/bits/char_traits.h"
+ 539              		.file 12 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
+ 540              		.file 13 "/usr/include/c++/7/new"
+ 541              		.file 14 "/usr/include/c++/7/clocale"
+ 542              		.file 15 "/usr/include/c++/7/bits/stl_pair.h"
+ 543              		.file 16 "/usr/include/c++/7/bits/vector.tcc"
+ 544              		.file 17 "/usr/include/c++/7/bits/stl_iterator_base_funcs.h"
+ 545              		.file 18 "/usr/include/c++/7/debug/debug.h"
+ 546              		.file 19 "/usr/include/c++/7/bits/predefined_ops.h"
+ 547              		.file 20 "/usr/include/c++/7/ext/numeric_traits.h"
+ 548              		.file 21 "/usr/include/c++/7/ext/alloc_traits.h"
+ 549              		.file 22 "/usr/include/c++/7/bits/stl_iterator.h"
+ 550              		.file 23 "/usr/include/c++/7/ext/type_traits.h"
+ 551              		.file 24 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
+ 552              		.file 25 "<built-in>"
+ 553              		.file 26 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
+ 554              		.file 27 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
+ 555              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
+ 556              		.file 29 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
+ 557              		.file 30 "/usr/include/wchar.h"
+ 558              		.file 31 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
+ 559              		.file 32 "/usr/include/locale.h"
+ 560              		.file 33 "/usr/include/time.h"
+ 561              		.file 34 "DeferredTestResult.h"
+ 10739              		.align 8
+ 10742              	DW.ref.__gxx_personality_v0:
+ 10743 0000 00000000 		.quad	__gxx_personality_v0
+ 10743      00000000 
+ 10744              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+ 10745              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 DeferredTestResult.cpp
+     /tmp/cc5Z4PeU.s:11     .text:0000000000000000 _ZN8UnitTest18DeferredTestResultC2Ev
+     /tmp/cc5Z4PeU.s:10742  .data.DW.ref.__gxx_personality_v0:0000000000000000 DW.ref.__gxx_personality_v0
+     /tmp/cc5Z4PeU.s:380    .text._ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:0000000000000000 _ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev
+     /tmp/cc5Z4PeU.s:11     .text:0000000000000000 _ZN8UnitTest18DeferredTestResultC1Ev
+     /tmp/cc5Z4PeU.s:195    .text:0000000000000174 _ZN8UnitTest18DeferredTestResultC2EPKcS2_
+     /tmp/cc5Z4PeU.s:195    .text:0000000000000174 _ZN8UnitTest18DeferredTestResultC1EPKcS2_
+     /tmp/cc5Z4PeU.s:380    .text._ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:0000000000000000 _ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev
+     /tmp/cc5Z4PeU.s:411    .text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev
+     /tmp/cc5Z4PeU.s:441    .text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC2Ev:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC1Ev
+     /tmp/cc5Z4PeU.s:411    .text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2Ev:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1Ev
+     /tmp/cc5Z4PeU.s:441    .text._ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC2Ev:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC2Ev
+     /tmp/cc5Z4PeU.s:478    .text._ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:0000000000000000 _ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev
+     /tmp/cc5Z4PeU.s:509    .text._ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:0000000000000000 _ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev
+     /tmp/cc5Z4PeU.s:478    .text._ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:0000000000000000 _ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev
+     /tmp/cc5Z4PeU.s:509    .text._ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev:0000000000000000 _ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev
+                           .group:0000000000000000 _ZNSt6vectorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC5Ev
+                           .group:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC5Ev
+                           .group:0000000000000000 _ZNSt12_Vector_baseISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC5Ev
+                           .group:0000000000000000 _ZNSaISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC5Ev
+                           .group:0000000000000000 _ZN9__gnu_cxx13new_allocatorISt4pairIiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC5Ev
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+_ZNSaIcEC1Ev
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_
+_ZNSaIcED1Ev
+_Unwind_Resume
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+__stack_chk_fail
+__gxx_personality_v0

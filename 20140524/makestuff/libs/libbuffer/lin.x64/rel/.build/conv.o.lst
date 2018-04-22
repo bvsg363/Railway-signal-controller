@@ -1,0 +1,158 @@
+   1              		.file	"conv.c"
+   2              		.text
+   3              		.p2align 4,,15
+   4              		.globl	getHexNibble
+   6              	getHexNibble:
+   7              	.LFB4:
+   8              		.cfi_startproc
+   9 0000 8D47D0   		leal	-48(%rdi), %eax
+  10 0003 3C09     		cmpb	$9, %al
+  11 0005 7631     		jbe	.L7
+  12 0007 8D479F   		leal	-97(%rdi), %eax
+  13 000a 3C05     		cmpb	$5, %al
+  14 000c 761A     		jbe	.L8
+  15 000e 8D57BF   		leal	-65(%rdi), %edx
+  16 0011 B8010000 		movl	$1, %eax
+  16      00
+  17 0016 80FA05   		cmpb	$5, %dl
+  18 0019 7708     		ja	.L1
+  19 001b 83EF37   		subl	$55, %edi
+  20 001e 31C0     		xorl	%eax, %eax
+  21 0020 40883E   		movb	%dil, (%rsi)
+  22              	.L1:
+  23 0023 F3C3     		rep ret
+  24              		.p2align 4,,10
+  25 0025 0F1F00   		.p2align 3
+  26              	.L8:
+  27 0028 83EF57   		subl	$87, %edi
+  28 002b 31C0     		xorl	%eax, %eax
+  29 002d 40883E   		movb	%dil, (%rsi)
+  30 0030 C3       		ret
+  31              		.p2align 4,,10
+  32 0031 0F1F8000 		.p2align 3
+  32      000000
+  33              	.L7:
+  34 0038 8806     		movb	%al, (%rsi)
+  35 003a 31C0     		xorl	%eax, %eax
+  36 003c C3       		ret
+  37              		.cfi_endproc
+  38              	.LFE4:
+  40 003d 0F1F00   		.p2align 4,,15
+  41              		.globl	getHexByte
+  43              	getHexByte:
+  44              	.LFB5:
+  45              		.cfi_startproc
+  46 0040 55       		pushq	%rbp
+  47              		.cfi_def_cfa_offset 16
+  48              		.cfi_offset 6, -16
+  49 0041 53       		pushq	%rbx
+  50              		.cfi_def_cfa_offset 24
+  51              		.cfi_offset 3, -24
+  52 0042 4889FB   		movq	%rdi, %rbx
+  53 0045 4889F5   		movq	%rsi, %rbp
+  54 0048 4883EC18 		subq	$24, %rsp
+  55              		.cfi_def_cfa_offset 48
+  56 004c 0FBE3F   		movsbl	(%rdi), %edi
+  57 004f 488D7424 		leaq	6(%rsp), %rsi
+  57      06
+  58 0054 64488B04 		movq	%fs:40, %rax
+  58      25280000 
+  58      00
+  59 005d 48894424 		movq	%rax, 8(%rsp)
+  59      08
+  60 0062 31C0     		xorl	%eax, %eax
+  61 0064 E8000000 		call	getHexNibble@PLT
+  61      00
+  62 0069 84C0     		testb	%al, %al
+  63 006b 7423     		je	.L10
+  64              	.L12:
+  65 006d B8010000 		movl	$1, %eax
+  65      00
+  66              	.L9:
+  67 0072 488B4C24 		movq	8(%rsp), %rcx
+  67      08
+  68 0077 6448330C 		xorq	%fs:40, %rcx
+  68      25280000 
+  68      00
+  69 0080 7531     		jne	.L15
+  70 0082 4883C418 		addq	$24, %rsp
+  71              		.cfi_remember_state
+  72              		.cfi_def_cfa_offset 24
+  73 0086 5B       		popq	%rbx
+  74              		.cfi_def_cfa_offset 16
+  75 0087 5D       		popq	%rbp
+  76              		.cfi_def_cfa_offset 8
+  77 0088 C3       		ret
+  78 0089 0F1F8000 		.p2align 4,,10
+  78      000000
+  79              		.p2align 3
+  80              	.L10:
+  81              		.cfi_restore_state
+  82 0090 0FBE7B01 		movsbl	1(%rbx), %edi
+  83 0094 488D7424 		leaq	7(%rsp), %rsi
+  83      07
+  84 0099 E8000000 		call	getHexNibble@PLT
+  84      00
+  85 009e 84C0     		testb	%al, %al
+  86 00a0 75CB     		jne	.L12
+  87 00a2 0FB65424 		movzbl	6(%rsp), %edx
+  87      06
+  88 00a7 C1E204   		sall	$4, %edx
+  89 00aa 0A542407 		orb	7(%rsp), %dl
+  90 00ae 885500   		movb	%dl, 0(%rbp)
+  91 00b1 EBBF     		jmp	.L9
+  92              	.L15:
+  93 00b3 E8000000 		call	__stack_chk_fail@PLT
+  93      00
+  94              		.cfi_endproc
+  95              	.LFE5:
+  97              		.section	.rodata.str1.1,"aMS",@progbits,1
+  98              	.LC0:
+  99 0000 30313233 		.string	"0123456789ABCDEF"
+  99      34353637 
+  99      38394142 
+  99      43444546 
+  99      00
+ 100              		.text
+ 101 00b8 0F1F8400 		.p2align 4,,15
+ 101      00000000 
+ 102              		.globl	getHexUpperNibble
+ 104              	getHexUpperNibble:
+ 105              	.LFB6:
+ 106              		.cfi_startproc
+ 107 00c0 40C0EF04 		shrb	$4, %dil
+ 108 00c4 488D0500 		leaq	.LC0(%rip), %rax
+ 108      000000
+ 109 00cb 83E70F   		andl	$15, %edi
+ 110 00ce 0FB60438 		movzbl	(%rax,%rdi), %eax
+ 111 00d2 C3       		ret
+ 112              		.cfi_endproc
+ 113              	.LFE6:
+ 115 00d3 0F1F0066 		.p2align 4,,15
+ 115      2E0F1F84 
+ 115      00000000 
+ 115      00
+ 116              		.globl	getHexLowerNibble
+ 118              	getHexLowerNibble:
+ 119              	.LFB7:
+ 120              		.cfi_startproc
+ 121 00e0 488D0500 		leaq	.LC0(%rip), %rax
+ 121      000000
+ 122 00e7 83E70F   		andl	$15, %edi
+ 123 00ea 0FB60438 		movzbl	(%rax,%rdi), %eax
+ 124 00ee C3       		ret
+ 125              		.cfi_endproc
+ 126              	.LFE7:
+ 128              		.ident	"GCC: (Ubuntu 7.2.0-8ubuntu3.2) 7.2.0"
+ 129              		.section	.note.GNU-stack,"",@progbits
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 conv.c
+     /tmp/ccV9v4MV.s:6      .text:0000000000000000 getHexNibble
+     /tmp/ccV9v4MV.s:43     .text:0000000000000040 getHexByte
+     /tmp/ccV9v4MV.s:104    .text:00000000000000c0 getHexUpperNibble
+     /tmp/ccV9v4MV.s:118    .text:00000000000000e0 getHexLowerNibble
+     /tmp/ccV9v4MV.s:98     .rodata.str1.1:0000000000000000 .LC0
+
+UNDEFINED SYMBOLS
+_GLOBAL_OFFSET_TABLE_
+__stack_chk_fail
